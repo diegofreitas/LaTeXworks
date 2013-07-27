@@ -1,0 +1,132 @@
+\chapter{Referencial Teórico}
+
+\section{Princípios e Padrões de Projetos}
+
+Desenvolver software orientado a objetos é um desafio. Criar uma representação
+computacional de uma faceta da realidade em que seus constituintes trabalhem de
+forma horminiosa para atingir as necessidades que o software se propõe a
+atender requer experiência, conhecimento do domínio do problema e um processo de
+análise e projeto. Apesear de existir várias abordagens para se conceber um
+sistema orientado a objetos\cite{evans2004ddd},\cite{gomma11} um sistema bem
+contruído apresetam características fundamentais. Coesão, acoplamento etc
+\cite{demarco},\cite{page-jones}.
+
+
+Um padrão dentro do contexto de estudo deste presente trablho pode ser definido
+como uma técnica efetiva cuja a sua aplicabilidade é aceita e difundiida dentro
+de uma área de conhecimento com a intenção de atingir um
+objetivo\cite{MetskerWake06}.
+
+Em densenvolvimento de software o catálogo mais difundido de padrões de projetos
+orientado a objetos é elaborado por \citeonline{gof} contendo um total de 23
+padrões formalmente documentados que acumulam experiências bem sucedidas 
+diversos sistemas. Esses padrões tem a seguinte classificação:
+
+\begin{description}
+\item[Criacionais] Padrões que definem como criar novas instâncias de classes.
+\item[Estruturais] Foca na estruturação das classes e objetos.
+\item[Comportamentais] Definem como as classes e objetos interagem entre si e
+suas responsabilidades.
+\end{description}
+
+Com o intuito de documentar os padrões de projetos de forma objetiva para
+facilitar o aprendizado dos mesmos, a comparação e escolha do padrão a ser
+aplicado, \citeonline{gof} elabora um modelo que descreve as seguintes
+caracteristicas para cada padrão:
+
+\begin{description}
+\item[Nome e Classificação]
+\item[Intenção]
+\item[Também conhecido como]
+\item[Motivação]
+\item[Aplicabilidade]
+\item[Estrutura]
+\item[Participantes]
+\item[Collaborations]
+How the participants collaborate to carry out their responsibilities.
+\item[Consequences]
+How does the pattern support its objectives? What are the trade-offs and results
+of using the pattern? What aspect of system structure does it let you vary inde-
+pendently?
+\item[Implementation]
+What pitfalls, hints, or techniques should you be aware of when implementing
+the pattern? Are there language-specific issues?
+\item[Sample Code]
+Code fragments that illustrate how you might implement the pattern in C++ or
+Smalltalk.
+\item[Known Uses]
+Examples of the pattern found in real systems. We include at least two examples
+from different domains.
+\item[Related Patterns]
+\end{description}
+
+%argumentação
+Analisando a forma como um padrão de projeto é concebido definindo papéis de
+cada elemento participante e como eles interagem entre se podemos concluir que
+os padrões de projeto promovem maior coesão, melhor separação de interesses e
+baixo acoplamento no sistema.
+
+
+\section*{Model View Controller}
+
+Onde Quando surgiu
+
+Necessidade
+
+Model
+ 
+View
+
+Controller
+
+Relação com os padroes e principios.
+
+
+Segundo \citeonline{Fowler:2002:PEA} ``Of these the separation of presentation
+from model is one of the most fundamental heuristics of good software design''.
+
+\section*{MVP}
+
+Onde Quando surgiu
+
+Necessidades 
+
+Model
+
+View 
+
+Presenter
+
+Diferencas entre o mvc.
+
+\section*{Android}
+ 
+Historia caracteristicas
+Arquitetura.
+
+Componentes
+	Activity
+	service
+	broadcastReceiver
+	ContentProvider
+
+
+
+Como DP resolvem problemas, seguir linha de raciocinio para aplicar padrões em
+android.
+
+
+Analise do componente Activity, UI Thread, hieráriquia de herança e algumas
+funcionalidades que dependem da activity e como isso interfere na aplicação do
+padrão(Por experiência confirmo que é negativa). mostrar exemplo de uma view em
+lista para smartphone e outra para tablet com grid usando o mesmo modelo
+
+Experimentos
+
+activity - controller+async task - listeners,
+activity - controller+async task - observer pattern,
+activity - controller+async task - localbroadcast
+activity - controller+async task - Messages
+Activity+Fragment
+
+

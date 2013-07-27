@@ -1,0 +1,310 @@
+%% abtex2-modelo-trabalho-academico.tex, v-1.7.1 laurocesar
+%% Copyright 2012-2013 by abnTeX2 group at http://abntex2.googlecode.com/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://abntex2.googlecode.com/
+%%
+%% This work consists of the files abntex2-modelo-trabalho-academico.tex,
+%% abntex2-modelo-include-comandos and abntex2-modelo-references.bib
+%%
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
+% mestrado e trabalhos monograficos em geral) em conformidade com 
+% ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
+% Apresentacao
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	twoside,			% para impressão em verso e anverso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{cmap}				% Mapear caracteres especiais no PDF
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+% ---
+\usepackage{comment}		
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+\usepackage[brazil]{babel}
+
+
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Uso de Padrões de Projetos no desenvolvimento de aplicativos Android}
+\autor{Diego Lins de Freitas}
+\local{Manaus-Am}
+\data{2013, Julho}
+%\orientador{Lauro César Araujo}
+\instituicao{%
+  Faculdade Fucapi
+  \par
+  Especialização em Engenharia de Software
+  \par
+  Centro de Pós-Graduação e Extensão (CPGE)}
+\tipotrabalho{Tese (Doutorado)}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{}
+% ---
+
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+%\imprimircapa
+
+\imprimirfolhaderosto*
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+\begin{resumo}
+ A plataforma android foi adotada por vários fornecedores de smartphones e tablet promovendo uma disseminação 
+ do sistema operacional muito abrangente. Formou-se um grande mercado a ser explorado com fornecimento de 
+ aplicativos para as  mais variadas finalidades. Para atender essa demanda é necessário desenvolver aplicativos 
+ de qualidade e o mais rápido possível mas por se tratar de pequenos  aplicativos há pouca preocupação com a 
+ arquitetura é deixada de lado. Os padrões difundidos na comunidade são focados na utilização de componentes e 
+ desenvolvimento da interface. Neste artigo é apresentado alguns padrões de projetos  aplicados ao desenvolvimento 
+ de aplicativos android dando um visão mais ampla de um aplicativo. 
+
+ \vspace{\onelineskip}
+    
+ \noindent
+ \textbf{Palavras-chaves}: Android. MVC. MVP.
+\end{resumo}
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+\include{cap/cap1}
+
+\include{cap/cap2}
+
+
+\section{Refatoração do Objeto de estudo}
+
+Com base na literatura revisada esta seção tem como objetivo fazer uma análise
+dos componentes do framework android e projetar uma camada de apresentação
+utilizando o padrão MVP. Será realizado uma análise  tendo como objetivo definir
+usada um referência de implemntação a ser aplicada na refatoração(Referências
+sobre Refatoração de Código)
+Quem vai ser o model?
+
+
+OnTouchListener pode exercer papel de controller pois
+pode ser usado para interpretar os gestos do usuário e direcioar para o model.
+
+
+%Explicar uso do padrão observer no mvc
+Na definição clássica do padrão MVC é possível identificar a implementação do
+padrão Observer usado para a comunicação entre o model e a view.
+
+Observer=Lapsed listener problem=memory leak e bugs porque uma activity pode ser
+ou estar sendo referenciada por um listener que se não for desregistrado vai
+causar problema
+
+Destacar problema com o observer pattern e pra solucionar isso
+usar publish–subscribe messaging pattern
+
+O Broadcast Receiver é uma implementação do padrão pubsub onde diversos
+subscribers se registram para receber mensagens(intents) de seu interesse.
+
+
+Padrões Criacionais. O objeto Application é um singleton, a activity e
+fragmentos são criados pelo android e fica dificil aplicar padrões criacionais é
+possível identificar o padrão templete method nos ciclos de vida desses
+componentes.
+
+
+
+ Para concluir a seção sobre MVC e MVP destacar que A principal características
+ desses padrões de projetos é que ele promover maior coesão nos citar Tom deMarco 
+
+baseado em outras pesquisa será aplicado padões de projetos  para melhorar a
+ qualidade pegar referências,  relacionar Coesão = Qualidade.
+
+\chapter{Resultados e Conclusões}
+
+\section{Trabalhos Futuros}
+
+Existem outros padrões de projetos para o desenvolvimento da camada de
+apresentação de um software que não foram analisados nesse trabalho: MVVM,
+MVP-VM, MVPC.
+
+Este trabalho não fez uma avaliação dos impactos na performance do aplicativo
+devido ao uso desses padrões. A inclusão de mais objetos interagindo,
+redirecionando mensagens pode depreciar a performance.
+
+
+\section{Conclusões}
+
+Possível aumento do código.
+
+
+% ---
+% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
+% ---
+\bookmarksetup{startatroot}% 
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{abntex2-modelo-references}
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+
+\end{document}

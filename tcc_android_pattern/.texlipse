@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Tue Jul 16 21:10:11 AMT 2013
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=tcc_android_patterns.tex
+outputFile=tcc_android_patterns.pdf
+langSpell=en
+markDer=true
+srcDir=

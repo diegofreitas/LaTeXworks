@@ -1,0 +1,79 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v<VERSION> }
+
+\bibitem[DeMarco 1979]{demarco}
+\abntrefinfo{DeMarco}{DEMARCO}{1979}
+{DEMARCO, T. \emph{Structured Analysis and System Specification}. Upper Saddle
+  River, NJ, USA: Prentice Hall PTR, 1979.
+ISBN 0138543801.}
+
+\bibitem[Evans 2004]{evans2004ddd}
+\abntrefinfo{Evans}{EVANS}{2004}
+{EVANS, E. \emph{Domain-Driven Design: Tackling Complexity in the Heart of
+  Software}. [S.l.]: Addison-Wesley, 2004.}
+
+\bibitem[Fowler 2002]{Fowler:2002:PEA}
+\abntrefinfo{Fowler}{FOWLER}{2002}
+{FOWLER, M. \emph{Patterns of Enterprise Application Architecture}. Boston, MA,
+  USA: Addison-Wesley, 2002.
+ISBN 0321127420.}
+
+\bibitem[Gamma et al. 1995]{gof}
+\abntrefinfo{Gamma et al.}{GAMMA et al.}{1995}
+{GAMMA, E. et al. \emph{Design Patterns: Elements of Reusable Object-Oriented
+  Software}. [S.l.]: Addison Wesley, Boston, 1995.  (Professional Computing
+  Series).}
+
+\bibitem[Gomaa 2011]{gomma11}
+\abntrefinfo{Gomaa}{GOMAA}{2011}
+{GOMAA, H. \emph{Software modeling and design : UML, use cases, patterns, and
+  software architectures}. [S.l.]: Addison-Wesley, 2011.}
+
+\bibitem[IDC 2013]{idc:b}
+\abntrefinfo{IDC}{IDC}{2013a}
+{IDC. \emph{Android and iOS Combine for 92.3% of All Smartphone Operating
+  System Shipments in the First Quarter While Windows Phone Leapfrogs
+  BlackBerry}. 2013. IDC - Worldwide Quarterly Mobile Phone Forecast.
+Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/www\-.idc\-.com\-/getdoc\-.jsp?containerId=prUS24143513$>$}{http://www.idc.com/getdoc.jsp?containerId=prUS24143513}.
+  Acesso em: 9.7.2013.}
+
+\bibitem[IDC 2013]{idc:a}
+\abntrefinfo{IDC}{IDC}{2013b}
+{IDC. \emph{Smartphones Expected to Grow 32.7\% in 2013 Fueled By Declining
+  Prices and Strong Emerging Market Demand}. 2013. IDC - Worldwide Quarterly
+  Mobile Phone Forecast.
+Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/www\-.idc\-.com\-/getdoc\-.jsp?containerId=prUS24143513$>$}{http://www.idc.com/getdoc.jsp?containerId=prUS24143513}.
+  Acesso em: 9.7.2013.}
+
+\bibitem[Metsker e Wake 2006]{MetskerWake06}
+\abntrefinfo{Metsker e Wake}{METSKER; WAKE}{2006}
+{METSKER, S.~J.; WAKE, W.~C. \emph{Design Patterns in Java}. 2. ed. Upper
+  Saddle River, NJ: Addison-Wesley, 2006.
+ISBN 978-0-321-33302-5.}
+
+\bibitem[Page-Jones 1988]{page-jones}
+\abntrefinfo{Page-Jones}{PAGE-JONES}{1988}
+{PAGE-JONES, M. \emph{The practical guide to structured systems design}. 2. ed.
+  ed. London: Prentice-Hall International, 1988.  (Yourdon Press Computing
+  Series).
+ISBN 0136907776.}
+
+\bibitem[Pressman 2006]{pressman}
+\abntrefinfo{Pressman}{PRESSMAN}{2006}
+{PRESSMAN, R.~S. \emph{Engenharia de Software}. 6. ed. [S.l.]: Mcgraw-hill
+  Interamericana, 2006.}
+
+\bibitem[Yang, Tempero e Melton 2008]{tempero-di}
+\abntrefinfo{Yang, Tempero e Melton}{YANG; TEMPERO; MELTON}{2008}
+{YANG, H.~Y.; TEMPERO, E.; MELTON, H. An empirical study into use of dependency
+  injection in java. In:  \emph{Software Engineering, 2008. ASWEC 2008. 19th
+  Australian Conference on}. [S.l.: s.n.], 2008. p. 239--247.
+ISSN 1530-0803.}
+
+\end{thebibliography}
