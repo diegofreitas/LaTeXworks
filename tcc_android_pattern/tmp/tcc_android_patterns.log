@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.7.16)  27 JUL 2013 10:59
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.7.16)  27 JUL 2013 22:11
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1074,25 +1074,25 @@ LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 123.
+(Font)              <10> on input line 131.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 123.
+(Font)              <7> on input line 131.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 123.
+(Font)              <5> on input line 131.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.123 .../android/platform_packages_apps_contacts}
-                                                   que
+l.131 25073)}
+              que é um dos aplicativos básicos pré-instalados com o sistema
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-<argument> ...id/platform_packages_apps_contacts}}
+<argument> ..._packages_apps_contacts(PMD 25073)}}
                                                   \@finalstrut \strutbox 
-l.123 .../android/platform_packages_apps_contacts}
-                                                   que
+l.131 25073)}
+              que é um dos aplicativos básicos pré-instalados com o sistema
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -1102,31 +1102,31 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.123 .../android/platform_packages_apps_contacts}
-                                                   que
+l.131 25073)}
+              que é um dos aplicativos básicos pré-instalados com o sistema
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.123 .../android/platform_packages_apps_contacts}
-                                                   que
+l.131 25073)}
+              que é um dos aplicativos básicos pré-instalados com o sistema
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[9] <img/processo_experimentacao.png, id=124, 1040.38687pt x 322.20375pt>
+[9] <img/processo_experimentacao.png, id=135, 1040.38687pt x 322.20375pt>
 File: img/processo_experimentacao.png Graphic file (type png)
 
 <use img/processo_experimentacao.png>
-Package pdftex.def Info: img/processo_experimentacao.png used on input line 150
+Package pdftex.def Info: img/processo_experimentacao.png used on input line 160
 .
 (pdftex.def)             Requested size: 520.19217pt x 161.10147pt.
 
-Overfull \hbox (65.19217pt too wide) in paragraph at lines 150--151
+Overfull \hbox (65.19217pt too wide) in paragraph at lines 160--161
  [][][] 
  []
 
@@ -1161,43 +1161,44 @@ AED: lastpage setting LastPage
 \tf@toc=\write7
 \openout7 = `tcc_android_patterns.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 314.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 314.
  (./tcc_android_patterns.aux (./cap/cap1.aux) (./cap/cap2.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 314.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 314.
 Package rerunfilecheck Info: File `tcc_android_patterns.brf' has not changed.
-(rerunfilecheck)             Checksum: FEDA46F78CE6F146C9351D8670B800FD;556.
+(rerunfilecheck)             Checksum: 12B24273423E0691AF066BBD3711C88B;635.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 314.
  ) 
 Here is how much of TeX's memory you used:
- 11840 strings out of 495039
- 168853 string characters out of 3181249
- 381845 words of memory out of 3000000
- 14725 multiletter control sequences out of 15000+200000
+ 11867 strings out of 495039
+ 169145 string characters out of 3181249
+ 383147 words of memory out of 3000000
+ 14747 multiletter control sequences out of 15000+200000
  75975 words of font info for 52 fonts, out of 3000000 for 9000
  16 hyphenation exceptions out of 8191
- 39i,13n,33p,305b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,12n,33p,305b,490s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/s
-hare/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb
-></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on tcc_android_patterns.pdf (17 pages, 335360 bytes).
+c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm
+/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
+12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/font
+s/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/l
+msy10.pfb>
+Output written on tcc_android_patterns.pdf (17 pages, 346423 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 297 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 202 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 366 PDF objects out of 1000 (max. 8388607)
+ 321 compressed objects within 4 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 218 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,6 +5,12 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v<VERSION> }
 
+\bibitem[Chidamber e Kemerer 1994]{cksuite}
+\abntrefinfo{Chidamber e Kemerer}{CHIDAMBER; KEMERER}{1994}
+{CHIDAMBER, S.; KEMERER, C. A metrics suite for object oriented design.
+\emph{IEEE Transactions on Software Engineering}, v.~20, n.~6, p. 476 -- 493, 6
+  1994.}
+
 \bibitem[DeMarco 1979]{demarco}
 \abntrefinfo{DeMarco}{DEMARCO}{1979}
 {DEMARCO, T. \emph{Structured Analysis and System Specification}. Upper Saddle
@@ -68,6 +74,14 @@ ISBN 0136907776.}
 \abntrefinfo{Pressman}{PRESSMAN}{2006}
 {PRESSMAN, R.~S. \emph{Engenharia de Software}. 6. ed. [S.l.]: Mcgraw-hill
   Interamericana, 2006.}
+
+\bibitem[Türk 2009]{turk}
+\abntrefinfo{Türk}{TüRK}{2009}
+{TüRK, T.
+\emph{THE EFFECT OF SOFTWARE DESIGN PATTERNS ON OBJECT-ORIENTED SOFTWARE
+  QUALITY AND MAINTAINABILITY}.
+Disserta\c{c}\~{a}o (Mestrado) --- Middle East Technical University: METU,
+  Çankaya Ankara/ Turquia, Setembro 2009.}
 
 \bibitem[Yang, Tempero e Melton 2008]{tempero-di}
 \abntrefinfo{Yang, Tempero e Melton}{YANG; TEMPERO; MELTON}{2008}

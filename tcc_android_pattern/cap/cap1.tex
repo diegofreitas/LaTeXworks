@@ -74,11 +74,25 @@ aplicativo android utilizando padrões de projetos.
 
 \section{Trabalhos Relacionados}
 
+Na dissertação de \citeonline{turk} é feita uma análise dos impactos na
+qualidade ao aplicar cinco padrões de projetos em um software de comunicação
+TCP/IP. Os resultados do trabalho citado mostram que a qualidade do software
+aumenta ao aplicar padrões de projetos sendo que o principal atributo de
+qualidade aferida é a manutenabilidade.
+
 \section{Contribuições}
 
+
 Tendo em vista que padrões de projetos descrevem soluções genéricas, este
-trabalho contribui com uma interpretação do padrão de projeto mvp proporcionando
-uma referência prática dentro framework android.
+trabalho tem como principal contribuiçãouma interpretação do padrão de projeto
+Model-View-Presenter proporcionando uma referência prática dentro framework
+android.
+
+A diversidade de projetos de software torna difícil inferir se as métricas
+podem ser consideradas um paramêtro para determinar a qualidade. Para validar a
+aplicabilidade do padrão MVP métricas orientadas a objetos foram usadas
+dentro do contexto do framework android, contribuindo com mais uma estudo dessas
+métricas acrescentando algo para a ciência. rsrs
 
 \section{Organização do Trabalho}
 
@@ -95,53 +109,49 @@ responsabilidades definidas nos padrões e definir como implementa-los.
 
 Para validar a hipótese apresentada neste trabalho a pesquisa terá uma
 abordagem quantitativa através da análise de dados estatistícos de métricas 
-que expresssam atributos de qualidade em software orientado a objetos.
+que expresssam atributos de qualidade em software orientado a objetos. O
+conjunto de métricas a serem usadas nessa validação será o elaborado por
+\citeonline{cksuite}.
 
 Essas medidas serão coletadas através de um procedimento experimental em
 laboratório utilizando um processo iterativo-incremental para executar
-refatorações no código afim de introduzir o padrão de projeto nos aplicativo e a
-cada iteração será feita a coleata das métricas.
-Para executar esse processo será identificado um conjunto de estórias que o
-aplicativo atende relaciondas as interações com o usuário. Desse conjunto será
-elencadas as estórias que serão refatoradas para cada iteração.
+refatorações no código do objeto de estudo afim de introduzir o padrão de
+projeto Model-View-Presenter e a cada iteração será feita a coleata das
+métricas. Para executar esse processo será identificado um conjunto de
+funcionalidades que o aplicativo atende, relaciondas com a camada de
+apresentação com a qual o usuário interage.
 
 
 
 \section{Objeto de Estudo}
 
-\iffalse
-* Opção 1
-O projeto a ser refatorado será o
-IOSched\footnote{https://code.google.com/p/iosched/}. Este projeto é um
-aplicativo android desenvolvido para dar suporte ao usúario que participaram da
-conferência Google I/O\footnote{https://developers.google.com/events/io/}
-
-* Opção 2
-\fi
 
 O projeto a ser refatorado será o aplicativo de Contatos do
-android\footnote{https://github.com/android/platform_packages_apps_contacts} que
-é um dos aplicativos básicos pré-instalados com o sistema operacional. Este projeto é opensource mantido pelo The Android Open Source Projeto suportado pela
-Google com contribuições de desenvolvedores de do mundo todo.
+android\footnote{https://github.com/android/platform_packages_apps_contacts(PMD
+25073)} que é um dos aplicativos básicos pré-instalados com o sistema
+operacional. Este projeto é opensource mantido pelo  The Android Open Source
+Projeto suportado pela Google com contribuições de desenvolvedores do mundo
+todo.(qual é a licença do projeto).
 
 Os critérios para a escolha do objeto de estudo são:
 
 \begin{enumerate}
   \item Tamanho/Complexidade - Um projeto muito complexo iria inviabilizar a
-  pesquisa devido ao esforço para fazer a refatoração e as métricas coletadas
-  apartir de projeto simples e triviais não forneceria dados suficientes para
+  pesquisa devido ao esforço para fazer a refatoração. Métricas coletadas
+  apartir de projetos simples e triviais não forneceriam dados suficientes para
   uma análise satisfatória. (o que foi usado para medir a complexidade. e qual
   o tamanho do objeto de estudo).
-  \item Open Soruce - Além de permitir o acesso ao código fonte sem limitações,
-  tem a contribuição de vários desenvolvedores com experiência e formação em
-  programação diversificada que se refletem no código fonte.
-  \item Origem - A escolha de um aplicativo mantido sobre o mesmo
+  \item Código Aberto - Além de permitir o acesso ao código fonte sem
+  limitações para a pesquisa, tem a contribuição de vários desenvolvedores com
+  experiência e formação em programação diversificada que se refletem no código fonte.
+  \item Origem do projeto - A escolha de um aplicativo mantido sobre o mesmo
   ``guarda-chuva'' que o sistema operacional android foi feita com o intuito de
-  fazer a pesquisa uma código fonte que expresse as técnicas e práticas de
+  fazer a pesquisa em um código fonte que expressasse as técnicas e práticas de
   programação difundidas nesse ecosistema.
 \end{enumerate}
 
 \section{Processo de Experimentos}
+
 
 A Figura \ref{processo_experimentacao} demonstra as atividades do processo de
 experimentação adotado:
@@ -153,7 +163,7 @@ experimentação adotado:
 \end{figure}
 
 \begin{description}
-\item[Criação uma linha de base] - Delimitar um marco no estado do código no
+\item[Criação uma linha de base] - Delimitar um marco do estado do código no
 repositório.
 \item[Refatoração Incremental] Esta atividade tem como objetivo aplicar os
 padrões em uma funcionalidade do aplicativo.
@@ -162,10 +172,13 @@ das métricas do código apartir de uma revisão em que se encontra no repositó
 para fazer a avaliação dos efeitos da refatoração na qualidade do código.
 \end{description}
 
+Esta pesquisa se propõe a executar três iterações.
+
 \section{Ferramentas}
 
 Para elaborar uma documentação da implementação de referências usando será usada
 a notação UML v2 com o uso da ferramento Astah. O código será versionado no
 Github onde será feito o gerenciamento das linhas de base. As ferramentas a
-serem utilizadas para a refatoração, IDE Eclipse(Juno) com plugin ADT v21 para a
-refatoração. As métricas serão coletadas com a ferramenta PMD 5.
+serem utilizadas para a refatoração, IDE Eclipse(Juno) com plugin ADT v21. As
+métricas serão coletadas com o programa
+ckjm\footnote{http://www.spinellis.gr/sw/ckjm/}.
