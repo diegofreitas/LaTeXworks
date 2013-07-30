@@ -57,6 +57,12 @@ Dispon{\'\i}vel em:
   \htmladdnormallink{$<$http:\-/\-/www\-.idc\-.com\-/getdoc\-.jsp?containerId=prUS24143513$>$}{http://www.idc.com/getdoc.jsp?containerId=prUS24143513}.
   Acesso em: 9.7.2013.}
 
+\bibitem[Krasner e Pope 1988]{krasnerPope1988}
+\abntrefinfo{Krasner e Pope}{KRASNER; POPE}{1988}
+{KRASNER, G.; POPE, S. A description of the {Model-View-Controller} user
+  interface paradigm in the smalltalk-80 system.
+\emph{Journal of Object Oriented Programming}, n.~3, p. 26--49, 1988.}
+
 \bibitem[Metsker e Wake 2006]{MetskerWake06}
 \abntrefinfo{Metsker e Wake}{METSKER; WAKE}{2006}
 {METSKER, S.~J.; WAKE, W.~C. \emph{Design Patterns in Java}. 2. ed. Upper
