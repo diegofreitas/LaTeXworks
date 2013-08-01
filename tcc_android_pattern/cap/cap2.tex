@@ -1,12 +1,15 @@
 \chapter{Referencial Teórico}
 
+\iffalse
 \section{Qualidade de Software}
+
 
 \section{Métricas de qualidade OO}
 
 CKsuite
 em quê foi baseado essas metrica.
 quais são os métricas e como interpreta-las
+\fi
 
 \section{Princípios e Padrões de Projetos}
 
@@ -78,31 +81,69 @@ baixo acoplamento no sistema.
 
 \section*{Model View Controller}
 
-
 O padrão de projeto Model-View-Controller foi apresentado por
 \citeonline{krasnerPope1988} como uma forma de promover a reusabilidade e
 plugabilidade no ambiente de programação Smalltalk-80 capturando de forma
 orientada a objetos as interações do usuário e a interface do programa através
-de três componentes.
+de três componentes:
 
+Models - É o compoente constituído de uma composição de classes que implementam
+as regras de negócio referentes as funcionalidades que o programa provê contendo
+estruturas de dados variadas, atende mensagens da view requisitando seu estado e
+mensagens do controller para mudar seu estado.
 
+Views - Representação específica de um model na interface com o usuário
+responsável por todo a manipulação visual, recuperando um estado do
+model e exibindo os dados, podendo ser composta por sub-views e ser parte de
+views mais complexas.
 
-No trabalho de gof afirma que os padões já existiem afirma que 
-Onde Quando surgiu
+Controllers - Interpreta a as ações do usuário provenientes de um dispositivo de
+entrada(Teclado, Mouse) alterando estado da view ou do model.
 
-Necessidade
-
-Model
- 
-View
-
-Controller
-
-Relação com os padroes e principios.
-
-
-Segundo \citeonline{Fowler:2002:PEA} ``Of these the separation of presentation
+\citeonline{krasnerPope1988} descreve a estrutura do MVC onde a view tem seu
+controller exclusivo mantendo uma dependência cíclica entre ambos e tanto a view
+quanto o controller tem referências diretas para o model por meio de atributos
+de classe porém o model não deve conhecer seus respectivos pares de
+View-Controller para promover mais reuso de código e encapsulamento do model. As
+alterações do estado do model são feitas na maioria das vezes pelo controller, e
+o model é responsável por notificar todas as views que o representa para que
+se atualizem refletindo o novo estado. No caso de um model ser usado por vários
+pares de View-Controller as mensagens de notificação de um novo estado do model
+podem ser parametrizadas assim cada view pode verificar se a alteração é de seu
+interesse. Segundo \citeonline{Fowler:2002:PEA} ``Of these the separation of presentation
 from model is one of the most fundamental heuristics of good software design''.
+
+O controller poderia ser o responsável por publicar as alterações no estado do
+model devido sua relação direta com o mesmo, mas em casos onde o model é
+alterado por outro componente que não é um dos controladores que os utilizam, é
+necessário que o model conheça as views que devem ser notificados do novo
+estado. Para que essas alterações de estado sejam propagadas a view e o
+controller são registrados como dependentes de seu model. O padrão é descrito
+dentro do contexto no qual o surgiu levando em consideração caracteristicas
+espefíficas da  linguagem de programação que dão suporte à implementação dos
+três componentes como por exemplo o gerenciamento dos objetos que são
+dependentes do model definido na classe Objet que o model deve extender. A
+Figura \ref{mvc_seq} esclarece a interação entre os componetes.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{img/mvc_seq.png}
+	\caption{Diagrama de Sequência do MVC/Fonte: Próprio Autor}
+	\label{mvc_seq}
+\end{figure}
+
+\citeonline{gof} cita \citeonline{krasnerPope1988} fazendo uma análise dos
+objetos que compõem o MVC relacionando-os com outros padrões de proejtos. O
+desacoplamento entre a view e o model e a propagação das mudanças de estado no
+model para os objetos regitrados como dependentes do model pode ser descrico
+como uma implementação do padrão Observer. A hierarquia de views é um exemplos
+de Composite pois uma view pode ser constituída por sub-views para compor views
+complexas. O Strategy é aplicando ao controller que encapsula o algoritmo que
+vai alterar a view ou o model podendo ser substituído por por um outra
+implementação que deixa de responder às interações com o usuário.
+
+
+
 
 \section*{MVP}
 
