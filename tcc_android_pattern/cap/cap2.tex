@@ -79,18 +79,25 @@ os padrões de projeto promovem maior coesão, melhor separação de interesses 
 baixo acoplamento no sistema.
 
 
-\section*{Model View Controller}
+\section{Model View Controller}
 
-O padrão de projeto Model-View-Controller foi apresentado por
-\citeonline{krasnerPope1988} como uma forma de promover a reusabilidade e
-plugabilidade no ambiente de programação Smalltalk-80 capturando de forma
-orientada a objetos as interações do usuário e a interface do programa através
-de três componentes:
+O padrão Model View Controller surgiu como uma solução genérica para usuários
+de uma sistema de planejamento manipulem dados complexos\citeonline{Reenskaug:1979}.
+Posteriormente \citeonline{krasnerPope1988} implementam um framework MVC para o
+ambiente gráfico da linguagem de programação Smalltalk-80 como uma forma de
+promover a reusabilidade e plugabilidade.
+
+Segundo \citeonline{Reenskaug:1979} o principal objetivo do MVC ``\ldots was to
+support the user's mental model of the relevant information space and to enable
+the user to inspect and edit this information.''. Esse modelo mental é como o
+usuário percebe o dominio do problema que está inserido no qual executará suas
+atividades.
+
 
 Models - É o compoente constituído de uma composição de classes que implementam
-as regras de negócio referentes as funcionalidades que o programa provê contendo
-estruturas de dados variadas, atende mensagens da view requisitando seu estado e
-mensagens do controller para mudar seu estado.
+as regras de negócio referentes as funcionalidades que o programa provê. Atende
+mensagens da view requisitando seu estado e mensagens do controller para mudar
+seu estado.
 
 Views - Representação específica de um model na interface com o usuário
 responsável por todo a manipulação visual, recuperando um estado do
@@ -99,6 +106,9 @@ views mais complexas.
 
 Controllers - Interpreta a as ações do usuário provenientes de um dispositivo de
 entrada(Teclado, Mouse) alterando estado da view ou do model.
+
+
+
 
 \citeonline{krasnerPope1988} descreve a estrutura do MVC onde a view tem seu
 controller exclusivo mantendo uma dependência cíclica entre ambos e tanto a view
@@ -139,13 +149,24 @@ model para os objetos regitrados como dependentes do model pode ser descrico
 como uma implementação do padrão Observer. A hierarquia de views é um exemplos
 de Composite pois uma view pode ser constituída por sub-views para compor views
 complexas. O Strategy é aplicando ao controller que encapsula o algoritmo que
-vai alterar a view ou o model podendo ser substituído por por um outra
+vai alterar a view ou o model podendo ser substituído por uma outra
 implementação que deixa de responder às interações com o usuário.
 
+Segundo \citeonline{krasnerPope1988} o Model ``\ldots can be as simple as an integer
+(as the model of a counter) or string (as the model of a text editor), or it can
+be a complex object''. O model pode ser implementado usando o pardrão Facade
+para simplificar as interações com o model dependendo da complexidade do
+domínio que ele representa.
+%citar facade aqui
+
+\citeonline{Reenskaug:1979}  INPUT/OUTPUT SEPARATION
+
+The View and Controller roles may be played by the 
+same object when they are very tightly coupled. 
+Example: A Menu.
 
 
-
-\section*{MVP}
+\section{Model View Presenter}
 
 Onde Quando surgiu
 
@@ -159,7 +180,7 @@ Presenter
 
 Diferencas entre o mvc.
 
-\section*{Android}
+\section{Framework Android}
  
 Historia caracteristicas
 Arquitetura.
