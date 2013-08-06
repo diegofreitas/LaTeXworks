@@ -91,18 +91,20 @@ Segundo \citeonline{Reenskaug:1979} o principal objetivo do MVC ``\ldots was to
 support the user's mental model of the relevant information space and to enable
 the user to inspect and edit this information.''. Esse modelo mental é como o
 usuário percebe o dominio do problema que está inserido no qual executará suas
-atividades.
-
+atividades sobre dados de seu interesse. Para que o usuário de um sistema de
+informação possa interagir com a represetação computacional  de seu modelo
+mental três componetes são definidos:
 
 Models - É o compoente constituído de uma composição de classes que implementam
-as regras de negócio referentes as funcionalidades que o programa provê. Atende
+as regras de negócio referentes as funcionalidades que o programa provê,
+representa o  conhecimento que o usuário tem e como manipula-lo. Atende
 mensagens da view requisitando seu estado e mensagens do controller para mudar
-seu estado.
+seu estado,
 
-Views - Representação específica de um model na interface com o usuário
-responsável por todo a manipulação visual, recuperando um estado do
-model e exibindo os dados, podendo ser composta por sub-views e ser parte de
-views mais complexas.
+Views - Representação específica de um model na interface com o usuário, é 
+responsável por todo a manipulação visual, recuperando um estado do model e
+exibindo os dados, podendo ser composta por sub-views e ser parte de views mais
+complexas.
 
 Controllers - Interpreta a as ações do usuário provenientes de um dispositivo de
 entrada(Teclado, Mouse) alterando estado da view ou do model.
@@ -149,7 +151,7 @@ model para os objetos regitrados como dependentes do model pode ser descrico
 como uma implementação do padrão Observer. A hierarquia de views é um exemplos
 de Composite pois uma view pode ser constituída por sub-views para compor views
 complexas. O Strategy é aplicando ao controller que encapsula o algoritmo que
-vai alterar a view ou o model podendo ser substituído por uma outra
+vai alterar a view e o model podendo ser substituído por uma outra
 implementação que deixa de responder às interações com o usuário.
 
 Segundo \citeonline{krasnerPope1988} o Model ``\ldots can be as simple as an integer
@@ -159,11 +161,7 @@ para simplificar as interações com o model dependendo da complexidade do
 domínio que ele representa.
 %citar facade aqui
 
-\citeonline{Reenskaug:1979}  INPUT/OUTPUT SEPARATION
 
-The View and Controller roles may be played by the 
-same object when they are very tightly coupled. 
-Example: A Menu.
 
 
 \section{Model View Presenter}
@@ -209,5 +207,12 @@ activity - controller+async task - observer pattern,
 activity - controller+async task - localbroadcast
 activity - controller+async task - Messages
 Activity+Fragment
+
+
+\citeonline{Reenskaug:1979} The View and Controller roles may be played by the 
+same object when they are very tightly coupled. Example: A Menu., porém isso
+requer um boa análise do problema em questão para decidir o nível de
+granularidade que esses componentes podem ter portanto é recomendável manter
+sempre essa separação.
 
 
