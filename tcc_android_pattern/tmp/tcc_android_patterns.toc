@@ -16,9 +16,9 @@
 \contentsline {section}{\numberline {3.1}Princ\IeC {\'\i }pios e Padr\IeC {\~o}es de Projetos}{11}{section.3.1}
 \contentsline {section}{\numberline {3.2}Model View Controller}{12}{section.3.2}
 \contentsline {section}{\numberline {3.3}Model View Presenter}{14}{section.3.3}
-\contentsline {section}{\numberline {3.4}Framework Android}{14}{section.3.4}
-\contentsline {section}{\numberline {3.5}Refatora\IeC {\c c}\IeC {\~a}o do Objeto de estudo}{16}{section.3.5}
-\contentsline {chapter}{\chapternumberline {4}Resultados e Conclus\IeC {\~o}es}{17}{chapter.4}
-\contentsline {section}{\numberline {4.1}Trabalhos Futuros}{17}{section.4.1}
-\contentsline {section}{\numberline {4.2}Conclus\IeC {\~o}es}{17}{section.4.2}
-\contentsline {chapter}{Refer\^encias}{19}{section*.4}
+\contentsline {section}{\numberline {3.4}Framework Android}{15}{section.3.4}
+\contentsline {section}{\numberline {3.5}Refatora\IeC {\c c}\IeC {\~a}o do Objeto de estudo}{17}{section.3.5}
+\contentsline {chapter}{\chapternumberline {4}Resultados e Conclus\IeC {\~o}es}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Trabalhos Futuros}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Conclus\IeC {\~o}es}{19}{section.4.2}
+\contentsline {chapter}{Refer\^encias}{21}{section*.4}

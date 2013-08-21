@@ -163,20 +163,52 @@ domínio que ele representa.
 
 
 
-
 \section{Model View Presenter}
 
-Onde Quando surgiu
+O MVP é um modelo de programação para implementação de interfaces com o usuário
+desevolvido como um framework para C++ e Java, criado por uma subsidiária da IBM
+chamda Taligent,Inc. 
 
-Necessidades 
+Este padrão é baseado no MVC e descreve vários componentes que tem as
+responsabilidades de como gerenciar os dados da aplicação e como o usuário
+interage com esses dados:
 
-Model
+\begin{itemize}
+  \item Model
+  \item Selections
+  \item Commands
+  \item View 
+  \item Interactor
+  \item Presenter
+\end{itemize}
 
-View 
 
-Presenter
+%interpretações do mvp
+%Objectarts
+Os conceitos do MVP são descritos em \citeonline{Potel96mvp} de forma genérica
+permintindo interpretações para uma implementação efetiva.
+\citeonline{twisttriad:2000} descreve a implementação de um framework para
+Dolphin Smalltalk\footnote{Implementação da Linguagem de programação Smalltalk, http://www.object-arts.com} dotando os conceitos do MVP.
 
-Diferencas entre o mvc.
+O MVC foi concebido quando as interfaces com o usuário não eram tão ricas.
+\citeonline{twisttriad:2000} salienta que a maioria dos sistemas operacionais
+com ambiente gráfico fornece um conjunto de componetes (Widgets) no qual
+está contido a responsbilidade do controller.A maior parte do comportamento da
+interface com o usuário é implementada no presenter que está diretamente
+associado a View\citeonline{twisttriad:2000}
+
+discorrer sobre a interpretação do fowler:Passive Veiw
+
+discorrer sobre a interpretação de An Architecture and Implement Model for
+Model-View-Presenter Pattern
+
+%Conclusão
+
+O modelo de programação MVP define mais responsabilidades para o presenter em
+relação ao controller do MVC pois o presenter redireciona as interação do
+usuário para executar lógica de negócio a ser aplicada sobre o model e organiza
+como os outro componentes irão funcionar.
+
 
 \section{Framework Android}
  
@@ -213,6 +245,6 @@ Activity+Fragment
 same object when they are very tightly coupled. Example: A Menu., porém isso
 requer um boa análise do problema em questão para decidir o nível de
 granularidade que esses componentes podem ter portanto é recomendável manter
-sempre essa separação.
+sempre essa separação.É aplicável para 
 
 

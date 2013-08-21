@@ -5,6 +5,13 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v<VERSION> }
 
+\bibitem[Bower e McGlashan 2000]{twisttriad:2000}
+\abntrefinfo{Bower e McGlashan}{BOWER; MCGLASHAN}{2000}
+{BOWER, A.; MCGLASHAN, B. Twisting the triad: The evolution of the dolphin
+  smalltalk mvp application framework. In:  \emph{ESUG2000 Conference}.
+  Southampton, UK: [s.n.], 2000. Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/www\-.objectarts\-.com\-/$>$}{http://www.objectarts.com/}.}
+
 \bibitem[Chidamber e Kemerer 1994]{cksuite}
 \abntrefinfo{Chidamber e Kemerer}{CHIDAMBER; KEMERER}{1994}
 {CHIDAMBER, S.; KEMERER, C. A metrics suite for object oriented design.
@@ -75,6 +82,12 @@ ISBN 978-0-321-33302-5.}
   ed. London: Prentice-Hall International, 1988.  (Yourdon Press Computing
   Series).
 ISBN 0136907776.}
+
+\bibitem[Potel 1996]{Potel96mvp}
+\abntrefinfo{Potel}{POTEL}{1996}
+{POTEL, M. \emph{MVP: Model-View-Presenter The Taligent Programming Model for
+  C++ and Java&quot;, Taligent Inc}.
+[S.l.], 1996.}
 
 \bibitem[Pressman 2006]{pressman}
 \abntrefinfo{Pressman}{PRESSMAN}{2006}
