@@ -35,6 +35,13 @@ ISBN 0138543801.}
   USA: Addison-Wesley, 2002.
 ISBN 0321127420.}
 
+\bibitem[Fowler 2006]{fowler:ui}
+\abntrefinfo{Fowler}{FOWLER}{2006}
+{FOWLER, M. \emph{GUI Architectures}. 2006. GUI Architectures.
+Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/www\-.martinfowler\-.com\-/eaaDev\-/uiArchs\-.html$>$}{http://www.martinfowler.com/eaaDev/uiArchs.html}.
+  Acesso em: 20.8.2013.}
+
 \bibitem[Gamma et al. 1995]{gof}
 \abntrefinfo{Gamma et al.}{GAMMA et al.}{1995}
 {GAMMA, E. et al. \emph{Design Patterns: Elements of Reusable Object-Oriented

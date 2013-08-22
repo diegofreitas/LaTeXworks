@@ -167,20 +167,24 @@ domínio que ele representa.
 
 O MVP é um modelo de programação para implementação de interfaces com o usuário
 desevolvido como um framework para C++ e Java, criado por uma subsidiária da IBM
-chamda Taligent,Inc. 
-
-Este padrão é baseado no MVC e descreve vários componentes que tem as
+chamda Taligent,Inc. Este padrão é baseado no MVC e descreve vários componentes que tem as
 responsabilidades de como gerenciar os dados da aplicação e como o usuário
-interage com esses dados:
+interage com esses dados tendo como objetivo promover o encapsulamento do Model
+, reuso de lógica de negócio e o polimorfismo da View.
 
-\begin{itemize}
-  \item Model
-  \item Selections
-  \item Commands
-  \item View 
-  \item Interactor
-  \item Presenter
-\end{itemize}
+\begin{description}
+  \item[Model] Tem as mesmas responsabilidades que o Model definido pelo MVC.
+  \item[Selections] - Abstração para selecionar um subconjunto dos dados
+  existentes no model.
+  \item [Commands] Representa as operações a serem executadas sobre uma
+  Selection do Model.
+  \item [View] Responsável por exibir o model assim como no MVC.
+  \item [Interactor] Mapeia os interações do usuário na view como eventos do
+  mouse.
+  \item [Presenter] O papel do presenter é interpretar o eventos iniciados pelo
+  usuário executando a lógica de negócio correspondente implementada em um
+  command para manipular o model \cite{Potel96mvp}.
+\end{description}
 
 
 %interpretações do mvp
@@ -188,26 +192,31 @@ interage com esses dados:
 Os conceitos do MVP são descritos em \citeonline{Potel96mvp} de forma genérica
 permintindo interpretações para uma implementação efetiva.
 \citeonline{twisttriad:2000} descreve a implementação de um framework para
-Dolphin Smalltalk\footnote{Implementação da Linguagem de programação Smalltalk, http://www.object-arts.com} dotando os conceitos do MVP.
+Dolphin Smalltalk\footnote{Implementação da Linguagem de programação Smalltalk,
+http://www.object-arts.com} adotando os conceitos do MVP onde salienta que a
+maioria dos sistemas operacionais com ambiente gráfico fornece um conjunto de
+componetes (Widgets) no qual está contido a responsbilidade do controller.A
+maior parte do comportamento do caso com o usuário é implementada no
+presenter que está diretamente associado a View
 
-O MVC foi concebido quando as interfaces com o usuário não eram tão ricas.
-\citeonline{twisttriad:2000} salienta que a maioria dos sistemas operacionais
-com ambiente gráfico fornece um conjunto de componetes (Widgets) no qual
-está contido a responsbilidade do controller.A maior parte do comportamento da
-interface com o usuário é implementada no presenter que está diretamente
-associado a View\citeonline{twisttriad:2000}
+Ainda acerca das responsabilidades do presenter \citeonline{fowler:ui} descreve
+o que é chamado de Passive View onde toda a lógica do comportamento da view é
+implementado no presenter deixando a view enxuta com o intuito de isolar ao
+máximo a api gráfica do resto da aplicação, permitindo uma maior cobertura de
+testes aplicados ao presenter. Dessa forma o model não se comunica com a view
+por meio do observer pattern, sendo que a view séra atualizada pelo presenter.
 
-discorrer sobre a interpretação do fowler:Passive Veiw
 
 discorrer sobre a interpretação de An Architecture and Implement Model for
 Model-View-Presenter Pattern
 
 %Conclusão
 
-O modelo de programação MVP define mais responsabilidades para o presenter em
-relação ao controller do MVC pois o presenter redireciona as interação do
-usuário para executar lógica de negócio a ser aplicada sobre o model e organiza
-como os outro componentes irão funcionar.
+
+MVP se adequa melhor as apis gráficas existentes. Define de forma mais clara os
+componetes necessários para desenvolver uma aplicação, sendo o ponto de maior
+discussão reside em quais os limites das responsabilidades no que tange a
+mediação do Model e a View.
 
 
 \section{Framework Android}
