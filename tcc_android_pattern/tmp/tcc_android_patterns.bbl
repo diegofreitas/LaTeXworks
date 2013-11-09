@@ -18,12 +18,6 @@
 \emph{IEEE Transactions on Software Engineering}, v.~20, n.~6, p. 476 -- 493, 6
   1994.}
 
-\bibitem[DeMarco 1979]{demarco}
-\abntrefinfo{DeMarco}{DEMARCO}{1979}
-{DEMARCO, T. \emph{Structured Analysis and System Specification}. Upper Saddle
-  River, NJ, USA: Prentice Hall PTR, 1979.
-ISBN 0138543801.}
-
 \bibitem[Evans 2004]{evans2004ddd}
 \abntrefinfo{Evans}{EVANS}{2004}
 {EVANS, E. \emph{Domain-Driven Design: Tackling Complexity in the Heart of
@@ -83,13 +77,6 @@ Dispon{\'\i}vel em:
   Saddle River, NJ: Addison-Wesley, 2006.
 ISBN 978-0-321-33302-5.}
 
-\bibitem[Page-Jones 1988]{page-jones}
-\abntrefinfo{Page-Jones}{PAGE-JONES}{1988}
-{PAGE-JONES, M. \emph{The practical guide to structured systems design}. 2. ed.
-  ed. London: Prentice-Hall International, 1988.  (Yourdon Press Computing
-  Series).
-ISBN 0136907776.}
-
 \bibitem[Potel 1996]{Potel96mvp}
 \abntrefinfo{Potel}{POTEL}{1996}
 {POTEL, M. \emph{MVP: Model-View-Presenter The Taligent Programming Model for
@@ -114,6 +101,15 @@ ISBN 0136907776.}
   QUALITY AND MAINTAINABILITY}.
 Disserta\c{c}\~{a}o (Mestrado) --- Middle East Technical University: METU,
   Çankaya Ankara/ Turquia, Setembro 2009.}
+
+\bibitem[Wand e Weber 1990]{WandWeber}
+\abntrefinfo{Wand e Weber}{WAND; WEBER}{1990}
+{WAND, Y.; WEBER, R. An ontological model of an information system.
+\emph{IEEE Trans. Softw. Eng.}, IEEE Press, Piscataway, NJ, USA, v.~16, n.~11,
+  p. 1282--1292, nov. 1990.
+ISSN 0098-5589.
+Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/dx\-.doi\-.org\-/10\-.1109\-/32\-.60316$>$}{http://dx.doi.org/10.1109/32.60316}.}
 
 \bibitem[Yang, Tempero e Melton 2008]{tempero-di}
 \abntrefinfo{Yang, Tempero e Melton}{YANG; TEMPERO; MELTON}{2008}

@@ -1,8 +1,9 @@
-This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: tcc_android_patterns.aux
 A level-1 auxiliary file: cap/cap1.aux
 A level-1 auxiliary file: cap/cap2.aux
+A level-1 auxiliary file: cap/cap3.aux
 The style file: abntex2-alf.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -24,44 +25,44 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex2.googlecode.com                           |
 +---------------------------------------------------------+
-You've used 19 entries,
+You've used 18 entries,
             6642 wiz_defined-function locations,
-            1295 strings with 12033 characters,
-and the built_in function-call counts, 21303 in all, are:
-= -- 2456
-> -- 404
-< -- 380
-+ -- 567
+            1295 strings with 11973 characters,
+and the built_in function-call counts, 22429 in all, are:
+= -- 2685
+> -- 406
+< -- 453
++ -- 639
 - -- 127
-* -- 1273
-:= -- 2682
-add.period$ -- 78
-call.type$ -- 19
-change.case$ -- 152
-chr.to.int$ -- 30
-cite$ -- 18
-duplicate$ -- 1927
-empty$ -- 1115
-format.name$ -- 595
-if$ -- 4543
+* -- 1339
+:= -- 2763
+add.period$ -- 73
+call.type$ -- 18
+change.case$ -- 150
+chr.to.int$ -- 29
+cite$ -- 17
+duplicate$ -- 2139
+empty$ -- 1054
+format.name$ -- 596
+if$ -- 4704
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 336
-newline$ -- 94
-num.names$ -- 90
-pop$ -- 439
+missing$ -- 314
+newline$ -- 91
+num.names$ -- 85
+pop$ -- 420
 preamble$ -- 1
-purify$ -- 65
+purify$ -- 63
 quote$ -- 0
-skip$ -- 2012
+skip$ -- 2227
 stack$ -- 1
-substring$ -- 802
-swap$ -- 665
-text.length$ -- 14
+substring$ -- 882
+swap$ -- 729
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 6
 warning$ -- 0
-while$ -- 123
+while$ -- 121
 width$ -- 0
-write$ -- 288
+write$ -- 277
