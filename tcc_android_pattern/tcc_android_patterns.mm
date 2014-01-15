@@ -121,8 +121,7 @@
       MVC/MVP
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <icon BUILTIN="messagebox_warning"/>
 <icon BUILTIN="full-3"/>
 </node>
@@ -214,7 +213,7 @@
 <icon BUILTIN="button_cancel"/>
 </node>
 </node>
-<node CREATED="1374195654830" ID="ID_1324712738" MODIFIED="1374201344038" POSITION="right" TEXT="Conclus&#xe3;o">
+<node CREATED="1374195654830" FOLDED="true" ID="ID_1324712738" MODIFIED="1384011063888" POSITION="right" TEXT="Conclus&#xe3;o">
 <icon BUILTIN="button_cancel"/>
 <node CREATED="1374195693344" ID="ID_887788822" MODIFIED="1374195743041" TEXT="Tema Apresentado">
 <icon BUILTIN="button_cancel"/>
@@ -360,7 +359,7 @@
 </html></richcontent>
 <icon BUILTIN="messagebox_warning"/>
 </node>
-<node CREATED="1374196313292" FOLDED="true" ID="ID_1765684065" MODIFIED="1374202730690" POSITION="right" TEXT="Metodologia">
+<node CREATED="1374196313292" FOLDED="true" ID="ID_1765684065" MODIFIED="1384011061639" POSITION="right" TEXT="Metodologia">
 <richcontent TYPE="NOTE"><html>
   <head>
     
