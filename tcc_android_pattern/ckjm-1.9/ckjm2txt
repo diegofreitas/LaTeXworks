@@ -1,0 +1,8 @@
+
+for i in $1
+do
+        jar tf $i |
+        sed -n "/\.class$/s,^,$i ,p"
+done |
+java -jar /home/diego/git/LaTeXworks/tcc_android_pattern/ckjm-1.9/build/ckjm-1.9.jar | sed -n '/^com\.android\.contacts/p' > $2
+

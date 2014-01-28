@@ -1,1 +1,14 @@
 /tcc.asta.bak
+ckjm-1.9/LICENSE.txt
+ckjm-1.9/README.txt
+ckjm-1.9/build.xml
+ckjm-1.9/build/
+ckjm-1.9/contrib/
+ckjm-1.9/doc/
+ckjm-1.9/javadoc/
+ckjm-1.9/lib/
+ckjm-1.9/src/
+ckjm-1.9/xsl/
+/tmp
+*.gz
+*.brf
