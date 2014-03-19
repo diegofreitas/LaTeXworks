@@ -6,19 +6,61 @@
 são evoluções aplicadas a uma determinada situação desenvolvimento web, desktop
 e 
 
-abordar quais seriam os parâmetros aceitáveis para as métricas
+abordar quais seriam os parâmetros aceitáveis para as métricas(difícil afirmar
+quais são esses parametros, pois cada ferramenta de coleta tem sua propria
+forma de calcular. citar artigo sobre isso)
 
 Validade dessas métricas, talvez o ideal fosse customizar essas métricas para o
-framework.(question mark);
-Possível aumento do código com essa divisão com mais classes
+framework?;
 
-quais metricas foram afetadas.
+
+Possível aumento do código com essa divisão com mais classes --- Isso ocorreu
+
+
+
+O presenter deveria ser independente de tecnologia mas na plataforma android,
+seguir isso a risca iria criar uma aberração pois a activity ou fragmentos
+proveem muitos recursos usados para diversos interesses(View
+Controller/Presenter Model), por isso é tão natural esses componentes serem
+implementados com diversas responsabilidades.
+
+O componente Loader é dificil de refatorar, pois esta muito acoplado com a view!
+
+O foco da refatoração foi remover o model e o estado da view para o presenter
+
+Quais metricas foram afetadas.(todas exceto NOC e DIT)?
+- WMC,CBO,RPC,LCOM foram afetadas
+
+a refatoração melhorou cbo/lcom e piorou ou manteve rpc wmc, 
+
+
+
+\begin{description}
+  \item[WMC] Segundo \citeonline{cksuite}  ``\ldots The
+larger the number of methods in a class the greater the potential impact on children, since children will
+inherit all the methods defined in the class. \ldots Classes with large numbers of methods are
+likely to be more application specific, limiting the possibility of
+reuse.'' as classes analisadas são de inteface, portanto implementam uma
+interação com o usuário bem específica. não havera impacto negativo, além disso
+a quantidade de métodos aumentou mas com uma complexidade menor pois métodos com
+várias estruturas de controle forem quebrados em métodos menores, podendo ser
+avaliado como positivo.
+
+\end{description}
+
+
+
+
+
 
 \section{Trabalhos Futuros}
 
 Existem outros padrões de projetos para o desenvolvimento da camada de
 apresentação de um software que não foram analisados nesse trabalho: MVVM,
 MVP-VM, MVPC.
+
+Desenvolver métricas
+
 
 Este trabalho não fez uma avaliação dos impactos na performance do aplicativo
 devido ao uso desses padrões. A inclusão de mais objetos interagindo,
