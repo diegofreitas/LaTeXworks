@@ -56,6 +56,7 @@ Eficiencia. Não será feito testes de performance ou algo parecido
 Manutenabilidade Será avaliado.
 Portabilidade. Será avalidado
 \section{Métricas de qualidade OO}
+\label{sec:metrics}
 
 Com o advento de novas técnicas de desenvolvimento de software é necessário
 obter informações do impacto dessas inovações nos resultados de um projeto. Com
@@ -114,9 +115,9 @@ escritos usando a linguagem de programação java que emprega esse paradigma de
 desenvolvimento, o que justifica o uso das métricas de \citeonline{cksuite} para
 validação dos projetos orientados a objetos.
 
-Fazer referências de estudos relacionando CKsuite e Manutenabilidade.
+%Fazer referências de estudos relacionando CKsuite e Manutenabilidade.
  
-quanto maior dit maior reuso mas é melhor usar composição.
+%quanto maior dit maior reuso mas é melhor usar composição.
 
 
 \section{Model View Controller}
@@ -261,11 +262,10 @@ Abordar As variações do MVP.
 O android é um sistema operacional baseado no linux mantido pela Google para
 ser embarcado em dispositivos podendo ser aplicado em carros, televisão, placas
 controladoras mas seu destaque é a utilização em dispositivos smartphones e
-tablet que é o foco deste trabalho.
-A plataforma é contituída por uma pilha softwares e frameworks tendo em sua base
-o sistema operacional e seu drivers seguido da máquina virtual que executa os
-aplicativos android e bibliotecas auxiliares, SDK e ferramentas de
-desenvolvimento e aplicativos básicos.
+tablet que é o foco deste trabalho. A plataforma é contituída por uma pilha
+softwares e frameworks tendo em sua base o sistema operacional e seu drivers
+seguido da máquina virtual que executa os aplicativos android e bibliotecas
+auxiliares e aplicativos básicos como é demonstrado na figura \ref{android_stack}.
 
 \begin{figure}[h]
 	\centering
@@ -317,14 +317,6 @@ por ser uma classe auxiliar à view pode ser implementada como uma classe java
 simples. O Model será representado por componetes DAO (Data Access Object) para
 armazenamento e recuperação dos dados e classes auxiliares que encapsulam
 regras relacionados ao domínio de negócio.
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.5]{img/arq_poc1.png}
-	\caption{Arquitetura POC1/Fonte: Próprio Autor}
-	\label{arq_poc1}
-\end{figure}
 
 %Como DP resolvem problemas, seguir linha de raciocinio para aplicar padrões em
 %android.
