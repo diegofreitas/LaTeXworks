@@ -1,74 +1,41 @@
-\chapter{Resultados e Conclusões}
+\chapter{Conclusão}
 
-\section{Conclusões}
+As classes destinadas à implementação da interface no framework android fornecem
+acceso a recursos que servem para implementação de responsabilidades não
+relacionadas com a interface.
 
-É um equívoco MVC no contexto atual pois o padrão não se adequa. o que existe
-são evoluções aplicadas a uma determinada situação desenvolvimento web, desktop
-e 
+Essa característica do framework android leva à implementação da camada de View
+com diversas responsabilidades que não são inerentes à interação com o
+usuário. Isso dificultou a refatoração pois as classes que exercem o papel de
+presenter necessitam interagir com as classes de view para acessar esses
+recursos, além de atualizar o estado da view. O uso do padrão de injeção de
+dependência[REF] pode ser aplicado para acessar esses recursos e serviços sem a
+necessidade de interação com a classe de Veiw.
 
-abordar quais seriam os parâmetros aceitáveis para as métricas(difícil afirmar
-quais são esses parametros, pois cada ferramenta de coleta tem sua propria
-forma de calcular. citar artigo sobre isso)
-
-Validade dessas métricas, talvez o ideal fosse customizar essas métricas para o
-framework?;
-
-
-Possível aumento do código com essa divisão com mais classes --- Isso ocorreu
-
-
-
-O presenter deveria ser independente de tecnologia mas na plataforma android,
-seguir isso a risca iria criar uma aberração pois a activity ou fragmentos
-proveem muitos recursos usados para diversos interesses(View
-Controller/Presenter Model), por isso é tão natural esses componentes serem
-implementados com diversas responsabilidades.
-
-O componente Loader é dificil de refatorar, pois esta muito acoplado com a view!
-
-O foco da refatoração foi remover o model e o estado da view para o presenter
-
-Quais metricas foram afetadas.(todas exceto NOC e DIT)?
-- WMC,CBO,RPC,LCOM foram afetadas
-
-a refatoração melhorou cbo/lcom e piorou ou manteve rpc wmc, 
-
-
-
-
-\begin{description}
-  \item[WMC] Segundo \citeonline{cksuite}  ``\ldots The
-larger the number of methods in a class the greater the potential impact on children, since children will
-inherit all the methods defined in the class. \ldots Classes with large numbers of methods are
-likely to be more application specific, limiting the possibility of
-reuse.'' as classes analisadas são de inteface, portanto implementam uma
-interação com o usuário bem específica. não havera impacto negativo, além disso
-a quantidade de métodos aumentou mas com uma complexidade menor pois métodos com
-várias estruturas de controle forem quebrados em métodos menores, podendo ser
-avaliado como positivo.
-
-\end{description}
-
-Houve aumento no valor da métrica DIT, que deve ser mantido baixo pois quanto
-mais abaixo na hierarquia de heraça a classe estiver, menos previsível será seu
-comportamento devido a quantidade de classes acima, entretanto o aumento no DIT
-se deve ao fato que o ckjm considera a implementação de interface como herança.
-A interface define somente o contrato que a classe de implementar não havendo
-nenhuma implementação que pudesse interferir no comportamento da classe,
-portanto essa alteração no DIT não deve ser considerada.
-
-
+Ao seguir o padrão conforme descrito por (Martin Fowler). A granularidade dos
+métodos aumenta pois cada um dos componentes implementão uma parte do caso de
+uso aumentando o números de métodos que se reflete na métrica WMC, isso afeta
+também a métrica RFC pois esses métodos estão relacionados entre si aumentando a
+troca de mensagens entre a view e o presenter. Um ponto positivo sobre isso é o
+fato de que métodos  complexos com muitas linhas de código foram desmembrados em
+métodos menores e mais simples implementados tanto na view como no presenter.
+Houve diminuição na métrica CBO nas classes alteradas pois diversas
+responsabilidades que utilizam essas dependências foram movidas para a classe de
+presenter. Analisando de forma geral, essas dependências permanecem no pacote
+além de ser criada mais uma acoplamento entre a view e a nova classe presenter.
+Os experimentos demonstraram que a aplicação do padrão MVP promoveu de forma
+significativa maior coesão no aplicativo objeto de estudo deste trabalho.
 
 
 \section{Trabalhos Futuros}
 
 Existem outros padrões de projetos para o desenvolvimento da camada de
-apresentação de um software que não foram analisados nesse trabalho: MVVM,
-MVP-VM, MVPC.
-
-Desenvolver métricas
-
-
-Este trabalho não fez uma avaliação dos impactos na performance do aplicativo
-devido ao uso desses padrões. A inclusão de mais objetos interagindo,
-redirecionando mensagens pode depreciar a performance.
+apresentação de um software que não foram analisados nesse trabalho a saber: 
+MVVM, MVP-VM, MVPC. Essas variações no padrão MVC surgiram em contextos
+diversificados e podem agregar algum benefício à qualidade do aplicativo.
+Este trabalho não aborda o impacto do padrão mvp em outras métricas de qualidade
+de código.
+Não foi feita uma avaliação dos impactos na performance do aplicativo devido ao
+uso do padrão MVP. A inclusão de mais objetos interagindo trocando mensagens
+pode depreciar a performance levando-se em consideração sua execução em
+ambientes mais restritos como um aparelho móvel.

@@ -61,62 +61,108 @@ versão \verb|4.4.2_r1| do aplicativo.
 \end{table}
 
 
+\section{Experimentos}
 
-\section{Primeira Iteração}
-%Commit 2501ad5
+Como Introduzir esta seção?
 
-\begin{table}
+\subsection{WMC}
+
+Como fazer referência à tabela e ao gráfico?
+\begin{table}[h]
 	\centering
-    \begin{tabular}{ | l | l | l | l |}
+    \begin{tabular}{ | l | l | }
     \hline
-    Métrica & Min. & Max. & Média \\ \hline
-    WMC & 1 & 48  	& 8.5161290323   \\ \hline
-    DIT	& 0	& 2		&0.7741935484\\ \hline
-	NOC & 0	& 0		& 0\\ \hline
-	CBO	& 0	& 50	& 10.1612903226\\ \hline
-	RFC	& 1	& 157	& 23.7419354839\\ \hline
-	LCOM	& 0		& 772	& 57.4838709677\\ \hline
+    Iteração & Média 			\\ \hline
+    Baseline & 8.5161290323   	\\ \hline
+    Iteração 1 & 8.875			\\ \hline
+	Iteração 2 & 9				\\ \hline
+	Iteração 3 & 8.9393939394	\\ \hline
     \end{tabular}
-    \caption{Métricas CK para linha de base}
+    \caption{Valores da métrica}
     \label{tab:baseline}
 \end{table}
 
-\section{Segunda Iteração:}
-
-\begin{table}
+\begin{figure}[h]
 	\centering
-    \begin{tabular}{ | l | l | l | l |}
-    \hline
-    Métrica & Min. & Max. & Média \\ \hline
-    WMC & 1 & 48  	& 8.5161290323   \\ \hline
-    DIT	& 0	& 2		&0.7741935484\\ \hline
-	NOC & 0	& 0		& 0\\ \hline
-	CBO	& 0	& 50	& 10.1612903226\\ \hline
-	RFC	& 1	& 157	& 23.7419354839\\ \hline
-	LCOM	& 0		& 772	& 57.4838709677\\ \hline
-    \end{tabular}
-    \caption{Métricas CK para linha de base}
-    \label{tab:baseline}
-\end{table}
-
-%Commit 26f473a
-
-\section{Terceira Iteração:} 
+	\includegraphics{img/wmc.png}
+	\caption{Gráfico da métrica WMC/Fonte: Próprio autor} 
+	\label{fig:wmc}
+\end{figure}
 
 
-\begin{table}
+Segundo Chidamber e Kemerer (1994) “. . . The larger the number of methods in
+a class the greater the potential impact on children, since children will inherit all the
+methods defined in the class. . . . Classes with large numbers of methods are likely to
+be more application specific, limiting the possibility of reuse.” as classes analisadas
+são de interface, portanto implementão uma interação com o usuário bem
+específica que não serão reutilizadas por meio de herança.
+
+\subsection{DIT}
+
+
+\begin{figure}[h]
 	\centering
-    \begin{tabular}{ | l | l | l | l |}
-    \hline
-    Métrica & Min. & Max. & Média \\ \hline
-    WMC & 1 & 48  	& 8.5161290323   \\ \hline
-    DIT	& 0	& 2		&0.7741935484\\ \hline
-	NOC & 0	& 0		& 0\\ \hline
-	CBO	& 0	& 50	& 10.1612903226\\ \hline
-	RFC	& 1	& 157	& 23.7419354839\\ \hline
-	LCOM	& 0		& 772	& 57.4838709677\\ \hline
-    \end{tabular}
-    \caption{Métricas CK para linha de base}
-    \label{tab:baseline}
-\end{table}
-%Commit ec314ac
+	\includegraphics{img/dit.png}
+	\caption{Valores de DIT/Fonte: Próprio autor}
+	\label{fig:dit}
+\end{figure}
+
+
+Houve aumento no valor da métrica DIT, que deve ser mantido baixo pois quanto
+mais abaixo na hierarquia de heraça a classe estiver, menos previsível será seu
+comportamento devido a quantidade de classes acima, entretanto o aumento no DIT
+se deve ao fato que o ckjm considera a implementação de interface como herança.
+A interface define somente o contrato que a classe de implementar não havendo
+nenhuma implementação que pudesse interferir no comportamento da classe,
+portanto essa alteração no DIT não deve ser considerada.
+
+
+\subsection{NOC}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{img/noc.png}
+	\caption{Valores de NOC/Fonte: Próprio autor}
+	\label{fig:noc}
+\end{figure}
+
+Nenhuma classe foi herdada para a aplicação do padrão, portanto, essa métrica permaneceu intacta durante as iterações.
+
+\subsection{CBO}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{img/cbo.png}
+	\caption{Valores de CBO/Fonte: Próprio autor}
+	\label{fig:cbo}
+\end{figure}
+
+Na primeira iteração foi aplicado o padrão em um componente mais simples e foi
+possível remover qualquer dependência que não fosse relacionada a interface,
+entretanto, a maior queda ocorreu em  ficando a cargo do da experiência do
+desenvolvedor identificar estes cenários específicos. Nas iterações seguintes as
+interfaces alteradas são mais complexos,
+
+\subsection{RFC}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{img/rfc.png}
+	\caption{Valores de RFC/Fonte: Próprio autor}
+	\label{fig:rfc}
+\end{figure}
+
+Essa não tem muito o que argumentar. 
+
+\subsection{LCOM}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{img/lcom.png}
+	\caption{Valores de lcom/Fonte: Próprio autor}
+	\label{fig:lcom}
+\end{figure}
+
+Maior variação positiva e métrica mais importante
+
+

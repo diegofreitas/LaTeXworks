@@ -4,24 +4,24 @@
 
 Desenvolver software orientado a objetos é um desafio. Criar uma representação
 computacional de uma faceta da realidade em que seus constituintes trabalhem de
-forma horminiosa para atingir as necessidades que o software se propõe a
+forma harmoniosa para atingir as necessidades que o software se propõe a
 atender requer experiência, conhecimento do domínio do problema e um processo de
-análise e projeto. Apesear de existir várias abordagens para se conceber um
+análise e projeto. Apesar de existir várias abordagens para se conceber um
 sistema orientado a objetos\cite{evans2004ddd},\cite{gomma11} um sistema bem
-contruído apresetam características fundamentais. Coesão, acoplamento etc
-
+contruído apreseta características fundamentais como alta coesão e
+baixo acoplamento 
 
 designReusableClasses
 
-Um padrão dentro do contexto de estudo deste presente trablho pode ser definido
+Um padrão, dentro do contexto de estudo deste trabalho pode ser definido
 como uma técnica efetiva cuja a sua aplicabilidade é aceita e difundiida dentro
 de uma área de conhecimento com a intenção de atingir um
 objetivo\cite{MetskerWake06}.
 
-Em densenvolvimento de software o catálogo mais difundido de padrões de projetos
-orientado a objetos é elaborado por \citeonline{gof} contendo um total de 23
+Em desenvolvimento de software, o catálogo mais difundido de padrões de projetos
+orientado a objetos é elaborado por \citeonline{gof}, contendo um total de 23
 padrões formalmente documentados que acumulam experiências bem sucedidas em
-diversos sistemas. Esses padrões tem a seguinte classificação:
+diversos sistemas. Esses padrões têm a seguinte classificação:
 
 \begin{description}
 \item[Criacionais] Padrões que definem como criar novas instâncias de classes.
@@ -30,13 +30,11 @@ diversos sistemas. Esses padrões tem a seguinte classificação:
 suas responsabilidades.
 \end{description}
 
-
-
 %argumentação
-Analisando a forma como um padrão de projeto é concebido definindo papéis de
-cada elemento participante e como eles interagem entre se podemos concluir que
-o uso dos padrões de projeto promove maior coesão, melhor separação de
-interesses e baixo acoplamento no sistema. Todas essas características são muito
+Analisando a forma como um padrão de projeto é concebido, com uma definição
+dos papéis de cada elemento participante e como eles interagem entre si,
+pode-se concluir que o uso dos padrões de projeto promove maior coesão, melhor
+separação de interesses e baixo acoplamento no sistema. Todas essas características são muito
 importantes contribuem para um software de melhor qualidade
 
 %Melhorar isso
@@ -60,10 +58,10 @@ Portabilidade. Será avalidado
 
 Com o advento de novas técnicas de desenvolvimento de software é necessário
 obter informações do impacto dessas inovações nos resultados de um projeto. Com
-esse objetivo \citeonline{cksuite} elaborou um conjunto de métricas para mensurar a
-qualidade de sistemas desenvolvido usando o paradigma orientado a objetos que
+esse objetivo \citeonline{cksuite} elaboram um conjunto de métricas para
+mensurar a qualidade de sistemas desenvolvido usando o paradigma orientado a objetos que
 não se limitasse a uma linguagem de programação, fácil de coletar e com forte
-embasamento teórico na ontologia de bunge. This model is used to analyze
+embasamento teórico na ontologia de bunge\footnote{}. This model is used to analyze
 some static and dynamic properties of an information system and to examine the
 question of what constitutes a good decomposition of an information
 system\cite{WandWeber}As métricas são:
@@ -79,8 +77,8 @@ system\cite{WandWeber}As métricas são:
 \item[Acoplamento entre objetos (CBO)] Número de classes que ela depende por
 meio da relação de composição. Uma classe está acoplada a outra quando o método
 de um classe invoca o método de uma variável de instância de outra classe que
-gera uma dependência entre essas classes, quanto maior essa dependência mais
-difícil é reutilizar esses componetes em outras partes do sistema além do
+gera uma dependência entre essas classes. Quanto maior essa dependência, mais
+difícil é reutilizar esses componetes em outras partes do sistema, além do
 aumento do risco de efeitos colaterais ocorrerem ao modificar uma classe
 altamente acoplada.
 \item[Ausência de coesão dos métodos(LCOM)] Usado para avaliar a coesão de uma
@@ -91,14 +89,14 @@ indicando os métodos que usam esses atributos deveriam ser implementados em
 outra classe. Essa similaridade expressa a coesão da classe.
 \item[Profundidade na árvore de herança (DIT)] Nível de uma classe na
 hierárquia de herança. Reflete o número máximo de elementos pai dentro da aŕvove
-de classes até a raiz o que aumenta a complexidade conforme a quantidade de
+de classes até a raiz, o que aumenta a complexidade conforme a quantidade de
 elementos envolvidos se eleva, diminuindo a previsibilidade do comportamento da
 classe com vários métodos e atributos sendo herdados, principalmente com o uso
 de sobrecarga de métodos.
 \item[Métodos por Classe (WMC)] Serve para expressar o nível de complexidade de
 uma classe basseado no número de métodos que ela possui. Isso afeta o esforço de
 manutenção da classe, além de impactar nas classe filhas que herdarão esses
-métodos e também é um indicativo de a classe tem métodos espefíficos
+métodos e também é um indicativo de que a classe tem métodos específicos
 dificultando o seu reuso.
 \item[Número de classes filhas (NOC)] Número de subclasses imediatas de uma
 classe. Essa medida é um indicativo de mau uso de herança conforme seu valor
@@ -108,10 +106,10 @@ atenção e testes.
 quando um objeto recebe uma mensagem, incluindo os métodos de outras classes. 
 \end{description}
 
-Todas essas métricas tem uma relação inerentes com a coesão e acoplamento dos
-objetos sendo uma forma ``confiável'' para a análise da qualidade em sistemas
+Todas essas métricas tem uma relação inerente com a coesão e acoplamento dos
+objetos, sendo uma forma confiável para a análise da qualidade em sistemas
 orientados a objetos. Os aplicativos desenvolvidos para a plataforma android são
-escritos usando a linguagem de programação java que emprega esse paradigma de
+escritos usando a linguagem de programação Java que emprega esse paradigma de
 desenvolvimento, o que justifica o uso das métricas de \citeonline{cksuite} para
 validação dos projetos orientados a objetos.
 
@@ -122,11 +120,11 @@ validação dos projetos orientados a objetos.
 
 \section{Model View Controller}
 
-O padrão Model View Controller surgiu como uma solução genérica para usuários
-de uma sistema de planejamento manipulem dados complexos\citeonline{Reenskaug:1979}.
-Posteriormente \citeonline{krasnerPope1988} implementam um framework MVC para o
-ambiente gráfico da linguagem de programação Smalltalk-80 como uma forma de
-promover a reusabilidade e plugabilidade.
+O padrão Model View Controller surgiu como uma solução genérica para que
+usuários de uma sistema de planejamento manipulem dados complexos
+\citeonline{Reenskaug:1979}. Posteriormente, \citeonline{krasnerPope1988}
+implementam um framework MVC para o ambiente gráfico da linguagem de programação
+Smalltalk-80 como uma forma de promover a reusabilidade e plugabilidade.
 
 Segundo \citeonline{Reenskaug:1979} o principal objetivo do MVC ``\ldots was to
 support the user's mental model of the relevant information space and to enable
@@ -186,7 +184,7 @@ Figura \ref{mvc_seq} esclarece a interação entre os componetes.
 \end{figure}
 
 \citeonline{gof} cita \citeonline{krasnerPope1988} fazendo uma análise dos
-objetos que compõem o MVC relacionando-os com outros padrões de proejtos
+objetos que compõem o MVC relacionando-os com outros padrões de proejto
 descritos em seu catálogo.
 O desacoplamento entre a view e o model e a propagação das mudanças de estado no
 model para os objetos regitrados como dependentes do model pode ser descrico
@@ -208,10 +206,10 @@ domínio que ele representa.
 \section{Model View Presenter}
 
 O MVP é um modelo de programação para implementação de interfaces com o usuário
-desevolvido como um framework para C++ e Java, criado por uma subsidiária da IBM
-chamda Taligent,Inc. Este padrão é baseado no MVC e descreve vários componentes que tem as
+desenvolvido como um framework para C++ e Java, criado por uma subsidiária da
+IBM chamda Taligent,Inc. Este padrão é baseado no MVC e descreve vários componentes que tem as
 responsabilidades de como gerenciar os dados da aplicação e como o usuário
-interage com esses dados tendo como objetivo promover o encapsulamento do Model
+interage com esses dados, tendo como objetivo promover o encapsulamento do Model
 , reuso de lógica de negócio e o polimorfismo da View.
 
 \begin{description}
@@ -229,20 +227,18 @@ interage com esses dados tendo como objetivo promover o encapsulamento do Model
 \end{description}
 
 
-%interpretações do mvp
-%Objectarts
 Os conceitos do MVP são descritos em \citeonline{Potel96mvp} de forma genérica
 permintindo interpretações para uma implementação efetiva.
 \citeonline{twisttriad:2000} descreve a implementação de um framework para
 Dolphin Smalltalk\footnote{Implementação da Linguagem de programação Smalltalk,
 http://www.object-arts.com} adotando os conceitos do MVP onde salienta que a
 maioria dos sistemas operacionais com ambiente gráfico fornece um conjunto de
-componetes (Widgets) no qual está contido a responsbilidade do controller.A
+componentes (Widgets) no qual está contido a responsabilidade do controller.A
 maior parte do comportamento do caso com o usuário é implementada no
-presenter que está diretamente associado a View
+Presenter que está diretamente associado à View.
 
-Ainda acerca das responsabilidades do presenter \citeonline{fowler:ui} descreve
-o que é chamado de Passive View onde toda a lógica do comportamento da view é
+Ainda acerca das responsabilidades do Presenter, \citeonline{fowler:ui} descreve
+o que é chamado de Passive View, onde toda a lógica do comportamento da view é
 implementado no presenter deixando a view enxuta com o intuito de isolar ao
 máximo a api gráfica do resto da aplicação, permitindo uma maior cobertura de
 testes aplicados ao presenter. Dessa forma o model não se comunica com a view
@@ -254,18 +250,16 @@ componetes necessários para desenvolver uma aplicação, sendo o ponto de maior
 discussão reside em quais os limites das responsabilidades no que tange a
 mediação do Model e a View por parte do Presenter.
 
-Abordar As variações do MVP.
-
 \section{Framework Android}
  
 
 O android é um sistema operacional baseado no linux mantido pela Google para
 ser embarcado em dispositivos podendo ser aplicado em carros, televisão, placas
-controladoras mas seu destaque é a utilização em dispositivos smartphones e
-tablet que é o foco deste trabalho. A plataforma é contituída por uma pilha
-softwares e frameworks tendo em sua base o sistema operacional e seu drivers
-seguido da máquina virtual que executa os aplicativos android e bibliotecas
-auxiliares e aplicativos básicos como é demonstrado na figura \ref{android_stack}.
+controladoras mas seu destaque é a utilização em smartphones e
+tablets, que é o foco deste trabalho. A plataforma é contituída por API's e
+frameworks tendo em sua base o sistema operacional e seus drivers seguido da
+máquina virtual que executa os aplicativos android e bibliotecas auxiliares e
+aplicativos básicos como é demonstrado na figura \ref{android_stack}.
 
 \begin{figure}[h]
 	\centering
@@ -275,12 +269,12 @@ auxiliares e aplicativos básicos como é demonstrado na figura \ref{android_sta
 \end{figure}
 
 Para desenvolvimento é usado a api disponível no sdk que define
-os blocos de construção de um aplicativo:
+os blocos de construção de um aplicativo, a saber:
 
 \begin{description}
   \item[Activity] Representa uma atividade que o usuário executa no aplicativo
-  em um determinado momento. Usado para criar a interface contém todos os
-  componetes visuais e responde à interações do usuário.
+  em um determinado momento. É um agregador de componetes visuais e responde à
+  interações do usuário.
   \item[Service] Responsável por executar uma operação sem interface gráfica
   indicado para processamentos longos como por exemplo a execução de uma música
   ou download de de arquivos.
@@ -298,99 +292,22 @@ os blocos de construção de um aplicativo:
 
 Com base nos componentes de framework e literatura revisada é possível fazer
 uma análise dos mesmos e projetar uma camada de apresentação utilizando o padrão
-MVP para ser usada como referência de implemntação a ser usada para análise da
+MVP para ser usada como referência de implementação a ser usada para análise da
 qualidade dessa arquitetura.
 
 A activity terá a responsabilidade da view pois é através dela que a interface
 com o usuário é construída. A classe Activity fornece vários métodos para
 recuperação de recursos de imagens, textos, inicialização de serviços, entre
-outros. Isso ocorre porque a classe activity é uma subclasse de Context herdando
-diversos métodos não relacionados ao gerenciamento da interface. Essa falta de
-coesão da classe activity se deve ao uso abusivo de herança e que pode causar
-confusão com relação a responsabilidade da implementação de uma activity no
+outros. Isso ocorre porque a classe activity é uma subclasse de Context,
+herdando diversos métodos não relacionados ao gerenciamento da interface. Essa
+falta de coesão da classe activity se deve ao uso abusivo de herança e que pode
+causar confusão com relação a responsabilidade da implementação de uma activity no
 aplicativo. Segundo \citeonline{Reenskaug:1979} The View and Controller roles
 may be played by the same object when they are very tightly coupled. Example: A
 Menu., porém isso requer um boa análise do problema em questão para decidir o
-nível de granularidade que esses componentes podem ter portanto é recomendável
+nível de granularidade que esses componentes podem ter. Portanto, é recomendável
 manter sempre essa separação para manter uma boa coesão nas classes. O Presenter
-por ser uma classe auxiliar à view pode ser implementada como uma classe java
+é uma classe auxiliar à view e pode ser implementada como uma classe java
 simples. O Model será representado por componetes DAO (Data Access Object) para
 armazenamento e recuperação dos dados e classes auxiliares que encapsulam
 regras relacionados ao domínio de negócio.
-
-%Como DP resolvem problemas, seguir linha de raciocinio para aplicar padrões em
-%android.
-
-
-\if
-Referenciar DIT criticando as heranças das classes da api android
-
-Analise do componente Activity, UI Thread, hieráriquia de herança e algumas
-funcionalidades que dependem da activity e como isso interfere na aplicação do
-padrão(Por experiência confirmo que é negativa). mostrar exemplo de uma view em
-lista para smartphone e outra para tablet com grid usando o mesmo modelo
-
-
-Experimentos
-
-
-activity - controller+async task - observer pattern,
-activity - controller+async task - localbroadcast
-
-Padrões Criacionais. O objeto Application é um singleton, a activity e
-fragmentos são criados pelo android e fica dificil aplicar padrões criacionais é
-possível identificar o padrão templete method nos ciclos de vida desses
-componentes.
-
-
-
-OnTouchListener pode exercer papel de controller pois
-pode ser usado para interpretar os gestos do usuário e direcioar para o model.
-
-
-Quem vai ser o model?
-
-\begin{center}
-\begin{tabular}{ | l | l | l | }
-  \hline                        
-  	Model & View & Presenter \\  \hline
-  	Dao & Activity & POJO \\  \hline
-\end{tabular}
-\end{center}
-
-
-
-
-
-evitar que outras classes da camada abaixo dependam das classe de view do
-android.
-
-%Explicar uso do padrão observer no mvc
-Na definição clássica do padrão MVC é possível identificar a implementação do
-padrão Observer usado para a comunicação entre o model e a view.
-
-
-%segunda arquitetura
-
-Observer=Lapsed listener problem=memory leak e bugs porque uma activity pode ser
-ou estar sendo referenciada por um listener que se não for desregistrado vai
-causar problema
-
-Destacar problema com o observer pattern e pra solucionar isso
-usar publish–subscribe messaging pattern
-
-O Broadcast Receiver é uma implementação do padrão pubsub onde diversos
-subscribers se registram para receber mensagens(intents) de seu interesse.
-\fi
-
-
-
-
-
- Para concluir a seção sobre MVC e MVP destacar que A principal características
- desses padrões de projetos é que ele promover maior coesão nos citar Tom deMarco 
-
-baseado em outras pesquisa será aplicado padões de projetos  para melhorar a
- qualidade pegar referências,  relacionar Coesão = Qualidade.
-
-
