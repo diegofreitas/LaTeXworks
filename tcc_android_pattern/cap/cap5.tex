@@ -1,5 +1,6 @@
 \chapter{Conclusão}
 
+\section{Discussão dos Resultados}
 As classes destinadas à implementação da interface no framework android fornecem
 acceso a recursos que servem para implementação de responsabilidades não
 relacionadas com a interface.
@@ -9,8 +10,8 @@ com diversas responsabilidades que não são inerentes à interação com o
 usuário. Isso dificultou a refatoração pois as classes que exercem o papel de
 presenter necessitam interagir com as classes de view para acessar esses
 recursos, além de atualizar o estado da view. O uso do padrão de injeção de
-dependência\footnote{http://en.wikipedia.org/wiki/Dependency_injection} pode ser
-aplicado para acessar esses recursos e serviços sem a necessidade de interação com a classe de Veiw.
+dependência\footnote{\url{http://en.wikipedia.org/wiki/Dependency_injection}}
+pode ser aplicado para acessar esses recursos e serviços sem a necessidade de interação com a classe de Veiw.
 
 Ao seguir o padrão conforme descrito por \citeonline{fowler:ui}, a granularidade dos
 métodos aumenta pois cada um dos componentes implementão uma parte do caso de
@@ -25,7 +26,10 @@ responsabilidades que utilizam essas dependências foram movidas para a classe d
 presenter. Analisando de forma geral, essas dependências permanecem no pacote
 além de ser criada mais uma acoplamento entre a view e a nova classe presenter.
 Os experimentos demonstraram que a aplicação do padrão MVP promoveu de forma
-significativa maior coesão no aplicativo objeto de estudo deste trabalho.
+significativa maior coesão no aplicativo.
+
+O objeto de estudo deste trabalho não foi concebido com a aplicação intensiva
+dos conceitos da forma como foram apresentados. Os resultados das métricas 
 
 
 \section{Trabalhos Futuros}

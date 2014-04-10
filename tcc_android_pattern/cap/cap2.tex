@@ -2,6 +2,11 @@
 
 \section{Princípios e Padrões de Projetos}
 
+%como referências sobre padrões de projetos para proporcionar o que auxiliará na
+%identificação dos componetes do android que podem assumir as responsabilidades
+%definidas nos padrões e definir como implementa-los.
+
+
 Desenvolver software orientado a objetos é um desafio. Criar uma representação
 computacional de uma faceta da realidade em que seus constituintes trabalhem de
 forma harmoniosa para atingir as necessidades que o software se propõe a
@@ -34,25 +39,15 @@ suas responsabilidades.
 Analisando a forma como um padrão de projeto é concebido, com uma definição
 dos papéis de cada elemento participante e como eles interagem entre si,
 pode-se concluir que o uso dos padrões de projeto promove maior coesão, melhor
-separação de interesses e baixo acoplamento no sistema. Todas essas características são muito
-importantes contribuem para um software de melhor qualidade
+separação de interesses e baixo acoplamento no sistema. Todas essas
+características são muito importantes e contribuem para um software de melhor
+qualidade.
+
 
 %Melhorar isso
 
 %Linkar com as metricas, mostrar relação metricas e padroes
 
-\section{Qualidade de Software}
-
-Seguir definição da ISO/IEC 9126-1
-Funcionalidade. Esta pesquisa assume que o aplicativo está funcional
-Confiabilidade. exitem ferramentas que coletam informações importantes como
-validação de variáveis nulas e tratamento de exceção mas estão fora do escopo
-OO.
-Usabilidade. A usabilidade do aplicativo não será
-avaliada.
-Eficiencia. Não será feito testes de performance ou algo parecido
-Manutenabilidade Será avaliado.
-Portabilidade. Será avalidado
 \section{Métricas de qualidade OO}
 \label{sec:metrics}
 
@@ -126,11 +121,11 @@ usuários de uma sistema de planejamento manipulem dados complexos
 implementam um framework MVC para o ambiente gráfico da linguagem de programação
 Smalltalk-80 como uma forma de promover a reusabilidade e plugabilidade.
 
-Segundo \citeonline{Reenskaug:1979} o principal objetivo do MVC ``\ldots was to
-support the user's mental model of the relevant information space and to enable
-the user to inspect and edit this information.''. Esse modelo mental é como o
-usuário percebe o dominio do problema que está inserido no qual executará suas
-atividades sobre dados de seu interesse. Para que o usuário de um sistema de
+Segundo \citeonline{Reenskaug:1979} o principal objetivo do MVC
+``\ldots é representar o modelo mental do usuário de um espaço de informações
+relevantes e permitir que o usuário inspecione e altere esta
+informação.''(tradução livre).
+Esse modelo mental é como o usuário percebe o dominio do problema que está inserido no qual executará suas atividades sobre dados de seu interesse. Para que o usuário de um sistema de
 informação possa interagir com a represetação computacional  de seu modelo
 mental três componetes são definidos:
 
@@ -151,19 +146,21 @@ entrada(Teclado, Mouse) alterando estado da view ou do model.
 
 
 
-\citeonline{krasnerPope1988} descreve a estrutura do MVC onde a view tem seu
-controller exclusivo mantendo uma dependência cíclica entre ambos e tanto a view
-quanto o controller tem referências diretas para o model por meio de atributos
-de classe porém o model não deve conhecer seus respectivos pares de
-View-Controller para promover mais reuso de código e encapsulamento do model. As
-alterações do estado do model são feitas na maioria das vezes pelo controller, e
+\citeonline{krasnerPope1988} descrevem a estrutura do MVC onde a view tem seu
+controller exclusivo mantendo uma dependência cíclica entre ambos. Tanto a View
+quanto o Controller tem referências diretas para o model por meio de atributos
+de classe, porém, o model não deve conhecer seus respectivos pares de
+View-Controller para promover maior reuso de código e encapsulamento do model.
+As alterações do estado do model são feitas na maioria das vezes pelo controller, e
 o model é responsável por notificar todas as views que o representa para que
 se atualizem refletindo o novo estado. No caso de um model ser usado por vários
 pares de View-Controller as mensagens de notificação de um novo estado do model
 podem ser parametrizadas assim cada view pode verificar se a alteração é de seu
-interesse. Segundo \citeonline{Fowler:2002:PEA} ``Of these the separation of presentation
-from model is one of the most fundamental heuristics of good software design''.
+interesse. 
 
+Segundo \citeonline{Fowler:2002:PEA} ``\ldots esta separação da
+apresentação e modelo é uma das mais fundamentais herísticas de bom projeto
+de software''(tradução livre).
 O controller poderia ser o responsável por publicar as alterações no estado do
 model devido sua relação direta com o mesmo, mas em casos onde o model é
 alterado por outro componente que não é um dos controladores que os utilizam, é
@@ -200,11 +197,13 @@ encapsula o algoritmo que vai alterar a View e o Model, permitindo sua
 substituíção por uma outra implementação que deixa de responder às interações
 com o usuário.
 
-Segundo \citeonline{krasnerPope1988} o Model ``\ldots can be as simple as an integer
-(as the model of a counter) or string (as the model of a text editor), or it can
-be a complex object''. O model pode ser implementado usando o pardrão Facade
-para simplificar as interações com o model dependendo da complexidade do
-domínio que ele representa.
+Segundo \citeonline{krasnerPope1988} o Model ``\ldots pode ser simples como
+um valor numério inteiro (como o modelo de um contador) ou um valor literal
+(como o modelo de um editor de texto), ou pode ser um objeto
+complexo''(tradução livre).
+O model pode ser implementado usando o pardrão Facade para simplificar as
+interações com o Model dependendo da complexidade do domínio que ele
+representa.
 
 \section{Model View Presenter}
 
@@ -284,6 +283,8 @@ os blocos de construção de um aplicativo, a saber:
   \item[Activity] Representa uma atividade que o usuário executa no aplicativo
   em um determinado momento. É um agregador de componetes visuais e responde à
   interações do usuário.
+  \item[Fragment] Representa uma parte de interface com o usuário em uma
+  Activity.
   \item[Service] Responsável por executar uma operação sem interface gráfica
   indicado para processamentos longos como por exemplo a execução de uma música
   ou download de de arquivos.
@@ -298,25 +299,6 @@ os blocos de construção de um aplicativo, a saber:
   interações com o usuário.
 \end{description}
 
-
 Com base nos componentes de framework e literatura revisada é possível fazer
 uma análise dos mesmos e projetar uma camada de apresentação utilizando o padrão
-MVP para ser usada como referência de implementação a ser usada para análise da
-qualidade dessa arquitetura.
-
-A activity terá a responsabilidade da view pois é através dela que a interface
-com o usuário é construída. A classe Activity fornece vários métodos para
-recuperação de recursos de imagens, textos, inicialização de serviços, entre
-outros. Isso ocorre porque a classe activity é uma subclasse de Context,
-herdando diversos métodos não relacionados ao gerenciamento da interface. Essa
-falta de coesão da classe activity se deve ao uso abusivo de herança e que pode
-causar confusão com relação a responsabilidade da implementação de uma activity no
-aplicativo. Segundo \citeonline{Reenskaug:1979} The View and Controller roles
-may be played by the same object when they are very tightly coupled. Example: A
-Menu., porém isso requer um boa análise do problema em questão para decidir o
-nível de granularidade que esses componentes podem ter. Portanto, é recomendável
-manter sempre essa separação para manter uma boa coesão nas classes. O Presenter
-é uma classe auxiliar à view e pode ser implementada como uma classe java
-simples. O Model será representado por componetes DAO (Data Access Object) para
-armazenamento e recuperação dos dados e classes auxiliares que encapsulam
-regras relacionados ao domínio de negócio.
+MVP para ser usada como referência de implementação a ser aplicada.

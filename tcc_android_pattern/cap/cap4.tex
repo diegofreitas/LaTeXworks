@@ -39,36 +39,55 @@ outras partes do aplicativo.
 Os componetes elencados contém código não somente relacionado com a lógica de
 apresentação como também interagem diretamente com classes destinadas ao acesso
 de dados e serviços existentes nas dependências do projeto, por exemplo,
-gerenciamento de contas do usuário. A iteração de refatoração compreenderá na
-na refatoração de cada um dos componentes descritos. O marco de referência de
-dados das métricas presentes na tabela \ref{tab:dados_baseline} será feita a partir da
+gerenciamento de contas do usuário. 
+
+Cada iteração compreenderá na na refatoração de cada um dos componentes
+descritos. O marco de referência de dados das métricas presentes na tabela \ref{tab:dados_baseline} será feita a partir da
 versão \verb|4.4.2_r1| do aplicativo.
 
 \begin{table}[h]
 	\centering
-    \begin{tabular}{ | l | l | l | l |}
+    \begin{tabular}{ | l | l | }
     \hline
-    Métrica & Min. & Max. & Média \\ \hline
-    WMC & 1 & 48  	& 8.5161290323   \\ \hline
-    DIT	& 0	& 2		&0.7741935484\\ \hline
-	NOC & 0	& 0		& 0\\ \hline
-	CBO	& 0	& 50	& 10.1612903226\\ \hline
-	RFC	& 1	& 157	& 23.7419354839\\ \hline
-	LCOM	& 0		& 772	& 57.4838709677\\ \hline
+    Métrica &	Média \\ \hline
+    WMC  	&	8.5161290323   	\\ \hline
+    DIT	 	&	0.7741935484	\\ \hline
+	NOC  	& 	0				\\ \hline
+	CBO	  	& 	10.1612903226	\\ \hline
+	RFC	 	& 	23.7419354839	\\ \hline
+	LCOM 	& 	57.4838709677	\\ \hline
     \end{tabular}
     \caption{Métricas CK para linha de base}
     \label{tab:dados_baseline}
 \end{table}
 
-Será aplicado nos experimentos a variação do padrão MVP chamada Passive Viiew,
-com o objetivo de evitar alterações no código referente às classes que fazem
-parte da camada de modelo do aplicativo de contatos. Esses componentes estão
-localizados fora do projeto e são compartilhados.
+\section{Arquitetura Proposta}
+
+Será aplicado nos experimentos a variação do padrão MVP chamada Passive View,
+pois dessa forma, o Model não precisa publicar alterações de seu estado para a
+view, dessa forma evita-se alterações no código referente às classes que fazem
+parte da camada de Model do aplicativo de contatos. A organização do código
+fonte no repositório dificulta a implementação porque esses componentes estão
+localizados fora do projeto afetado e são compartilhados.
+
+As classes que extendem Fragment terão a responsabilidade da View pois é neste
+componente que a interface com o usuário é construída. A classe Activity fornece
+vários métodos para recuperação de recursos de imagens, textos, inicialização de
+serviços, entre outros. Isso ocorre porque a classe Activity é uma subclasse de Context, herdando diversos métodos não relacionados ao gerenciamento da interface.
+
+Segundo \citeonline{Reenskaug:1979} ``\ldots Os papéis da View e o
+Controller podem ser exercidos pelo mesmo objeto quando eles estão muito
+acoplados. Exemplo: A Menu.'', porém isso requer um boa análise do problema em
+questão para decidir o nível de granularidade que esses componentes podem ter.
+Portanto, é recomendável manter sempre essa separação para manter uma boa coesão
+nas classes. O Presenter será uma classe auxiliar à view e pode ser implementada
+como uma classe java simples. 
+
 
 
 \section{Experimentos}
 
-Como Introduzir esta seção?
+
 
 \subsection{WMC}
 
@@ -105,6 +124,14 @@ específica que não serão reutilizadas por meio de herança.
 \subsection{DIT}
 
 
+A figura \ref{fig:dit} mostrar um aumento no valor da métrica DIT, que deve ser
+mantido baixo pois quanto mais abaixo na hierarquia de heraça a classe estiver, menos previsível será seu
+comportamento devido a quantidade de classes acima, entretanto o aumento no DIT
+se deve ao fato que o ckjm considera a implementação de interface como herança.
+A interface define somente o contrato que a classe de implementar não havendo
+nenhuma implementação que pudesse interferir no comportamento da classe,
+portanto essa alteração no DIT não deve ser considerada.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics{img/dit.png}
@@ -113,16 +140,10 @@ específica que não serão reutilizadas por meio de herança.
 \end{figure}
 
 
-Houve aumento no valor da métrica DIT, que deve ser mantido baixo pois quanto
-mais abaixo na hierarquia de heraça a classe estiver, menos previsível será seu
-comportamento devido a quantidade de classes acima, entretanto o aumento no DIT
-se deve ao fato que o ckjm considera a implementação de interface como herança.
-A interface define somente o contrato que a classe de implementar não havendo
-nenhuma implementação que pudesse interferir no comportamento da classe,
-portanto essa alteração no DIT não deve ser considerada.
-
-
 \subsection{NOC}
+
+Nenhuma classe foi herdada para a aplicação do padrão, portanto, essa métrica
+permaneceu intacta durante as iterações.
 
 \begin{figure}[h]
 	\centering
@@ -131,9 +152,14 @@ portanto essa alteração no DIT não deve ser considerada.
 	\label{fig:noc}
 \end{figure}
 
-Nenhuma classe foi herdada para a aplicação do padrão, portanto, essa métrica permaneceu intacta durante as iterações.
-
 \subsection{CBO}
+
+Na primeira iteração foi aplicado o padrão em um componente mais simples e foi
+possível remover qualquer dependência que não fosse relacionada a interface,
+entretanto, a maior queda ocorreu em  ficando a cargo do da experiência do
+desenvolvedor identificar estes cenários específicos. Nas iterações seguintes as
+interfaces alteradas são mais complexos,
+
 
 \begin{figure}[h]
 	\centering
@@ -142,13 +168,11 @@ Nenhuma classe foi herdada para a aplicação do padrão, portanto, essa métric
 	\label{fig:cbo}
 \end{figure}
 
-Na primeira iteração foi aplicado o padrão em um componente mais simples e foi
-possível remover qualquer dependência que não fosse relacionada a interface,
-entretanto, a maior queda ocorreu em  ficando a cargo do da experiência do
-desenvolvedor identificar estes cenários específicos. Nas iterações seguintes as
-interfaces alteradas são mais complexos,
 
 \subsection{RFC}
+
+A métrica RFC tende a aumentar a cada iteração o que sugere um aumento da
+complexidade do código conforme é apresentado na Figura \ref{fig:rfc}.
 
 \begin{figure}[h]
 	\centering
@@ -157,7 +181,7 @@ interfaces alteradas são mais complexos,
 	\label{fig:rfc}
 \end{figure}
 
-Essa não tem muito o que argumentar. 
+
 
 \subsection{LCOM}
 
@@ -168,6 +192,7 @@ Essa não tem muito o que argumentar.
 	\label{fig:lcom}
 \end{figure}
 
-Maior variação positiva e métrica mais importante
+A Figura \ref{fig:lcom} mostra uma queda siginificativa na métrica LCOM. Isto
+indica que a coesão do código melhorou após cada iteração. 
 
 

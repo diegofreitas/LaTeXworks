@@ -32,7 +32,7 @@ camada de apresentação ou interface com o usuário.
  
 Segundo \citeonline{pressman}, ``A interface com o usuário pode ser considerada
 o elemento mais importante de um sistema ou produto baseado em computador``.
-tendo em vista isso, será tratado nesse trabalho  os padrões para
+Tendo em vista isso, será tratado nesse trabalho  os padrões para
 desenvolvimento da camada de apresentação de em aplicativos android.
 
 \section{Motivação}
@@ -75,7 +75,7 @@ responsabilidades de acordo com os padrões estudados, levando  em consideraçã
 características que podem dificultar a aplicação dos padrões. 
 \item Identificar os impactos nas características de qualidade do aplicativo de acordo
 com o paradigma da Orientação a objetos.
-\item Elaborar um referência de implementação para a  camada de apresentação de um
+\item Propor um referência de implementação para a  camada de apresentação de um
 aplicativo android utilizando padrões de projetos.
 \end{itemize}
 
@@ -103,16 +103,28 @@ através de indicadores de qualidade de código orientado a objetos.
 
 \section{Organização do Trabalho}
 
-Será descrito a metodologia, definicão do projeto, experimentos, conclusões.
+O presente trabalho está estruturado em cinco capítulos dos quais este é o
+Capítulo 1 que apresentou a proposta do trabalho, contexto do problema, a
+motivação para estes estudo, os objetivos a serem alcançados e a estrutura do
+trabalho. 
+O Capítulo 2 trata da metodologia aplicada neste trabalho mostrando o
+objeto de estudo a ser analisado e os passos a serem executados, enfatizando o
+método experimental.
+O Capítulo 3 discorre sobre a fundamentação teórica sobre
+padrões de projetos, métricas de qualidade orientada a objetos e as tecnologias com as quais o objeto
+de estudo foi desenvolvido.
+O Capítulo 4 contém uma análise do objeto de estudo e define como serão feitas
+as implementações e mostra os resultados da execução da pesquisa.
+O Capítulo 5 faz a análise final, conclusões do trabalho, e sugestões para
+trabalhos futuros.
 
 
 \chapter{Metodologia}
 
-Esta pesquisa se caracteriza como experimental pois tem fins práticos ao
-realizar uma revisão na literatura existente sobre orientação a objetos e seus
-princípios bem como referências sobre padrões de projetos para proporcionar o
-embasamento que auxiliará na identificação dos componetes do android que podem
-assumir as responsabilidades definidas nos padrões e definir como implementa-los.
+Esta pesquisa se caracteriza como experimental pois é selecionado um objeto
+de estudo que será analisado do ponto de vista de métricas bem definidas. Essas
+métricas serão influenciadas pelos experimentos de refatoração embasados na
+revisão literatura existente sobre orientação a objetos e seus princípios.
 
 Para validar a hipótese apresentada neste trabalho a pesquisa terá uma
 abordagem quantitativa através da análise de dados estatistícos de métricas 
@@ -166,13 +178,15 @@ experimentação adotado:
 \end{figure}
 
 \begin{description}
-\item[Criação uma linha de base] - Delimitar um marco do estado do código no
+\item[Definir versão de referência] - Delimitar um marco do estado do código no
 repositório.
-\item[Refatoração Incremental] Esta atividade tem como objetivo aplicar os
+\item[Refatoração de funcionalidade] Esta atividade tem como objetivo aplicar os
 padrões propostos em uma funcionalidade do aplicativo.
+\item[Construir proejto] Excutar o processo de construção do projeto que inclui
+a compilação das classes para fazer a coleta das métricas.
 \item[Coleta de Métricas] Este passo tem como objetivo fazer a coleta
 das métricas do código que se encontra no repositório a partir de uma revisão
 para fazer a avaliação dos efeitos da refatoração na qualidade do código.
+\item[Análise dos resultados] Discussão dos impactos das alterações executadas
+nas métricas.
 \end{description}
-
-Esta pesquisa se propõe a executar três iterações.
