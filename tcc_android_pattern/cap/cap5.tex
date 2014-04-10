@@ -9,16 +9,17 @@ com diversas responsabilidades que não são inerentes à interação com o
 usuário. Isso dificultou a refatoração pois as classes que exercem o papel de
 presenter necessitam interagir com as classes de view para acessar esses
 recursos, além de atualizar o estado da view. O uso do padrão de injeção de
-dependência[REF] pode ser aplicado para acessar esses recursos e serviços sem a
-necessidade de interação com a classe de Veiw.
+dependência\footnote{http://en.wikipedia.org/wiki/Dependency_injection} pode ser
+aplicado para acessar esses recursos e serviços sem a necessidade de interação com a classe de Veiw.
 
-Ao seguir o padrão conforme descrito por (Martin Fowler). A granularidade dos
+Ao seguir o padrão conforme descrito por \citeonline{fowler:ui}, a granularidade dos
 métodos aumenta pois cada um dos componentes implementão uma parte do caso de
 uso aumentando o números de métodos que se reflete na métrica WMC, isso afeta
 também a métrica RFC pois esses métodos estão relacionados entre si aumentando a
 troca de mensagens entre a view e o presenter. Um ponto positivo sobre isso é o
 fato de que métodos  complexos com muitas linhas de código foram desmembrados em
 métodos menores e mais simples implementados tanto na view como no presenter.
+
 Houve diminuição na métrica CBO nas classes alteradas pois diversas
 responsabilidades que utilizam essas dependências foram movidas para a classe de
 presenter. Analisando de forma geral, essas dependências permanecem no pacote

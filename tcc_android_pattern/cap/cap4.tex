@@ -4,7 +4,7 @@
 \section{Ferramentas usadas}
 
 O código será versionado no
-Github\footnote{https://github.com/diegofreitas/platform_packages_apps_contacts}
+Github\footnote{\url{https://github.com/diegofreitas/platform_packages_apps_contacts}}
 onde será feito o gerenciamento das versões de cada iteração.
 As ferramentas utilizadas para a refatoração serão a IDE Eclipse(Juno) com
 plugin ADT v21 para facilitar a edição do código e ferramentas de construção
@@ -12,7 +12,8 @@ do projeto existentes no próprio repositório do android tendo em vista que tod
 o processo de compilação e empacontamento não visa ser usado em uma ide.
 Para fazer a coleta das métricas é necessario que a ferramenta analise código
 java e contemple todas as métricas descritas na seção \ref{sec:metrics}. O
-programa Chidamber and Kemerer Java Metrics\footnote{https://github.com/dspinellis/ckjm} atende esses
+programa Chidamber and Kemerer Java
+Metrics\footnote{\url{https://github.com/dspinellis/ckjm}} atende esses
 critérios, além de ser um projeto de código-aberto.
 
 \section{Análise do objeto de estudo}
@@ -40,11 +41,10 @@ apresentação como também interagem diretamente com classes destinadas ao aces
 de dados e serviços existentes nas dependências do projeto, por exemplo,
 gerenciamento de contas do usuário. A iteração de refatoração compreenderá na
 na refatoração de cada um dos componentes descritos. O marco de referência de
-dados das métricas presentes na tabela \ref{tab:baseline} será feita a partir da
+dados das métricas presentes na tabela \ref{tab:dados_baseline} será feita a partir da
 versão \verb|4.4.2_r1| do aplicativo.
-%be5bc44 
 
-\begin{table}
+\begin{table}[h]
 	\centering
     \begin{tabular}{ | l | l | l | l |}
     \hline
@@ -57,8 +57,13 @@ versão \verb|4.4.2_r1| do aplicativo.
 	LCOM	& 0		& 772	& 57.4838709677\\ \hline
     \end{tabular}
     \caption{Métricas CK para linha de base}
-    \label{tab:baseline}
+    \label{tab:dados_baseline}
 \end{table}
+
+Será aplicado nos experimentos a variação do padrão MVP chamada Passive Viiew,
+com o objetivo de evitar alterações no código referente às classes que fazem
+parte da camada de modelo do aplicativo de contatos. Esses componentes estão
+localizados fora do projeto e são compartilhados.
 
 
 \section{Experimentos}
@@ -79,7 +84,7 @@ Como fazer referência à tabela e ao gráfico?
 	Iteração 3 & 8.9393939394	\\ \hline
     \end{tabular}
     \caption{Valores da métrica}
-    \label{tab:baseline}
+    \label{tab:dados_iteracao1}
 \end{table}
 
 \begin{figure}[h]
@@ -90,7 +95,7 @@ Como fazer referência à tabela e ao gráfico?
 \end{figure}
 
 
-Segundo Chidamber e Kemerer (1994) “. . . The larger the number of methods in
+Segundo \citeonline{cksuite} “. . . The larger the number of methods in
 a class the greater the potential impact on children, since children will inherit all the
 methods defined in the class. . . . Classes with large numbers of methods are likely to
 be more application specific, limiting the possibility of reuse.” as classes analisadas

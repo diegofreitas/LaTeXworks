@@ -186,22 +186,25 @@ Figura \ref{mvc_seq} esclarece a interação entre os componetes.
 \citeonline{gof} cita \citeonline{krasnerPope1988} fazendo uma análise dos
 objetos que compõem o MVC relacionando-os com outros padrões de proejto
 descritos em seu catálogo.
-O desacoplamento entre a view e o model e a propagação das mudanças de estado no
-model para os objetos regitrados como dependentes do model pode ser descrico
-como uma implementação do padrão Observer. A hierarquia de views é um exemplos
-de Composite pois uma view pode ser constituída por sub-views para compor views
-complexas. O Strategy é aplicando ao controller que encapsula o algoritmo que
-vai alterar a view e o model podendo ser substituído por uma outra
-implementação que deixa de responder às interações com o usuário.
+O desacoplamento entre a View e o Model, somado à propagação das mudanças de
+estado no model para os objetos regitrados como dependentes do model pode ser
+descrito como uma implementação do padrão Observer. O padrão Observer define uma
+estrutura em que um componente que precisa publicar mudanças em seu estado, detém a
+referência para uma lista de objetos a serem notificados. A hierarquia de views
+é um exemplos de Composite pois uma view pode ser constituída por sub-views para
+compor views complexas. No Composite  um conjunto de componentes podem ser
+tratadas de forma encapsulada onde cada implementa as mesmas abstração. O padrão
+Strategy define uma abstração cuja as implementações podem ser trocadas de
+acordo com algum critério, esse conceito pode ser aplicado ao controller que
+encapsula o algoritmo que vai alterar a View e o Model, permitindo sua
+substituíção por uma outra implementação que deixa de responder às interações
+com o usuário.
 
 Segundo \citeonline{krasnerPope1988} o Model ``\ldots can be as simple as an integer
 (as the model of a counter) or string (as the model of a text editor), or it can
 be a complex object''. O model pode ser implementado usando o pardrão Facade
 para simplificar as interações com o model dependendo da complexidade do
 domínio que ele representa.
-%citar facade aqui
-
-
 
 \section{Model View Presenter}
 
@@ -230,9 +233,9 @@ interage com esses dados, tendo como objetivo promover o encapsulamento do Model
 Os conceitos do MVP são descritos em \citeonline{Potel96mvp} de forma genérica
 permintindo interpretações para uma implementação efetiva.
 \citeonline{twisttriad:2000} descreve a implementação de um framework para
-Dolphin Smalltalk\footnote{Implementação da Linguagem de programação Smalltalk,
-http://www.object-arts.com} adotando os conceitos do MVP onde salienta que a
-maioria dos sistemas operacionais com ambiente gráfico fornece um conjunto de
+Dolphin Smalltalk\footnote{Implementação da Linguagem de programação Smalltalk - 
+\url{http://www.object-arts.com}} adotando os conceitos do MVP onde salienta que
+a maioria dos sistemas operacionais com ambiente gráfico fornece um conjunto de
 componentes (Widgets) no qual está contido a responsabilidade do controller.A
 maior parte do comportamento do caso com o usuário é implementada no
 Presenter que está diretamente associado à View.
@@ -240,10 +243,16 @@ Presenter que está diretamente associado à View.
 Ainda acerca das responsabilidades do Presenter, \citeonline{fowler:ui} descreve
 o que é chamado de Passive View, onde toda a lógica do comportamento da view é
 implementado no presenter deixando a view enxuta com o intuito de isolar ao
-máximo a api gráfica do resto da aplicação, permitindo uma maior cobertura de
-testes aplicados ao presenter. Dessa forma o model não se comunica com a view
-por meio do observer pattern, sendo que a view séra atualizada pelo presenter.
+máximo a API gráfica do resto da aplicação. Dessa forma o model não se comunica
+com a view por meio do observer pattern, sendo que a view séra atualizada pelo
+presenter como pode ser observado na Figura~\ref{fig:mvp_passive_view}.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{img/mvp_passive_view.png}
+	\caption{Passive View/Fonte: Próprio autor}
+	\label{fig:mvp_passive_view}
+\end{figure}
 
 MVP se adequa melhor as apis gráficas existentes e define de forma mais clara os
 componetes necessários para desenvolver uma aplicação, sendo o ponto de maior
