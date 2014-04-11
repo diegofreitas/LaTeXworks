@@ -85,8 +85,14 @@ Na dissertação de \citeonline{turk} é feita uma análise dos impactos na
 qualidade ao aplicar cinco padrões de projetos em um software de comunicação
 TCP/IP. Os resultados do trabalho citado mostram que a qualidade do software
 aumenta ao aplicar padrões de projetos sendo que o principal atributo de
-qualidade aferida é a manutenabilidade.
+qualidade aferido é a manutenabilidade. O método utilizado para a execução da
+pesquisa se baseia no trabalho citado. 
 
+Não foi encontrado na literatura disponível, referências sobre a aplicação do
+MVP para desenvolvimento de aplicativos android. Outros trabalhos mostram a
+aplicação do padrão em outros contextos usando outras plataformas 
+\cite{presenterfirst}, \cite{yangmvp}. \citeonline{presenterfirst} discute os
+efeitos do padrão sob a perspectiva da testabilidade.
 
 \section{Contribuições}
 
@@ -100,24 +106,6 @@ A diversidade de projetos de software torna difícil inferir se as métricas
 podem ser consideradas um paramêtro para determinar a qualidade. O presente
 trabalho  se propõe a avaliar a aderência do padrão MVP â projetos android
 através de indicadores de qualidade de código orientado a objetos.
-
-\section{Organização do Trabalho}
-
-O presente trabalho está estruturado em cinco capítulos dos quais este é o
-Capítulo 1 que apresentou a proposta do trabalho, contexto do problema, a
-motivação para estes estudo, os objetivos a serem alcançados e a estrutura do
-trabalho. 
-O Capítulo 2 trata da metodologia aplicada neste trabalho mostrando o
-objeto de estudo a ser analisado e os passos a serem executados, enfatizando o
-método experimental.
-O Capítulo 3 discorre sobre a fundamentação teórica sobre
-padrões de projetos, métricas de qualidade orientada a objetos e as tecnologias com as quais o objeto
-de estudo foi desenvolvido.
-O Capítulo 4 contém uma análise do objeto de estudo e define como serão feitas
-as implementações e mostra os resultados da execução da pesquisa.
-O Capítulo 5 faz a análise final, conclusões do trabalho, e sugestões para
-trabalhos futuros.
-
 
 \section{Metodologia}
 
@@ -172,7 +160,7 @@ A Figura \ref{processo_experimentacao} demonstra as atividades do processo de
 experimentação adotado:
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.5]{img/processo_experimentacao.png}
+	\includegraphics[scale=0.4]{img/processo_experimentacao.png}
 	\caption{Processo de Experimentação Fonte: Próprio Autor}
 	\label{processo_experimentacao}
 \end{figure}
@@ -190,3 +178,20 @@ para fazer a avaliação dos efeitos da refatoração na qualidade do código.
 \item[Análise dos resultados] Discussão dos impactos das alterações executadas
 nas métricas.
 \end{description}
+
+
+\section{Organização do Trabalho}
+
+O presente trabalho está estruturado em cinco capítulos dos quais este é o
+Capítulo 1 que apresentou a proposta do trabalho, contexto do problema, a
+motivação para estes estudo, os objetivos a serem alcançados e a estrutura do
+trabalho. Também é abordado a metodologia aplicada neste trabalho mostrando o
+objeto de estudo a ser analisado e os passos a serem executados, enfatizando o
+método experimental.
+O Capítulo 2 discorre sobre a fundamentação teórica sobre padrões de projetos,
+métricas de qualidade orientada a objetos e as tecnologias com as quais o objeto
+de estudo foi desenvolvido.
+O Capítulo 3 contém uma análise do objeto de estudo e define como serão feitas
+as implementações e mostra os resultados da execução da pesquisa.
+O Capítulo 4 faz a análise final, conclusões do trabalho, e sugestões para
+trabalhos futuros.

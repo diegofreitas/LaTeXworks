@@ -2,10 +2,6 @@
 
 \section{Princípios e Padrões de Projetos}
 
-%como referências sobre padrões de projetos para proporcionar o que auxiliará na
-%identificação dos componetes do android que podem assumir as responsabilidades
-%definidas nos padrões e definir como implementa-los.
-
 
 Desenvolver software orientado a objetos é um desafio. Criar uma representação
 computacional de uma faceta da realidade em que seus constituintes trabalhem de
@@ -14,9 +10,18 @@ atender requer experiência, conhecimento do domínio do problema e um processo 
 análise e projeto. Apesar de existir várias abordagens para se conceber um
 sistema orientado a objetos\cite{evans2004ddd},\cite{gomma11} um sistema bem
 contruído apreseta características fundamentais como alta coesão e
-baixo acoplamento 
+baixo acoplamento.
 
-designReusableClasses
+A Coesão é uma característica de um componete de software que se refere ao grau
+de relacionamento entres os menbros desse componente. No contexto de uma classe,
+é levado em consideração as relações entre os métodos e atributos. Classes com
+coesão baixa demonstram grande complexidade pois os atributos e métodos que não
+se relacionam indicam que a classe tem muitas responsablidades.
+
+O acoplamento descreve as dependências entre componetes. Quanto maior a
+quantidade dessas dependências entre classes, mais complexo ela se torna, pois
+dificulta  alterações na classe. Além disso, o acoplamento aumenta o risco de
+uma classe ser afetada devido à alterações em suas dependências.
 
 Um padrão, dentro do contexto de estudo deste trabalho pode ser definido
 como uma técnica efetiva cuja a sua aplicabilidade é aceita e difundiida dentro
