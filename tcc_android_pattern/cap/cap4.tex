@@ -8,9 +8,9 @@ Github\footnote{\url{https://github.com/diegofreitas/platform_packages_apps_cont
 onde será feito o gerenciamento das versões de cada iteração.
 As ferramentas utilizadas para a refatoração serão a IDE Eclipse(Juno) com
 plugin ADT v21 para facilitar a edição do código e ferramentas de construção
-do projeto existentes no próprio repositório do android tendo em vista que todo
-o processo de compilação e empacontamento não visa ser usado em uma ide.
-Para fazer a coleta das métricas é necessario que a ferramenta analise código
+do projeto existentes no próprio repositório do android, tendo em vista que todo
+o processo de compilação e empacotamento não visa ser usado em uma IDE.
+Para realizar a coleta das métricas é necessário que a ferramenta analise código
 java e contemple todas as métricas descritas na seção \ref{sec:metrics}. O
 programa Chidamber and Kemerer Java
 Metrics\footnote{\url{https://github.com/dspinellis/ckjm}} atende esses
@@ -19,10 +19,10 @@ critérios, além de ser um projeto de código-aberto.
 \section{Análise do objeto de estudo}
 
 O aplicativo a ser refatorado tem funcionalidades para gerenciamento de
-contatos. Dentro deste conjunto de casos de uso será feratorado o pacote
+contatos. Dentro deste conjunto de casos de uso será refatorado o pacote
 referente ao gerenciamento de grupos de contatos presente no pacote
 \textbf{com.android.contacts.group} que contém componentes de tela para
-interação com o usuário a saber:
+interação com o usuário, a saber:
 \begin{description}
 \item[GroupDetailFragment.java] Exibe os dados de um grupo de contatos.
 \item[GroupBrowseListFragment.java] Fonece uma lista de grupos.
@@ -30,18 +30,18 @@ interação com o usuário a saber:
 dados de um grupo.
 \end{description}
 
-Estas intefaces são usadas dentro de activities que controlam uma parte do fluxo
+Estas interfaces são usadas dentro de activities que controlam uma parte do fluxo
 de interação e se comportam de forma diferente conforme o tipo de dispositivo
 móvel utilizado. Devido a essa complexidade, não será feita nenhuma alteração na
-interface pública dos componentes refatorados evitando efeitos colaterais em
+interface pública dos componentes refatorados, evitando efeitos colaterais em
 outras partes do aplicativo.
 
-Os componetes elencados contém código não somente relacionado com a lógica de
+Os componentes elencados contêm código não somente relacionado com a lógica de
 apresentação como também interagem diretamente com classes destinadas ao acesso
 de dados e serviços existentes nas dependências do projeto, por exemplo,
 gerenciamento de contas do usuário. 
 
-Cada iteração compreenderá na na refatoração de cada um dos componentes
+Cada iteração consistirá na refatoração de cada um dos componentes
 descritos. O marco de referência de dados das métricas presentes na tabela \ref{tab:dados_baseline} será feita a partir da
 versão \verb|4.4.2_r1| do aplicativo.
 
@@ -57,41 +57,57 @@ versão \verb|4.4.2_r1| do aplicativo.
 	RFC	 	& 	23.7419354839	\\ \hline
 	LCOM 	& 	57.4838709677	\\ \hline
     \end{tabular}
-    \caption{Métricas CK para linha de base}
+    \caption{Métricas CK da versão de referência}
     \label{tab:dados_baseline}
 \end{table}
 
 \section{Arquitetura Proposta}
 
+% sempre que for referenciar as camadas (view, model, controller), utilize com primeira maiúscula. serve tb para nome de classes e padroes citados ao longo do texto
+
 Será aplicado nos experimentos a variação do padrão MVP chamada Passive View,
 pois dessa forma, o Model não precisa publicar alterações de seu estado para a
-view, dessa forma evita-se alterações no código referente às classes que fazem
+view, Logo, evita-se alterações no código referente às classes que fazem
 parte da camada de Model do aplicativo de contatos. A organização do código
-fonte no repositório dificulta a implementação porque esses componentes estão
+fonte no repositório dificulta a implementação, isto porque esses componentes estão
 localizados fora do projeto afetado e são compartilhados.
 
-As classes que extendem Fragment terão a responsabilidade da View pois é neste
+As classes que extendem Fragment terão a responsabilidade da View, pois é neste
 componente que a interface com o usuário é construída. A classe Activity fornece
 vários métodos para recuperação de recursos de imagens, textos, inicialização de
 serviços, entre outros. Isso ocorre porque a classe Activity é uma subclasse de Context, herdando diversos métodos não relacionados ao gerenciamento da interface.
 
-Segundo \citeonline{Reenskaug:1979} ``\ldots Os papéis da View e o
+Segundo \citeonline{Reenskaug:1979} ``\ldots Os papéis da View e do
 Controller podem ser exercidos pelo mesmo objeto quando eles estão muito
-acoplados. Exemplo: A Menu.'', porém isso requer um boa análise do problema em
-questão para decidir o nível de granularidade que esses componentes podem ter.
+acoplados. Exemplo: Um Menu.''(tradução livre). Porém, isso requer um boa
+análise do problema em questão para decidir o nível de granularidade que esses componentes podem ter.
 Portanto, é recomendável manter sempre essa separação para manter uma boa coesão
 nas classes. O Presenter será uma classe auxiliar à view e pode ser implementada
 como uma classe java simples. 
 
 
 
-\section{Experimentos}
+\section{Resultados dos Experimentos}
 
+Esta sessão tem como objetvo mostar os resultados objetos com o processo de
+refatoração aplicando o parão mvp. Cada métrica é apresentada com seus dados
+para cada iteração mostrando os efeitos desses valores na qualidade.
 
+% TODO - ao apresentar cada metrica, detalhar melhor o q se espera dela e qual o
+% comportamento gerado. O que falta eh caracterizar melhor o dado, explicitando
+% o q a variacao da metrica reflete em termos de qualidade de codigo
 
 \subsection{WMC}
 
-Como fazer referência à tabela e ao gráfico?
+
+A métrica WMC é usada para medir o tempo e esforço necessário para desenvolver e
+manter uma classe. É recomendado que esta métrica tenha valores baixos.
+
+Segundo \citeonline{cksuite} “\ldots Classes com um número grande de métodos
+tem uma aplicação específica limitando a possibilidade de reuso."(tradução
+livre). As classes que foram refatoradas são de interface, portanto
+implementam uma interação com o usuário bem específica que não serão
+reutilizadas por meio de herança.
 \begin{table}[h]
 	\centering
     \begin{tabular}{ | l | l | }
@@ -102,8 +118,8 @@ Como fazer referência à tabela e ao gráfico?
 	Iteração 2 & 9				\\ \hline
 	Iteração 3 & 8.9393939394	\\ \hline
     \end{tabular}
-    \caption{Valores da métrica}
-    \label{tab:dados_iteracao1}
+    \caption{Dados métrica WMC}
+    \label{tab:wmc}
 \end{table}
 
 \begin{figure}[h]
@@ -114,23 +130,18 @@ Como fazer referência à tabela e ao gráfico?
 \end{figure}
 
 
-Segundo \citeonline{cksuite} “. . . The larger the number of methods in
-a class the greater the potential impact on children, since children will inherit all the
-methods defined in the class. . . . Classes with large numbers of methods are likely to
-be more application specific, limiting the possibility of reuse.” as classes analisadas
-são de interface, portanto implementão uma interação com o usuário bem
-específica que não serão reutilizadas por meio de herança.
-
 \subsection{DIT}
 
-
-A figura \ref{fig:dit} mostrar um aumento no valor da métrica DIT, que deve ser
-mantido baixo pois quanto mais abaixo na hierarquia de heraça a classe estiver, menos previsível será seu
-comportamento devido a quantidade de classes acima, entretanto o aumento no DIT
-se deve ao fato que o ckjm considera a implementação de interface como herança.
-A interface define somente o contrato que a classe de implementar não havendo
-nenhuma implementação que pudesse interferir no comportamento da classe,
-portanto essa alteração no DIT não deve ser considerada.
+A métrica DIT esta relacionado complexidade e reusabilidade. Quanto mais abaixo
+na hierarquia de heraça a classe estiver, menos previsível será seu
+comportamento devido a quantidade de classes acima. Entretanto, a métrica também
+indica um potencial reuso de código por meio da herança de métodos, isso torna
+os parâmetros de avaliação da métrica dependentes do contexto a ser analisado.
+O aumento demonstrado na DIT se deve ao fato que o ckjm considera a
+implementação de interface como herança. A interface define somente o contrato
+que a classe de implementar não havendo nenhuma implementação que pudesse
+interferir no comportamento da classe, portanto essa alteração no DIT não deve
+ser considerada. O aumento no valor da métrica é mostrado na Figura~\ref{fig:dit}
 
 \begin{figure}[h]
 	\centering
@@ -141,6 +152,16 @@ portanto essa alteração no DIT não deve ser considerada.
 
 
 \subsection{NOC}
+
+The greater the NOC is:
+ the greater is the RE-USE
+ the greater is the probability of improper abstraction of the parent class,
+ the greater the requirements of method's TESTING in that class.
+
+Small values of NOC, may be an indicator of lack of communication between different class designers.
+
+Objetivo: Depende
+
 
 Nenhuma classe foi herdada para a aplicação do padrão, portanto, essa métrica
 permaneceu intacta durante as iterações.
@@ -153,6 +174,14 @@ permaneceu intacta durante as iterações.
 \end{figure}
 
 \subsection{CBO}
+
+
+Small values of CBO :
+Improve MODULARITY and promote ENCAPSULATION
+Indicates independence in the class, making easier its RE-USE
+Makes easier to MAINTAIN and to TEST a class.
+Objetivo: Baixo
+
 
 Na primeira iteração foi aplicado o padrão em um componente mais simples e foi
 possível remover qualquer dependência que não fosse relacionada a interface,
@@ -171,6 +200,12 @@ interfaces alteradas são mais complexos,
 
 \subsection{RFC}
 
+If a large numbers of methods are invoked from a class (RFC is high):
+TESTING and MAINTANACE of the Class becomes more COMPLEX.
+
+Objetivo: Baixo
+
+
 A métrica RFC tende a aumentar a cada iteração o que sugere um aumento da
 complexidade do código conforme é apresentado na Figura \ref{fig:rfc}.
 
@@ -181,9 +216,15 @@ complexidade do código conforme é apresentado na Figura \ref{fig:rfc}.
 	\label{fig:rfc}
 \end{figure}
 
-
-
 \subsection{LCOM}
+
+
+Great values of LCOM:
+Increases COMPLEXITY
+Does not promotes  ENCAPSULATION and implies classes should probably be split into two or more subclasses
+Helps to identified low-quality design
+
+Objetivo: Baixo
 
 \begin{figure}[h]
 	\centering
@@ -194,5 +235,4 @@ complexidade do código conforme é apresentado na Figura \ref{fig:rfc}.
 
 A Figura \ref{fig:lcom} mostra uma queda siginificativa na métrica LCOM. Isto
 indica que a coesão do código melhorou após cada iteração. 
-
 

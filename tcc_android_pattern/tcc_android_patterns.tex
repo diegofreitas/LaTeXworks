@@ -109,15 +109,15 @@
 \titulo{Uso de Padrões de Projetos no desenvolvimento de aplicativos Android}
 \autor{Diego Lins de Freitas}
 \local{Manaus-Am}
-\data{2013, v0.6}
-%\orientador{Lauro César Araujo}
-\instituicao{%
+\data{2014}
+\orientador{Danny Lopes}
+\instituicao{
   Faculdade Fucapi
   \par
   Especialização em Engenharia de Software
   \par
   Centro de Pós-Graduação e Extensão (CPGE)}
-\tipotrabalho{Tese (Doutorado)}
+\tipotrabalho{Monografia}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 
 \preambulo{}
@@ -176,14 +176,29 @@
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
 % ----------------------------------------------------------
-% \pretextual
+\pretextual
 
 % ---
 % Capa
 % ---
-%\imprimircapa
+\imprimircapa
 
 \imprimirfolhaderosto*
+
+\begin{folhadeaprovacao}
+\setlength{\ABNTsignthickness}{1pt}
+Esta Monografia foi julgada adequada como \textbf{TRABALHO DE CONCLUSÃO
+DE CURSO} no Curso de Matemática --- Habilitação Licenciatura, e aprovada
+em sua forma final pela Banca Examinadora designada pela Portaria
+no 20CC/210
+\assinatura{Prof. Nereu Estanislau Burin\\Professor da disciplina}
+Banca Examinadora:
+\begin{flushright}
+\assinatura*{Prof. Daniel Gonçalves\\Orientador}
+\assinatura*{Prof. Celso Melchiades Doria}
+\assinatura*{Prof. Danilo Royer}
+\end{flushright}
+\end{folhadeaprovacao}
 
 % ---
 % RESUMOS
@@ -194,13 +209,19 @@
 A plataforma android foi adotada por vários fornecedores de smartphones e
 tablets promovendo uma disseminação do sistema operacional muito abrangente.
 Formou-se um grande mercado a ser explorado com fornecimento de aplicativos para
-as  mais variadas finalidades. Para atender essa demanda é necessário
+as mais variadas finalidades. Para atender essa demanda é necessário
 desenvolver aplicativos de qualidade e o mais rápido possível. Porém, por
 se tratar de pequenos  aplicativos há pouca preocupação com a arquitetura. 
-Os padrões difundidos na comunidade são focados na utilização de
-componentes e desenvolvimento da interação homem-máquina. Neste trabalho são
-apresentados alguns padrões de projetos  aplicados ao desenvolvimento de aplicativos android dando
-um visão mais ampla de um aplicativo.
+Os padrões difundidos na comunidade são focados na utilização de componentes e
+desenvolvimento da interação homem-máquina. Este trabalho tem como objetivo
+apresentar o padrões de projeto MVP aplicado ao desenvolvimento de aplicativos
+android. Os efeitos que esse padrão tem sobre o objeto de estudo são
+avaliados sobre uma perspectiva orientada a objetos. O método experimental é
+aplicado de forma iterativa usando o processo de refatoração incremental e
+coletando métricas de qualidade de código para fazer uma análise quantitativa.
+Os resultados mostram que a aplicação do padrão aumentou a coesão do código,
+porém, com um aumento da complexidade devido a inclusão de novos componentes
+usados para dividir as responsabilidades.
 
  \vspace{\onelineskip}
     
