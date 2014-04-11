@@ -12,16 +12,13 @@ padrão de injeção de dependência\footnote{\url{http://en.wikipedia.org/wiki/
 pode ser aplicado para acessar esses recursos e serviços sem a necessidade de
 interação com a classe de Veiw.
 
-% danny - o parag. comeca estranho... parece q vc vai citar o padrao, mas ae
-% começa a falar sobre granularidade... tenta conectar melhor as ideias. releia
-% o parag. e tente se convencer q esta facil de entender.
-Ao seguir o padrão conforme descrito por \citeonline{fowler:ui}, a granularidade dos
-métodos aumenta pois cada um dos componentes implementarão uma parte do caso de
-uso aumentando o números de métodos que se reflete na métrica WMC, isso afeta
-também a métrica RFC pois esses métodos estão relacionados entre si, aumentando
-a troca de mensagens entre a view e o presenter. Um ponto positivo sobre isso é o
-fato de que métodos  complexos com muitas linhas de código foram desmembrados em
-métodos menores e mais simples, implementados tanto na View como no Presenter.
+Ao usar o padrão MVP, a granularidade dos métodos aumentou pois cada um dos
+componentes implementaram uma parte do caso de uso aumentando o números de
+métodos que se reflete na métrica WMC, isso afeta também a métrica RFC pois
+esses métodos estão relacionados entre si, aumentando a troca de mensagens entre
+a view e o presenter. Um ponto positivo sobre isso é o fato de que métodos 
+complexos com muitas linhas de código foram desmembrados em métodos menores e
+mais simples, implementados tanto na View como no Presenter.
 
 Houve diminuição na métrica CBO nas classes alteradas pois diversas
 responsabilidades que utilizam essas dependências foram movidas para a classe de
@@ -32,19 +29,30 @@ significativa maior coesão no aplicativo.
 
 A métrica WMC está relácionada com as métricas DIT e NOC. Como houve pouca
 variação no DIT e nenhuma variação no NOC o aumento da WMC não tem impacto
-relevante. 
-
-Entretanto a métrica RFC aumentou indicando maior complexidade. Os resultaddos
-mostram que isso se deve à melhora da coesão do código demonstrado pela
+relevante. Entretanto a métrica RFC aumentou indicando maior complexidade. Os
+resultaddos mostram que isso se deve à melhora da coesão do código demonstrado pela
 diminiução da métrica LCOM. Comforme um software é desenvolvido novas classes e
 troca de menssagens são implementadas afetando as métricas WMC e RFC. Como não
 houve uma refatoração mais extensiva do projeto não é possível determinar
 valores de referência para as métricas. Não é possível relacionar diretamente a
 métrica CBO com base na variação dos resultados para esta métrica, apesar de
 que, os valores se mantiveram abaixo dos encontrados da versão de referência.
-Isso requer mais estudos abordando outros padrões de projeto. Portanto é possível
-determinar que a arquitetura proposta melhorou a qualidade do objeto de estudo
-porque esta mais coeso.
+Isso requer mais estudos abordando outros padrões de projeto. 
+
+
+A métrica mais afetada pelo uso do padrão MVP no projeto foi a LCOM como
+pode ser observado na figura \ref{fig:allmetrics}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{img/allmetrics}
+	\caption{Variação das métricas ao longo das iterações/Fonte: Próprio autor}
+	\label{fig:allmetrics}
+\end{figure}
+
+
+Portanto, a arquitetura proposta melhorou a qualidade do objeto de estudo porque
+promoveu maior coesão, diminuindo a complexidade.
 
 
 \section{Trabalhos Futuros}

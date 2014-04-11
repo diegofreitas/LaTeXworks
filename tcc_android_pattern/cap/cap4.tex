@@ -93,15 +93,13 @@ Esta sessão tem como objetvo mostar os resultados objetos com o processo de
 refatoração aplicando o parão mvp. Cada métrica é apresentada com seus dados
 para cada iteração mostrando os efeitos desses valores na qualidade.
 
-% TODO - ao apresentar cada metrica, detalhar melhor o q se espera dela e qual o
-% comportamento gerado. O que falta eh caracterizar melhor o dado, explicitando
-% o q a variacao da metrica reflete em termos de qualidade de codigo
-
 \subsection{WMC}
 
 
 A métrica WMC é usada para medir o tempo e esforço necessário para desenvolver e
-manter uma classe. É recomendado que esta métrica tenha valores baixos.
+manter uma classe. É recomendado que esta métrica tenha valores baixos. A
+tablela \ref{tab:wmc} e a figura \ref{fig:wmc} mostram os valores dessa métricas
+no projeto.
 
 Segundo \citeonline{cksuite} “\ldots Classes com um número grande de métodos
 tem uma aplicação específica limitando a possibilidade de reuso."(tradução
@@ -141,7 +139,22 @@ O aumento demonstrado na DIT se deve ao fato que o ckjm considera a
 implementação de interface como herança. A interface define somente o contrato
 que a classe de implementar não havendo nenhuma implementação que pudesse
 interferir no comportamento da classe, portanto essa alteração no DIT não deve
-ser considerada. O aumento no valor da métrica é mostrado na Figura~\ref{fig:dit}
+ser considerada. O aumento no valor da métrica é mostrado na
+tabela~\ref{tab:dit} e Figura~\ref{fig:dit}
+
+\begin{table}[h]
+	\centering
+    \begin{tabular}{ | l | l | }
+    \hline
+    Iteração & Média 			\\ \hline
+    Baseline & 0.7741935484  	\\ \hline
+    Iteração 1 & 0.78125		\\ \hline
+	Iteração 2 & 0.78125			\\ \hline
+	Iteração 3 & 0.7878787879	\\ \hline
+    \end{tabular}
+    \caption{Dados métrica DIT}
+    \label{tab:dit}
+\end{table}
 
 \begin{figure}[h]
 	\centering
@@ -153,18 +166,26 @@ ser considerada. O aumento no valor da métrica é mostrado na Figura~\ref{fig:d
 
 \subsection{NOC}
 
-The greater the NOC is:
- the greater is the RE-USE
- the greater is the probability of improper abstraction of the parent class,
- the greater the requirements of method's TESTING in that class.
+Altos valores para a métrica NOC são indicativos de que existe maior reuso de
+código, o esforço de testes também aumenta e maior é a probabilidade de uso
+incorreto de abstração. O objetivo da métrica é variável Nenhuma classe foi
+herdada para a aplicação do padrão, portanto, essa métrica permaneceu intacta
+durante as iterações como pode ser observado na tabela \ref{tab:noc} e
+figura~\ref{fig:noc}
 
-Small values of NOC, may be an indicator of lack of communication between different class designers.
-
-Objetivo: Depende
-
-
-Nenhuma classe foi herdada para a aplicação do padrão, portanto, essa métrica
-permaneceu intacta durante as iterações.
+\begin{table}[h]
+	\centering
+    \begin{tabular}{ | l | l | }
+    \hline
+    Iteração & Média 			\\ \hline
+    Baseline & 0  	\\ \hline
+    Iteração 1 & 0			\\ \hline
+	Iteração 2 & 0				\\ \hline
+	Iteração 3 & 0	\\ \hline
+    \end{tabular}
+    \caption{Dados métrica NOC}
+    \label{tab:noc}
+\end{table}
 
 \begin{figure}[h]
 	\centering
@@ -175,13 +196,9 @@ permaneceu intacta durante as iterações.
 
 \subsection{CBO}
 
-
-Small values of CBO :
-Improve MODULARITY and promote ENCAPSULATION
-Indicates independence in the class, making easier its RE-USE
-Makes easier to MAINTAIN and to TEST a class.
-Objetivo: Baixo
-
+Valores baixos de CBO são indicativos de boa modularidade e encapsulamento que
+se reflete na indepdendência da classe o que a torna mais fácil de reutilizar,
+manter e testar.
 
 Na primeira iteração foi aplicado o padrão em um componente mais simples e foi
 possível remover qualquer dependência que não fosse relacionada a interface,
@@ -189,6 +206,19 @@ entretanto, a maior queda ocorreu em  ficando a cargo do da experiência do
 desenvolvedor identificar estes cenários específicos. Nas iterações seguintes as
 interfaces alteradas são mais complexos,
 
+\begin{table}[h]
+	\centering
+    \begin{tabular}{ | l | l | }
+    \hline
+    Iteração & Média 			\\ \hline
+    Baseline & 10.1612903226   	\\ \hline
+    Iteração 1 & 10.03125		\\ \hline
+	Iteração 2 & 10.09375		\\ \hline
+	Iteração 3 & 10.1515151515	\\ \hline
+    \end{tabular}
+    \caption{Dados métrica CBO}
+    \label{tab:cbo}
+\end{table}
 
 \begin{figure}[h]
 	\centering
@@ -200,14 +230,27 @@ interfaces alteradas são mais complexos,
 
 \subsection{RFC}
 
-If a large numbers of methods are invoked from a class (RFC is high):
-TESTING and MAINTANACE of the Class becomes more COMPLEX.
-
-Objetivo: Baixo
-
+Altos valores para a métrica RFC indica que uma quantidade grande de métodos é
+chamados a partir de uma classe tornando-a mais complexa de testar e fazer
+manutenção. Logo, esta métrica deve ser mantida baixa.
 
 A métrica RFC tende a aumentar a cada iteração o que sugere um aumento da
-complexidade do código conforme é apresentado na Figura \ref{fig:rfc}.
+complexidade do código conforme é apresentado na tabela \ref{tab:rfc} e Figura
+\ref{fig:rfc}.
+
+\begin{table}[h]
+	\centering
+    \begin{tabular}{ | l | l | }
+    \hline
+    Iteração & Média 			\\ \hline
+    Baseline & 23.7419354839   	\\ \hline
+    Iteração 1 & 24.21875		\\ \hline
+	Iteração 2 & 24.71875		\\ \hline
+	Iteração 3 & 24.9090909091	\\ \hline
+    \end{tabular}
+    \caption{Dados métrica RFC}
+    \label{tab:rfc}
+\end{table}
 
 \begin{figure}[h]
 	\centering
@@ -218,13 +261,25 @@ complexidade do código conforme é apresentado na Figura \ref{fig:rfc}.
 
 \subsection{LCOM}
 
+Esta métrica ajuda a identificar má qualidade na estrutura do código quando os
+valores são altos apontando aumento da complexidade e pouco encapsulamento.
+A tabela \ref{tab:lcom} e a figura \ref{fig:lcom} mostram uma queda
+siginificativa na métrica LCOM.
+Isto indica que a coesão do código melhorou após cada iteração. 
 
-Great values of LCOM:
-Increases COMPLEXITY
-Does not promotes  ENCAPSULATION and implies classes should probably be split into two or more subclasses
-Helps to identified low-quality design
-
-Objetivo: Baixo
+\begin{table}[h]
+	\centering
+    \begin{tabular}{ | l | l | }
+    \hline
+    Iteração & Média 			\\ \hline
+    Baseline & 57.4838709677   	\\ \hline
+    Iteração 1 & 56.875			\\ \hline
+	Iteração 2 & 53.1875		\\ \hline
+	Iteração 3 & 48.4242424242	\\ \hline
+    \end{tabular}
+    \caption{Dados métrica LCOM}
+    \label{tab:lcom}
+\end{table}
 
 \begin{figure}[h]
 	\centering
@@ -232,7 +287,3 @@ Objetivo: Baixo
 	\caption{Valores de lcom/Fonte: Próprio autor}
 	\label{fig:lcom}
 \end{figure}
-
-A Figura \ref{fig:lcom} mostra uma queda siginificativa na métrica LCOM. Isto
-indica que a coesão do código melhorou após cada iteração. 
-
