@@ -26,12 +26,17 @@ uma classe ser afetada devido à alterações em suas dependências.
 Um padrão, dentro do contexto de estudo deste trabalho pode ser definido
 como uma técnica efetiva cuja a sua aplicabilidade é aceita e difundiida dentro
 de uma área de conhecimento com a intenção de atingir um
-objetivo\cite{MetskerWake06}.
+objetivo\cite{MetskerWake06}. Ao seguir um padrão evita-se o retrabalho de
+resolver um problema cuja a solução já existe.
 
-Em desenvolvimento de software, o catálogo mais difundido de padrões de projetos
-orientado a objetos é elaborado por \citeonline{gof}, contendo um total de 23
-padrões formalmente documentados que acumulam experiências bem sucedidas em
-diversos sistemas. Esses padrões têm a seguinte classificação:
+Um padrão de projeto descreve uma solução pra algum problema recorrente em um
+sistema orientado a objeto \cite{gof}. Essa descrição envolve as motivações para
+a utilização daquele padrão, a estrutura de classes e objetos participantes do
+padrão e contextualização de sua aplicabilidade. Em desenvolvimento de software,
+o catálogo mais difundido de padrões de projetos orientado a objetos é elaborado
+por \citeonline{gof}, contendo um total de 23 padrões formalmente documentados
+que acumulam experiências bem sucedidas em diversos sistemas. Esses padrões têm
+a seguinte classificação:
 
 \begin{description}
 \item[Criacionais] Padrões que definem como criar novas instâncias de classes.
@@ -56,15 +61,23 @@ qualidade.
 \section{Métricas de qualidade OO}
 \label{sec:metrics}
 
+%A qualidade de software . Segundo \citeonline{pressman}, qualidade de software 
+%Qualidade
+
+%Existem aspectos da qualidade de software que podem ser mensurados como
+%Alguns aspectos da qualide de software são subjetivos, como por exemplo,
+% a facilidade de uso ou manutenabilidade. É possível medir os 
+
+%A classe é a unidade fundamental de um sistema oo
+
 Com o advento de novas técnicas de desenvolvimento de software é necessário
 obter informações do impacto dessas inovações nos resultados de um projeto. Com
-esse objetivo \citeonline{cksuite} elaboram um conjunto de métricas para
-mensurar a qualidade de sistemas desenvolvido usando o paradigma orientado a objetos que
-não se limitasse a uma linguagem de programação, fácil de coletar e com forte
-embasamento teórico na ontologia de bunge\footnote{}. This model is used to analyze
-some static and dynamic properties of an information system and to examine the
-question of what constitutes a good decomposition of an information
-system\cite{WandWeber}As métricas são:
+esse objetivo \citeonline{cksuite} criaram um conjunto de métricas para
+medir a qualidade de sistemas desenvolvidos usando o paradigma orientado a
+objetos que não se limitasse a uma linguagem de programação, fácil de coletar e
+com forte embasamento teórico na ontologia de bunge que é um modelo usado pra
+analisar algumas propriedades estáticas e dinâmicas de um sistema de
+informação\cite{WandWeber}. As métricas são:
 
 %Bunge’s ontology has
 %considerable appeal for 00 researchers since it deals with the
@@ -119,12 +132,13 @@ O padrão Model View Controller surgiu como uma solução genérica para que
 usuários de uma sistema de planejamento manipulem dados complexos
 \citeonline{Reenskaug:1979}. Posteriormente, \citeonline{krasnerPope1988}
 implementam um framework MVC para o ambiente gráfico da linguagem de programação
-Smalltalk-80 como uma forma de promover a reusabilidade e plugabilidade.
+Smalltalk-80 como uma forma de promover a reusabilidade e plugabilidade dos
+componetes de um sistema.
 
 Segundo \citeonline{Reenskaug:1979} o principal objetivo do MVC
 ``\ldots é representar o modelo mental do usuário de um espaço de informações
-relevantes e permitir que o usuário inspecione e altere esta
-informação.''(tradução livre).
+relevantes e permitir que o usuário inspecione e altere estas
+informações.''(tradução livre).
 Esse modelo mental é como o usuário percebe o dominio do problema que está inserido no qual executará suas atividades sobre dados de seu interesse. Para que o usuário de um sistema de
 informação possa interagir com a represetação computacional  de seu modelo
 mental três componetes são definidos:
@@ -184,35 +198,54 @@ Figura \ref{mvc_seq} esclarece a interação entre os componetes.
 objetos que compõem o MVC relacionando-os com outros padrões de proejto
 descritos em seu catálogo.
 O desacoplamento entre a View e o Model, somado à propagação das mudanças de
-estado no model para os objetos regitrados como dependentes do model pode ser
-descrito como uma implementação do padrão Observer. O padrão Observer define uma
-estrutura em que um componente que precisa publicar mudanças em seu estado, detém a
-referência para uma lista de objetos a serem notificados. A hierarquia de views
-é um exemplos de Composite pois uma view pode ser constituída por sub-views para
-compor views complexas. No Composite  um conjunto de componentes podem ser
-tratadas de forma encapsulada onde cada implementa as mesmas abstração. O padrão
-Strategy define uma abstração cuja as implementações podem ser trocadas de
-acordo com algum critério, esse conceito pode ser aplicado ao controller que
-encapsula o algoritmo que vai alterar a View e o Model, permitindo sua
-substituíção por uma outra implementação que deixa de responder às interações
-com o usuário.
+estado no model para a View e o Controller podem ser
+descritos como uma implementação do padrão Observer. Segundo \cite{gof} o padrão
+Observer ``\ldots Define uma dependência de 1-N entre objetos para quando um
+objeto mudar de estado, todos os seus dependentes são notificados e atualizados
+automaticamente''(tradução livre). \citeonline{krasnerPope1988} descrevem essa
+estrutura com o conceito de Dependents onde a View e o Controller são
+registrados como dependentes do model. O padrão Observer é composto por uma
+estrutura em que um objeto precisa publicar mudanças em seu estado, detém a
+referência para os objetos a serem notificados. A organização das classes de
+acordo com o que o padrão descreve permite que várias Views possam se atualizar
+dada uma modificação no Model.
+
+A View é composta por vários objetos com a ressponsabilidade em comum de
+representar parte ou todo o estado do Model. Este é um exemplo do padrão de
+projeto Composite. Segundo \citeonline{gof} o padrão Composite ``\ldots
+Integra objetos em uma estrutura de árvore para representar uma hierárquia
+parte-todo, deixando clientes tratar objetos individuais e composições de
+objetos uniformemente''(tradução livre).Uma view pode ser constituída por
+sub-views para compor Views complexas. No Composite  um conjunto de componentes
+visuais podem ser tratadas de forma encapsulada onde cada um implementa a
+mesma abstração. 
+
+Segundo \citeonline{gof} o padrão de projeto Strategy ``\ldots define uma
+família de algoritmos, encapsula cada um, e torna-os substituíveis entre si
+permitindo que variem independentemente dos clientees que o usam''(tradução
+livre). O padrão Strategy define uma abstração cuja as implementações podem ser
+trocadas de acordo com algum critério. Esse conceito pode ser aplicado ao
+Controller que encapsula o algoritmo que vai alterar a View e o Model,
+permitindo sua substituíção, por exemplo, por uma outra implementação que deixa
+de responder às interações com o usuário.
 
 Segundo \citeonline{krasnerPope1988} o Model ``\ldots pode ser simples como
 um valor numério inteiro (como o modelo de um contador) ou um valor literal
-(como o modelo de um editor de texto), ou pode ser um objeto
-complexo''(tradução livre).
-O model pode ser implementado usando o pardrão Facade para simplificar as
-interações com o Model dependendo da complexidade do domínio que ele
-representa.
+(como o modelo de um editor de texto), ou pode ser um objeto complexo''(tradução
+livre). O Model pode ser implementado usando o padrão Facade para simplificar
+as interações entre o Controller e o Model. O padrão Facade uma provê
+uma abstração mais simples e unificada de várias interfaces de um
+subsistema\cite{gof}. Esta forma de interpretar o Model pode ser aplicada
+dependendo da complexidade do domínio que ele representa.
 
 \section{Model View Presenter}
 
 O MVP é um modelo de programação para implementação de interfaces com o usuário
 desenvolvido como um framework para C++ e Java, criado por uma subsidiária da
-IBM chamda Taligent,Inc. Este padrão é baseado no MVC e descreve vários componentes que tem as
-responsabilidades de como gerenciar os dados da aplicação e como o usuário
-interage com esses dados, tendo como objetivo promover o encapsulamento do Model
-, reuso de lógica de negócio e o polimorfismo da View.
+IBM chamada Taligent,Inc. Este padrão é baseado no MVC e descreve vários
+componentes que tem as responsabilidades de como gerenciar os dados da aplicação
+e como o usuário interage com esses dados, tendo como objetivo promover o
+encapsulamento do Model , reuso de lógica de negócio e o polimorfismo da View.
 
 \begin{description}
   \item[Model] Tem as mesmas responsabilidades que o Model definido pelo MVC.
@@ -231,13 +264,14 @@ interage com esses dados, tendo como objetivo promover o encapsulamento do Model
 
 Os conceitos do MVP são descritos em \citeonline{Potel96mvp} de forma genérica
 permintindo interpretações para uma implementação efetiva.
-\citeonline{twisttriad:2000} descreve a implementação de um framework para
+\citeonline{twisttriad:2000} descrevem a implementação de um framework para
 Dolphin Smalltalk\footnote{Implementação da Linguagem de programação Smalltalk - 
 \url{http://www.object-arts.com}} adotando os conceitos do MVP onde salienta que
 a maioria dos sistemas operacionais com ambiente gráfico fornece um conjunto de
-componentes (Widgets) no qual está contido a responsabilidade do controller.A
-maior parte do comportamento do caso com o usuário é implementada no
-Presenter que está diretamente associado à View.
+componentes (Widgets) nos quais estão contidas as responsabilidades do
+Controller, de acordo com a descrição do padrão MVC.A maior parte do
+comportamento com o usuário é implementada no Presenter que está
+diretamente associado à View.
 
 Ainda acerca das responsabilidades do Presenter, \citeonline{fowler:ui} descreve
 o que é chamado de Passive View, onde toda a lógica do comportamento da view é
