@@ -1,20 +1,20 @@
 \chapter{Introdução}
 
-%Contextualização android vai dominar precisamso programar pra ele
-A tendência do mercado de dispositivos móveis é aumentar. Segundo IDC,  é
-experado um crescimento de 32.7\% na produção em 2013 \cite{idc:a}. O sistema
-operacional android é o líder dominando 75\% desse mercado com mais de 162 milhões de
+%TODO - Diego, o parag a seguir eh estranho, pois eh um dado `futuro' de 2013.
+% entendeu? previsao para 2013, sendo q estamos em 2014...
+Segundo o IDC,  é esperado um crescimento de 32.7\% na produção de dispositivos móveis em 2013 \cite{idc:a}. O sistema
+operacional Android é o líder de mercado dominando 75\% desse universo com mais de 162 milhões de
 smartphones produzidos e embarcados com android\cite{idc:b}. Baseado nesses
-dados é possível concluir que existe uma damanda no desenvolvimento de novos 
-aplicativos que agregem valor à esses aparelhos.
-% é preciso que tenha   - Design Principles.
+dados é possível concluir que existe uma demanda latente no desenvolvimento de novos 
+aplicativos que agreguem valor à esses aparelhos.
+
 
 Para produzir aplicativos de qualidade é necessário aplicar boas práticas de
 desenvolvimento de software. Levando-se em consideração que a linguagem de
 programação usada para o desenvolvimento na plataforma android é a Java, é
 natural que se aplique as práticas definidas pelos princípios de projeto
-orientado a objetos. Esses princípios guiam o desenvolvedor em como definir a
-estrutura interna do software afetando diretamente características  de
+orientado a objetos. Tais  princípios guiam o desenvolvedor na definição da
+estrutura interna do software, afetando diretamente características  de
 qualidade como manutenabilidade, performance e outras\cite{tempero-di}.
 
 Os padrões de projeto são aplicados na engenharia de software como forma de
@@ -22,23 +22,22 @@ reproduzir  soluções  para problemas recorrentes melhorando a manutenabilidade
 o reuso de componentes de software\cite{gof}.O uso de padrões de projetos
 é um meio de aplicar esses princípios. 
 
-Boas práticas de engenharia de software promevem o desenvolvimento dos
+Boas práticas de engenharia de software promovem o desenvolvimento dos
 artefatos que constituem o sistema de forma coesa. Os conjuntos desses artefatos
 podem ser classificados de acordo com suas responsabilidades, surgindo
 uma divisão clara em camadas. Um sistema pode ter diversas camadas, responsáveis
-por acesso à um banco de dados, comunicação com serviços externos, encapsular
-regras de negócio. Uma dessas camadas que constituem um aplicativo android é a
+por acesso a um banco de dados, comunicação com serviços externos, encapsular
+regras de negócio. Uma dessas camadas que constitui um aplicativo android é a
 camada de apresentação ou interface com o usuário.
  
 Segundo \citeonline{pressman}, ``A interface com o usuário pode ser considerada
 o elemento mais importante de um sistema ou produto baseado em computador``.
-Tendo em vista isso, será tratado nesse trabalho  os padrões para
+Tendo em vista isso, será tratado nesse trabalho  o uso de padrões de projeto para
 desenvolvimento da camada de apresentação de em aplicativos android.
 
 \section{Motivação}
 
-A motivação para a execução desta pesquisa sugiu da participação do autor em
-projetos para desenvolvimento de aplicativos android em uma instituição de
+O autor deste trabalho atua em projetos de desenvolvimento de aplicativos android em uma instituição de
 pesquisa e desenvolvimento localizada em Manaus. O comprometimento com a
 qualidade promoveu o uso de ferramentas de código aberto para monitoração da
 qualidade dos projetos, além do processo de testes adotado pela empresa. Com uma
@@ -62,10 +61,10 @@ do produto final.
 Este trabalho fará um estudo sobre a arquitetura de aplicativos android com o
 propósito de melhorar a qualidade desses softwares, causando uma redução nos
 riscos relacionados as mudanças que acontecem durante o ciclo de desenvolvimento
-e promova a reutilização de componentes e que permita o incremento de funcionalidades com
+e promovendo a reutilização de componentes,  além de permitir o incremento de funcionalidades com
 baixo impacto. Este estudo fornecerá insumos para que os desenvolvedores possam
 ter uma visão geral da aplicabilidade dos padrões de projetos e analisar quais
-técnicas contribuem para o seus projetos. Este trabalho tem como meta:
+técnicas contribuem para seus projetos. Os seguintes objetivos específicos serão alcançados:
 
 \begin{itemize}
 \item Estudar os padrões de projeto que podem ser usados para a implementação da
@@ -74,7 +73,7 @@ camada de apresentação de um aplicativo android.
 responsabilidades de acordo com os padrões estudados, levando  em consideração
 características que podem dificultar a aplicação dos padrões. 
 \item Identificar os impactos nas características de qualidade do aplicativo de acordo
-com o paradigma da Orientação a objetos.
+com o paradigma da Orientação a Objetos, através da análise de métricas de qualidade de código.
 \item Propor um referência de implementação para a  camada de apresentação de um
 aplicativo android utilizando padrões de projetos.
 \end{itemize}
@@ -82,7 +81,7 @@ aplicativo android utilizando padrões de projetos.
 \section{Trabalhos Relacionados}
 
 Na dissertação de \citeonline{turk} é feita uma análise dos impactos na
-qualidade ao aplicar cinco padrões de projetos em um software de comunicação
+qualidade do código  ao aplicar cinco padrões de projetos em um software de comunicação
 TCP/IP. Os resultados do trabalho citado mostram que a qualidade do software
 aumenta ao aplicar padrões de projetos sendo que o principal atributo de
 qualidade aferido é a manutenabilidade. O método utilizado para a execução da
@@ -97,7 +96,9 @@ característica subjetiva da qualidade de software é a manutenabilidade.
 \citeonline{Dubey:2011} sumarizam uma série de estudos que mostram a relação
 entre sistemas orientados a objetos e sua manutenabilidades, e como as métricas
 de \citeonline{cksuite} são eficazes para descrever de forma quantitativa essa
-relação.
+relação. 
+%TODO 2DO - Sugiro que aqui nesse parag vc comente um pouco sobre os trabalhos
+% q vc citou no final, a fim de detalhar melhor a fundamentacao a partir de outros trabalhos e tb para ajudar na `encorpada' do trab
 
 \section{Contribuições}
 
@@ -109,7 +110,7 @@ framework android.
 
 A diversidade de projetos de software torna difícil inferir se as métricas
 podem ser consideradas um paramêtro para determinar a qualidade. O presente
-trabalho  se propõe a avaliar a aderência do padrão MVP à projetos android
+trabalho  se propõe a avaliar a aderência do padrão MVP a projetos android
 através de indicadores de qualidade de código orientado a objetos.
 
 \section{Metodologia}
@@ -147,7 +148,7 @@ Os critérios para a escolha do objeto de estudo são:
 \begin{enumerate}
   \item Tamanho/Complexidade - Um projeto muito complexo iria inviabilizar a
   pesquisa devido ao esforço para fazer a refatoração. Métricas coletadas
-  apartir de projetos simples e triviais não forneceriam dados suficientes para
+  a partir de projetos simples e triviais não forneceriam dados suficientes para
   uma análise satisfatória.
   \item Código Aberto - Além de permitir o acesso ao código fonte sem
   limitações para a pesquisa, tem a contribuição de vários desenvolvedores com
@@ -188,9 +189,9 @@ nas métricas.
 \section{Organização do Trabalho}
 
 O presente trabalho está estruturado em 4 capítulos dos quais este é o
-Capítulo 1 que apresentou a proposta do trabalho, contexto do problema, a
-motivação para estes estudo, os objetivos a serem alcançados e a estrutura do
-trabalho. Também é abordado a metodologia aplicada neste trabalho mostrando o
+Capítulo 1 que apresenta a proposta do trabalho, contexto do problema, a
+motivação para este estudo, os objetivos a serem alcançados e a estrutura do
+trabalho. Também é abordada a metodologia aplicada neste trabalho mostrando o
 objeto de estudo a ser analisado e os passos a serem executados, enfatizando o
 método experimental.
 O Capítulo 2 discorre sobre a fundamentação teórica sobre padrões de projetos,
@@ -198,5 +199,5 @@ métricas de qualidade orientada a objetos e as tecnologias com as quais o objet
 de estudo foi desenvolvido.
 O Capítulo 3 contém uma análise do objeto de estudo e define como serão feitas
 as implementações e mostra os resultados da execução da pesquisa.
-O Capítulo 4 faz a análise final, conclusões do trabalho, e sugestões para
+O Capítulo 4 apresenta a análise final, conclusões do trabalho e sugestões para
 trabalhos futuros.
