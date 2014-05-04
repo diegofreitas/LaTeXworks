@@ -1,14 +1,3 @@
-%TODO 3 - seção 3.4.1 - Vc cita que o WMC recomenda q seus valores sejam baixos.
-% Porém, na coleta os valores aumentaram... explicar claramente o q ocorreu. Como alguem que nao ta consumindo
-% codigos de aplicacoes diariamente, senti que nao eh trivial entender as causas
-% q justificam tal comportamento. Isso serve para todos os indicadores. Vc
-% precisa determinar:  
-%1o) qual o cenario ideal para metrica;
-%2o) qual o comportamento atual; 
-%3o) justificar o q causou tal comportamento.
-
-%TODO falta LCOM.
-
 \chapter{Execução da Pesquisa}
 
 
@@ -320,18 +309,21 @@ um aumento da complexidade do código conforme é apresentado na tabela \ref{tab
 \end{figure}
 
 A justificativa para o aumento da métrica WMC também se aplica neste caso.
-Apoós cada iteração de refatoração, as Views delegam responsabilidades para o
-Presenter por meio de chamada de métodos, além disso, o Presenter interage com a
-View da mesma forma para atualiza-la. A quantidade de chamada de métodos
-aumentou e isso se refletiu na métrica RFC.
+Apoós cada iteração de refatoração, as Views passaram a delegar
+responsabilidades para o Presenter por meio de chamada de métodos, além disso, o Presenter interage com a
+View da mesma forma para atualiza-la. Portanto, a quantidade de chamada de
+métodos aumentou e isso se refletiu na métrica RFC.
 
 \subsection{LCOM}
 
-Esta métrica ajuda a identificar má qualidade na estrutura do código quando os
-valores são altos apontando aumento da complexidade e pouco encapsulamento.
-A tabela \ref{tab:lcom} e a figura \ref{fig:lcom} mostram uma queda
-siginificativa na métrica LCOM. Isto indica que a coesão do código melhorou após
-cada iteração.
+Segundo \citeonline{cksuite} ``Um valor alto de LCOM indica uma disparidade na
+funcionalidade provida pela classe.". Analisando a relação entre os métodos da
+classe e seus atributos é possível dizer se a classe tem muitas
+responsabilidades e é necessário dividi-la em duas ou mais classes. Esta métrica
+ajuda a identificar má qualidade na estrutura do código quando os valores são
+altos, apontando aumento da complexidade e pouco encapsulamento. A tabela
+\ref{tab:lcom} e a figura \ref{fig:lcom} mostram uma queda siginificativa na
+métrica LCOM. Isto indica que a coesão do código melhorou após cada iteração.
 
 \begin{table}[h]
 	\centering
