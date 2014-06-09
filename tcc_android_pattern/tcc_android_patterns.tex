@@ -78,6 +78,8 @@
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 
 \usepackage[brazil]{babel}
+\usepackage[subentrycounter,seeautonumberlist,nonumberlist=true]{glossaries}
+
 
 
 
@@ -164,7 +166,13 @@
 % ---
 \makeindex
 % ---
+\makeglossaries
 
+
+\newglossaryentry{latex}{
+                name={LaTeX},
+                description={ferramenta de computador para autoria de
+                documentos criada por D. E. Knuth} }
 % ----
 % Início do documento
 % ----
@@ -184,6 +192,7 @@
 \imprimircapa
 
 \imprimirfolhaderosto*
+
 % ---
 % RESUMOS
 % ---
@@ -195,12 +204,14 @@ tablets promovendo uma abrangente disseminação do sistema operacional.
 Formou-se um grande mercado a ser explorado com fornecimento de aplicativos para
 as mais variadas finalidades. Para atender essa demanda é necessário
 desenvolver aplicativos de qualidade e com altos índices de produtividade. Porém, por
-se tratar de pequenos  aplicativos há pouca preocupação com a arquitetura da solução. 
-Os padrões difundidos na comunidade são focados na utilização de componentes e
-desenvolvimento da interação homem-máquina. Este trabalho tem como objetivo
-apresentar a aplicação do padrão de projeto MVP em projetos de desenvolvimento de aplicativos
-android. Os efeitos que esse padrão tem sobre o objeto de estudo são
-avaliados sobre uma perspectiva orientada a objetos. O método experimental é
+se tratar de aplicativos destinados a atender necessidades específicas e com um
+ciclo de desenvolvimento curto, há pouca preocupação com a arquitetura da
+solução resultando em produtos com baixa qualidade. Dentro da engenharia de
+software existem os padrões de projetos que ajudam no desenvolvimento do sitema.
+Este trabalho tem como objetivo apresentar a aplicação do padrão de projeto
+Model View Presenter no desenvolvimento de aplicativos android para aumentar a
+qualidade do aplicativo. Os efeitos que esse padrão tem sobre o objeto de estudo
+são avaliados sobre uma perspectiva orientada a objetos. O método experimental é
 aplicado de forma iterativa usando o processo de refatoração incremental e
 coletando métricas de qualidade de código para fazer uma análise quantitativa.
 Os resultados mostram que a aplicação do padrão aumentou a coesão do código,
@@ -210,7 +221,7 @@ componentes usados para dividir as responsabilidades.
 \vspace{\onelineskip}
     
 \noindent
-\textbf{Palavras-chaves}: Android. MVP. MVC. Padrões de projeto.
+\textbf{Palavras-chaves}: Android. Model View Presenter. Padrões de projeto.
 \end{resumo}
 
 \begin{resumo}[Abstract]
@@ -236,9 +247,37 @@ components used to divide responsibilities .
  \vspace{\onelineskip}
     
  \noindent
- \textbf{keywords}: Android. MVP. MVC. Padrões de projeto.
+ \textbf{keywords}: Android. MVP. MVC. Design Patterns.
  \end{otherlanguage*}
 \end{resumo}
+
+
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\begin{siglas}
+  \item[MVP] Model View Presenter
+  \item[456] Isto é um número
+  \item[123] Isto é outro número
+  \item[lauro cesar] este é o meu nome
+\end{siglas}
+
 
 % ---
 % inserir o sumario

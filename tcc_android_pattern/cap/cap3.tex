@@ -1,7 +1,7 @@
 \chapter{Execução da Pesquisa}
 
 
-\section{Ferramentas usadas}
+\section{Ferramentas Aplicadas}
 
 O código será versionado no
 Github\footnote{\url{https://github.com/diegofreitas/platform_packages_apps_contacts}}
@@ -14,15 +14,29 @@ Para realizar a coleta das métricas é necessário que a ferramenta analise có
 java e contemple todas as métricas descritas na seção \ref{sec:metrics}. O
 programa Chidamber and Kemerer Java
 Metrics\footnote{\url{https://github.com/dspinellis/ckjm}} atende esses
-critérios, além de ser um projeto de código-aberto.
+critérios, além de ser um projeto de código aberto.
 
 \section{Análise do objeto de estudo}
 
 O aplicativo a ser refatorado tem funcionalidades para gerenciamento de
-contatos. Dentro deste conjunto de casos de uso será refatorado o pacote
-referente ao gerenciamento de grupos de contatos presente no pacote
-\textbf{com.android.contacts.group} que contém componentes de tela para
-interação com o usuário, a saber:
+contatos e é composto 153 classes organizadas em 13 pacotes. O padrão
+de projeto MVP será aplicado em uma parte do aplicativo. Será refatorado o
+pacote referente ao gerenciamento de grupos de contatos presente no pacote
+\textbf{com.android.contacts.group}. A figura \ref{fig:pacotes_contacts}
+mostra os pacotes que compõem o aplicativo.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.53,angle=90]{img/pacotes_contacts}
+	\caption{Diagrama de pacotes do aplicativo de contatos} 
+	\label{fig:pacotes_contacts}
+\end{figure}
+
+
+A cada iteração será selecionada uma tela do aplicativo para a aplicação do
+padrão MVP. Cada tela é implementada por uma classe e suas interfaces
+são ilustradas nas figuras \ref{fig:contacts_groups},
+\ref{fig:contacts_groups_view} e \ref{fig:groups_edit}. As classes a serem refatoradas são:
 \begin{description}
 \item[GroupDetailFragment.java] Exibe os dados de um grupo de contatos.
 \item[GroupBrowseListFragment.java] Fonece uma lista de grupos.
@@ -30,19 +44,36 @@ interação com o usuário, a saber:
 dados de um grupo.
 \end{description}
 
-Estas interfaces são usadas dentro de activities que controlam uma parte do fluxo
-de interação e se comportam de forma diferente conforme o tipo de dispositivo
-móvel utilizado. Devido a essa complexidade, não será feita nenhuma alteração na
-interface pública dos componentes refatorados, evitando efeitos colaterais em
-outras partes do aplicativo.
+\begin{figure}[!h]
+\begin{minipage}{.5\textwidth}
+	\centering
+	\includegraphics[scale=0.25]{img/contacts_groups.png}
+	\caption{Tela de lista de grupos} 
+	\label{fig:contacts_groups}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+	\centering
+	\includegraphics[scale=0.25]{img/contacts_group_view.png}
+	\caption{Tela de visualização de um grupo} 
+	\label{fig:contacts_groups_view}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+\centering
+	\includegraphics[scale=0.25]{img/contacts_edit.png}
+	\caption{Tela de edição e criação de grupos} 
+	\label{fig:groups_edit}
+\end{minipage}
+\end{figure}
 
-Os componentes elencados contêm código não somente relacionado com a lógica de
-apresentação como também interagem diretamente com classes destinadas ao acesso
+Estas interfaces com o usuário são usadas dentro de Activities que controlam uma
+parte do fluxo de interação e se comportam de forma diferente conforme o tipo de dispositivo
+móvel utilizado (tablet ou smartphone). Devido a essa complexidade, não será
+feita nenhuma alteração na interface pública dos componentes refatorados, evitando efeitos colaterais em
+outras partes do aplicativo. Os componentes elencados contêm código não somente
+relacionado com a lógica de apresentação como também interagem diretamente com classes destinadas ao acesso
 de dados e serviços existentes nas dependências do projeto, por exemplo,
-gerenciamento de contas do usuário. 
-
-Cada iteração consistirá na refatoração de cada um dos componentes
-descritos. O marco de referência de dados das métricas presentes na tabela \ref{tab:dados_baseline} será feita a partir da
+gerenciamento de contas do usuário.  Cada iteração consistirá na refatoração de
+cada um dos componentes descritos. O marco de referência de dados das métricas presentes na tabela \ref{tab:dados_baseline} será feita a partir da
 versão \verb|4.4.2_r1| do aplicativo.
 
 \begin{table}[h]
@@ -61,6 +92,7 @@ versão \verb|4.4.2_r1| do aplicativo.
     \end{tabular}
     \label{tab:dados_baseline}
 \end{table}
+
 
 \section{Arquitetura Proposta}
 
