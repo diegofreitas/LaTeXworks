@@ -13,8 +13,23 @@ o processo de compilação e empacotamento não visa ser usado em uma IDE.
 Para realizar a coleta das métricas é necessário que a ferramenta analise código
 java e contemple todas as métricas descritas na seção \ref{sec:metrics}. O
 programa Chidamber and Kemerer Java
-Metrics\footnote{\url{https://github.com/dspinellis/ckjm}} atende esses
-critérios, além de ser um projeto de código aberto.
+Metrics(CKJM)\footnote{\url{https://github.com/dspinellis/ckjm}} atende esses
+critérios, além de ser um projeto de código aberto. O CKJM é uma aplicação java
+sem interface gráfica, executado por linha de comando. Ele analisa o código java
+compilado, conhecido como byte codes contido em arquivos com extensão .class. Um
+exemplo de uso do CKJM é mostrado a seguir:
+
+java -jar ckjm-1.9.jar ImplementacaoDeClasse.class
+
+Os resultados são escritos na saída padrão do sistema, neste caso, no terminal
+de execução, mostrando uma lista com os nomes completos das classes
+analisadas seguidas de seus respectivos valores das métricas na seguinte
+ordem: WMC, DIT, NOC, CBO, RFC, LCOM, Ce, and NPM sendo que as métricas Ce e
+NPM são desconsideradas para esta pesquisa. a figura x ilustra o resultado de
+uma coleta.
+
+ImplementacaoDeClasse.class 4 0 0 16 35 0 0 3
+
 
 \section{Análise do objeto de estudo}
 
@@ -36,13 +51,7 @@ mostra os pacotes que compõem o aplicativo.
 A cada iteração será selecionada uma tela do aplicativo para a aplicação do
 padrão MVP. Cada tela é implementada por uma classe e suas interfaces
 são ilustradas nas figuras \ref{fig:contacts_groups},
-\ref{fig:contacts_groups_view} e \ref{fig:groups_edit}. As classes a serem refatoradas são:
-\begin{description}
-\item[GroupDetailFragment.java] Exibe os dados de um grupo de contatos.
-\item[GroupBrowseListFragment.java] Fonece uma lista de grupos.
-\item[GroupEditorFragment.java] Disponibiliza um formulário para edição dos
-dados de um grupo.
-\end{description}
+\ref{fig:contacts_groups_view} e \ref{fig:groups_edit}. 
 
 \begin{figure}[!h]
 \begin{minipage}{.5\textwidth}
@@ -63,6 +72,24 @@ dados de um grupo.
 	\caption{Tela de edição e criação de grupos} 
 	\label{fig:groups_edit}
 \end{minipage}
+\end{figure}
+
+As classes a serem refatoradas são:
+\begin{description}
+\item[GroupDetailFragment.java] Exibe os dados de um grupo de contatos.
+\item[GroupBrowseListFragment.java] Fonece uma lista de grupos.
+\item[GroupEditorFragment.java] Disponibiliza um formulário para edição dos
+dados de um grupo.
+\end{description}
+
+Essas classes estão presentes no pacote \textbf{com.android.contacts.group} como
+mostra a figura \ref{fig:classes_group_baseline}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.53,angle=90]{img/classes_group_baseline}
+	\caption{Diagrama de pacotes do aplicativo de contatos} 
+	\label{fig:classes_group_baseline}
 \end{figure}
 
 Estas interfaces com o usuário são usadas dentro de Activities que controlam uma
@@ -120,7 +147,7 @@ como uma classe java simples.
 
 \section{Resultados dos Experimentos}
 
-Esta seção tem como objetvo mostar os resultados obtidos com o processo de
+Esta seção tem como objetivo mostrar os resultados obtidos com o processo de
 refatoração aplicando o parão MVP. Cada métrica é apresentada com seus dados
 para cada iteração mostrando os efeitos desses valores na qualidade.
 
@@ -134,8 +161,8 @@ portanto, é recomendado que esta métrica tenha valores baixos.
 Entretanto, uma classe terá a quantidade de métodos necessária para exercer seu
 papel no sistema. É inviável desenvolver um sistema cujas todas as classes
 tenham um único método com a implementação de todas as funcões de uma
-classe. Portanto não existe um valor ideal para a métrica WMC. Essa métrica deve
-ser analisada levando em consideração o contexto da classe de interesse além da
+classe. Portanto, não existe um valor ideal para a métrica WMC. Essa métrica
+deve ser analisada levando em consideração o contexto da classe de interesse além da
 complexidade expressa pela quantidade de métodos. 
 
 A possibilidade de reuso de uma classe reduz, pois a grande quantidade de
@@ -249,7 +276,7 @@ seus valores devem ser analisados caso a caso.
 
 Durante o processo de refatoração não foi aplicada herança em nenhuma das
 classes afetadas, portanto, essa métrica permaneceu intacta durante as iterações
-como pode ser observado na tabela \ref{tab:noc} %e figura~\ref{fig:noc}
+como pode ser observado na tabela \ref{tab:noc}. %e figura~\ref{fig:noc}
 
 \begin{table}[h]
 	\centering
@@ -315,8 +342,8 @@ acréscimo de duas dependências entre a View e o Presenter. A variação da mé
 Altos valores para a métrica RFC indica que uma quantidade grande de métodos são
 chamados a partir de uma classe tornando-a mais complexa de testar e fazer
 manutenção. Logo, esta métrica deve deve diminuir para expressar maior
-qualidade no código. A métrica RFC tende a aumentar a cada iteração o que sugere
-um aumento da complexidade do código conforme é apresentado na tabela \ref{tab:rfc} e Figura
+qualidade no código. A métrica RFC tende a aumentar a cada iteração, o que
+sugere um aumento da complexidade do código conforme é apresentado na tabela \ref{tab:rfc} e Figura
 \ref{fig:rfc}.
 
 \begin{table}[h]
@@ -341,9 +368,9 @@ um aumento da complexidade do código conforme é apresentado na tabela \ref{tab
 \end{figure}
 
 A justificativa para o aumento da métrica WMC também se aplica neste caso.
-Apoós cada iteração de refatoração, as Views passaram a delegar
+Após cada iteração de refatoração, as Views passaram a delegar
 responsabilidades para o Presenter por meio de chamada de métodos, além disso, o Presenter interage com a
-View da mesma forma para atualiza-la. Portanto, a quantidade de chamada de
+View da mesma forma para atualizá-la. Portanto, a quantidade de chamada de
 métodos aumentou e isso se refletiu na métrica RFC.
 
 \subsection{LCOM}

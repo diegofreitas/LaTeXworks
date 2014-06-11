@@ -3,7 +3,7 @@
 \section{Discussão dos Resultados} 
 
 As classes destinadas à implementação da interface no framework android fornecem
-acceso a recursos que servem para implementação de responsabilidades não
+acesso a recursos que servem para implementação de responsabilidades não
 relacionadas com a interface. Essa característica do framework android leva à
 implementação da camada de View com diversas responsabilidades que não são
 inerentes à interação com o usuário. Isso dificultou a refatoração, pois as
@@ -29,7 +29,7 @@ disposição das classes após a refatoração.
 
 Ao usar o padrão MVP, a granularidade dos métodos aumentou pois cada um dos
 componentes implementaram uma parte do caso de uso aumentando o números de
-métodos que se reflete na métrica WMC, isso afeta também a métrica RFC pois
+métodos que se reflete na métrica WMC. Isso afeta também a métrica RFC pois
 esses métodos estão relacionados entre si, aumentando a troca de mensagens entre
 a View e o Presenter. Um ponto positivo sobre isso é o fato de que métodos 
 complexos com muitas linhas de código foram desmembrados em métodos menores e
@@ -41,15 +41,15 @@ Presenter. Analisando de forma geral, essas dependências permanecem no pacote
 além de ser criado mais um acoplamento entre a View e a nova classe Presenter.
 
 A métrica WMC está relacionada com as métricas DIT e NOC. Como houve pouca
-variação no DIT e nenhuma variação no NOC o aumento da WMC não tem impacto
-relevante. Entretanto a métrica RFC aumentou indicando maior complexidade. Os
-resultaddos mostram que isso se deve à melhora da coesão do código demonstrado pela
-diminiução da métrica LCOM. Comforme um software é desenvolvido novas classes e
+variação no DIT e nenhuma variação no NOC, o aumento da WMC não tem impacto
+relevante. Entretanto, a métrica RFC aumentou indicando maior complexidade. Os
+resultados mostram que isso se deve à melhora da coesão do código demonstrado pela
+diminiução da métrica LCOM. Conforme um software é desenvolvido, novas classes e
 troca de menssagens são implementadas afetando as métricas WMC e RFC. 
 
-Não existe valores ideais para as métricas e seu maior valor está em identificar
-anomalias que devem ser analisadas caso a caso. Como não houve uma refatoração
-mais extensiva do projeto não é possível determinar valores de referência para
+Não existem valores ideais para as métricas e seu maior valor está em
+identificar anomalias que devem ser analisadas caso a caso. Como não houve uma refatoração
+mais extensiva do projeto, não é possível determinar valores de referência para
 as métricas. 
 
 Não é possível relacionar diretamente a métrica CBO com base na
@@ -70,14 +70,14 @@ ser observado na figura \ref{fig:allmetrics}.
 	\label{fig:allmetrics}
 \end{figure}
 
-É possível obeservar nos resutados a relação entre LCOM e as métricas 
+É possível observar nos resutados a relação entre LCOM e as métricas 
 WMC,RFC que aumentaram conforme o LCOM diminuia. O aumento da complexidade
 indicado pelas métricas WMC e RFC é pequeno em comparação à diminuição de
-complexidade indicada pela métrica LCOM, pode se chegar a essa conclusão não só
+complexidade indicada pela métrica LCOM. Pode-se chegar a essa conclusão não só
 analisando os resultados, como também ao analisar o código em que as classes
 estão menores, mais coesas com responsabilidades bem definidas.Portanto, a
 arquitetura proposta melhorou a qualidade do objeto de estudo porque promoveu
-maior coesão e diminuindo a complexidade.
+maior coesão e diminuiu a complexidade.
 
  
 \section{Trabalhos Futuros}
