@@ -19,7 +19,13 @@ sem interface gráfica, executado por linha de comando. Ele analisa o código ja
 compilado, conhecido como byte codes contido em arquivos com extensão .class. Um
 exemplo de uso do CKJM é mostrado a seguir:
 
-java -jar ckjm-1.9.jar ImplementacaoDeClasse.class
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.53]{img/ckjm_run}
+	\caption{Exemplo de execução do CKJM} 
+	\label{fig:ckjm_run}
+\end{figure}
+
 
 Os resultados são escritos na saída padrão do sistema, neste caso, no terminal
 de execução, mostrando uma lista com os nomes completos das classes
@@ -28,7 +34,13 @@ ordem: WMC, DIT, NOC, CBO, RFC, LCOM, Ce, and NPM sendo que as métricas Ce e
 NPM são desconsideradas para esta pesquisa. a figura x ilustra o resultado de
 uma coleta.
 
-ImplementacaoDeClasse.class 4 0 0 16 35 0 0 3
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.45]{img/ckjm_result}
+	\caption{Exemplo de resultado da análise do CKJM} 
+	\label{fig:ckjm_result}
+\end{figure}
 
 
 \section{Análise do objeto de estudo}
@@ -52,6 +64,7 @@ A cada iteração será selecionada uma tela do aplicativo para a aplicação do
 padrão MVP. Cada tela é implementada por uma classe e suas interfaces
 são ilustradas nas figuras \ref{fig:contacts_groups},
 \ref{fig:contacts_groups_view} e \ref{fig:groups_edit}. 
+
 
 \begin{figure}[!h]
 \begin{minipage}{.5\textwidth}
@@ -87,7 +100,7 @@ mostra a figura \ref{fig:classes_group_baseline}.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.53,angle=90]{img/classes_group_baseline}
+	\includegraphics[scale=0.53]{img/classes_group_baseline}
 	\caption{Diagrama de pacotes do aplicativo de contatos} 
 	\label{fig:classes_group_baseline}
 \end{figure}
@@ -103,7 +116,7 @@ gerenciamento de contas do usuário.  Cada iteração consistirá na refatoraç�
 cada um dos componentes descritos. O marco de referência de dados das métricas presentes na tabela \ref{tab:dados_baseline} será feita a partir da
 versão \verb|4.4.2_r1| do aplicativo.
 
-\begin{table}[h]
+\begin{table}[!h]
 	\centering
 	    \caption{Métricas CK da versão de referência}
 	
@@ -184,7 +197,7 @@ A tablela \ref{tab:wmc} e a figura \ref{fig:wmc} mostram os valores dessa
 métrica no projeto.
 
 
-\begin{table}[h]
+\begin{table}[!h]
 	\centering
 	\caption{Dados métrica WMC}
     \begin{tabular}{ | l | l | }
@@ -199,7 +212,7 @@ métrica no projeto.
     \label{tab:wmc}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[!h]
 	\centering
 	\includegraphics{img/wmc.png}
 	\caption{Gráfico da métrica WMC/Fonte: Próprio autor} 
@@ -243,7 +256,7 @@ da classe, portanto essa alteração na métrica DIT não deve ser considerada. 
 aumento no valor da métrica é mostrado na tabela~\ref{tab:dit} e
 figura~\ref{fig:dit}
 
-\begin{table}[h]
+\begin{table}[!h]
 	\centering
 	    \caption{Dados métrica DIT}
     \begin{tabular}{ | l | l | }
@@ -257,7 +270,7 @@ figura~\ref{fig:dit}
     \label{tab:dit}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[!h]
 	\centering
 	\includegraphics{img/dit.png}
 	\caption{Valores de DIT/Fonte: Próprio autor}
@@ -278,7 +291,7 @@ Durante o processo de refatoração não foi aplicada herança em nenhuma das
 classes afetadas, portanto, essa métrica permaneceu intacta durante as iterações
 como pode ser observado na tabela \ref{tab:noc}. %e figura~\ref{fig:noc}
 
-\begin{table}[h]
+\begin{table}[!h]
 	\centering
 	    \caption{Dados métrica NOC}
     \begin{tabular}{ | l | l | }
@@ -314,7 +327,7 @@ para essas dependências aumentando o valor da métrica. Além disso, existe o
 acréscimo de duas dependências entre a View e o Presenter. A variação da métrica
 é exposta na tabela \ref{tab:cbo} e no figura~\ref{fig:cbo}
 
-\begin{table}[h]
+\begin{table}[!h]
 	\centering
 	    \caption{Dados métrica CBO}
 	
@@ -329,7 +342,7 @@ acréscimo de duas dependências entre a View e o Presenter. A variação da mé
     \label{tab:cbo}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[!h]
 	\centering
 	\includegraphics{img/cbo.png}
 	\caption{Valores de CBO/Fonte: Próprio autor}
@@ -346,7 +359,7 @@ qualidade no código. A métrica RFC tende a aumentar a cada iteração, o que
 sugere um aumento da complexidade do código conforme é apresentado na tabela \ref{tab:rfc} e Figura
 \ref{fig:rfc}.
 
-\begin{table}[h]
+\begin{table}[!h]
 	\centering
 	    \caption{Dados métrica RFC}
     \begin{tabular}{ | l | l | }
@@ -360,7 +373,7 @@ sugere um aumento da complexidade do código conforme é apresentado na tabela \
     \label{tab:rfc}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[!h]
 	\centering
 	\includegraphics{img/rfc.png}
 	\caption{Valores de RFC/Fonte: Próprio autor}
@@ -384,7 +397,7 @@ altos, apontando aumento da complexidade e pouco encapsulamento. A tabela
 \ref{tab:lcom} e a figura \ref{fig:lcom} mostram uma queda siginificativa na
 métrica LCOM. Isto indica que a coesão do código melhorou após cada iteração.
 
-\begin{table}[h]
+\begin{table}[!h]
 	\centering
 	    \caption{Dados métrica LCOM}
     \begin{tabular}{ | l | l | }
@@ -398,7 +411,7 @@ métrica LCOM. Isto indica que a coesão do código melhorou após cada iteraç�
     \label{tab:lcom}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[!h]
 	\centering
 	\includegraphics{img/lcom.png}
 	\caption{Valores de lcom/Fonte: Próprio autor}
