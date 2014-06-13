@@ -184,13 +184,13 @@ levando em consideração as aplicações desenvolvidas em Smalltalk usando
 características espefíficas dessa linguagem de programação que da suporte à
 implementação dos três componentes como por exemplo o gerenciamento dos objetos
 que são dependentes do model definido na classe Objet que o model deve extender.
-A Figura \ref{mvc_seq} esclarece a interação entre os componetes.
+A Figura \ref{mvc} esclarece a interação entre os componetes.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{img/mvc_seq.png}
+	\includegraphics[scale=0.5]{img/mvc.png}
 	\caption{Diagrama de Sequência do MVC/Fonte: Próprio Autor}
-	\label{mvc_seq}
+	\label{mvc}
 \end{figure}
 
 \citeonline{gof} cita \citeonline{krasnerPope1988} fazendo uma análise dos
@@ -277,20 +277,36 @@ Ainda acerca das responsabilidades do Presenter, \citeonline{fowler:ui} descreve
 o que é chamado de Passive View, onde toda a lógica do comportamento da view é
 implementado no presenter deixando a view enxuta com o intuito de isolar ao
 máximo a API gráfica do resto da aplicação. Dessa forma o model não se comunica
-com a view por meio do observer pattern, sendo que a view séra atualizada pelo
-presenter como pode ser observado na Figura~\ref{fig:mvp_passive_view}.
+com a view por meio do padrão Observer, sendo que a view séra atualizada
+pelo presenter como pode ser observado na Figura~\ref{fig:mvp_passive_view}.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{img/mvp_passive_view.png}
+	\includegraphics[scale=0.5]{img/passive_view.png}
 	\caption{Passive View/Fonte: Próprio autor}
 	\label{fig:mvp_passive_view}
 \end{figure}
+
+Outra variação do MVP descrita por \citeonline{fowler:sp} é o Supevising
+Controller. Nesta abordagem o Model utiliza algum mecanismo de notificação, por
+exemplo o padrão Observer, para atualizar a View. Este comportamente é parecido
+com o do padrão MVC. Como pode pode ser observado na
+figura~\ref{fig:sup_controller}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{img/passive_view.png}
+	\caption{Passive View/Fonte: Próprio autor}
+	\label{fig:mvp_passive_view}
+\end{figure}
+
 
 MVP se adequa melhor as API's gráficas existentes e define de forma mais clara
 os componentes necessários para desenvolver uma aplicação, sendo o ponto de maior
 discussão reside em quais os limites das responsabilidades no que tange a
 mediação do Model e a View por parte do Presenter.
+
+
 
 \section{Framework Android}
  
