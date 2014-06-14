@@ -86,19 +86,30 @@ informação\cite{WandWeber}. As métricas são:
 
 
 \begin{description}
-\item[Acoplamento entre objetos (CBO)] Número de classes que ela depende por
-meio da relação de composição. Uma classe está acoplada a outra quando o método
+\item[Acoplamento entre objetos (CBO)] Número de classes que a classe analisada
+depende. Uma classe está acoplada a outra quando o método
 de um classe invoca o método de uma variável de instância de outra classe que
 gera uma dependência entre essas classes. Quanto maior essa dependência, mais
 difícil é reutilizar esses componetes em outras partes do sistema, além do
 aumento do risco de efeitos colaterais ocorrerem ao modificar uma classe
 altamente acoplada.
 \item[Ausência de coesão dos métodos(LCOM)] Usado para avaliar a coesão de uma
-classe através da similaridade entre seus métodos. Um método tem similaridade
-com outro quando a intercessão entre os conjuntos de atributos usados por ambos
+classe através dos relacionamentos entre seus atributos e métodos.
+Uma classe é dita como coesa 
+Um método tem similaridade com outro quando a intercessão entre os conjuntos de atributos usados por ambos
 os métodos tem cardinalidade maior que zero. LCOM mostra esses conjuntos nulos
 indicando os métodos que usam esses atributos deveriam ser implementados em
 outra classe. Essa similaridade expressa a coesão da classe.
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{img/pic_lcom.png}
+	\caption{Exemplo de avaliação da métrica LCOM/Fonte: Próprio Autor}
+	\label{fig:pic_lcom}
+\end{figure}
+
+
 \item[Profundidade na árvore de herança (DIT)] Nível de uma classe na
 hierárquia de herança. Reflete o número máximo de elementos pai dentro da árvore
 de classes até a raiz, o que aumenta a complexidade conforme a quantidade de
@@ -106,10 +117,26 @@ elementos envolvidos se eleva, diminuindo a previsibilidade do comportamento da
 classe com vários métodos e atributos sendo herdados, principalmente com o uso
 de sobrecarga de métodos.
 \item[Métodos por Classe (WMC)] Serve para expressar o nível de complexidade de
-uma classe basseado no número de métodos que ela possui. Isso afeta o esforço de
-manutenção da classe, além de impactar nas classe filhas que herdarão esses
-métodos. Também é um indicativo de que a classe tem métodos específicos
-dificultando o seu reuso.
+uma classe basseado na soma da complexidade dos métodos que ela possui.
+Isso afeta o esforço de manutenção da classe, além de impactar nas classes
+filhas que herdarão esses métodos. Também é um indicativo de que a classe tem
+métodos específicos dificultando o seu reuso.
+A unidade de complexidade definida por \citeonline{cksuite} é o próprio método e
+não considera outros fatores como número de linhas, número de parâmetros ou
+quantidade de estruturas de decisão. A figura~\ref{fic:pic_wmc} ilustra como a
+métrica WMC é avaliada em uma classe. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{img/pic_wmc.png}
+	\caption{Exemplo de avaliação da métrica WMC/Fonte: Próprio Autor}
+	\label{fig:pic_wmc}
+\end{figure}
+
+No exemplo da figura~\ref{fic:pic_wmc}, a classe reprensentada tem um total de
+cinco métodos implementados. Seguindo estritamente o que \citeonline{cksuite}
+definem para a métrica o valor da métrica WMC para a classe é cinco unidades.
+
 \item[Número de classes filhas (NOC)] Número de subclasses imediatas de uma
 classe. Essa medida é um indicativo de mau uso de herança conforme seu valor
 aumenta e mostra o impacto que uma classe pode ter no sistema requerendo maior
