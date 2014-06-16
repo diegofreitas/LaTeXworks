@@ -31,8 +31,6 @@
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
-	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	twoside,			% para impressão em verso e anverso. Oposto a oneside
 	a4paper,			% tamanho do papel. 
 	% -- opções da classe abntex2 --
 	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
@@ -41,7 +39,6 @@
 	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
 	% -- opções do pacote babel --
 	english,			% idioma adicional para hifenização
-	french,				% idioma adicional para hifenização
 	spanish,			% idioma adicional para hifenização
 	brazil,				% o último idioma é o principal do documento
 	]{abntex2}
@@ -56,7 +53,10 @@
 % ---
 \usepackage{cmap}				% Mapear caracteres especiais no PDF
 \usepackage{lmodern}			% Usa a fonte Latin Modern			
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{helvet}
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
 \usepackage{lastpage}			% Usado pela Ficha catalográfica
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
@@ -79,7 +79,6 @@
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 
 \usepackage[brazil]{babel}
-\usepackage[subentrycounter,seeautonumberlist,nonumberlist=true]{glossaries}
 
 
 
@@ -167,13 +166,6 @@
 % ---
 \makeindex
 % ---
-\makeglossaries
-
-
-\newglossaryentry{latex}{
-                name={LaTeX},
-                description={ferramenta de computador para autoria de
-                documentos criada por D. E. Knuth} }
 % ----
 % Início do documento
 % ----
@@ -283,8 +275,8 @@ components used to divide responsibilities .
  	\item[CBO] 	Coupling between object classes
  	\item[RFC] 	Response for a Class
  	\item[LCOM] Lack of cohesion in methods
-   	\item[NPM] 	Number of Public Methods for a class (not a C&K metric)
-  	\item[Ce] 	Afferent coupling (not a C&K metric)
+   	\item[NPM] 	Number of Public Methods for a class
+\item[Ce]Afferent coupling
 
 
 \end{siglas}

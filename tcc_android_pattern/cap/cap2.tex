@@ -44,7 +44,6 @@ a seguinte classificação:
 \item[Comportamentais] Definem como as classes e objetos interagem entre si e
 suas responsabilidades.
 \end{description}
-
 %argumentação
 Analisando a forma como um padrão de projeto é concebido, com uma definição
 dos papéis de cada elemento participante e como eles interagem entre si,
@@ -74,7 +73,7 @@ obter informações do impacto dessas inovações nos resultados de um projeto. 
 esse objetivo \citeonline{cksuite} criaram um conjunto de métricas para
 medir a qualidade de sistemas desenvolvidos usando o paradigma orientado a
 objetos que não se limitasse a uma linguagem de programação, fácil de coletar e
-com forte embasamento teórico na ontologia de bunge que é um modelo usado pra
+com forte embasamento teórico na ontologia de Bunge que é um modelo usado pra
 analisar algumas propriedades estáticas e dinâmicas de um sistema de
 informação\cite{WandWeber}. As métricas são:
 
@@ -86,63 +85,164 @@ informação\cite{WandWeber}. As métricas são:
 
 
 \begin{description}
-\item[Acoplamento entre objetos (CBO)] Número de classes que a classe analisada
-depende. Uma classe está acoplada a outra quando o método
-de um classe invoca o método de uma variável de instância de outra classe que
-gera uma dependência entre essas classes. Quanto maior essa dependência, mais
-difícil é reutilizar esses componetes em outras partes do sistema, além do
-aumento do risco de efeitos colaterais ocorrerem ao modificar uma classe
-altamente acoplada.
-\item[Ausência de coesão dos métodos(LCOM)] Usado para avaliar a coesão de uma
-classe através dos relacionamentos entre seus atributos e métodos.
-Uma classe é dita como coesa 
-Um método tem similaridade com outro quando a intercessão entre os conjuntos de atributos usados por ambos
-os métodos tem cardinalidade maior que zero. LCOM mostra esses conjuntos nulos
-indicando os métodos que usam esses atributos deveriam ser implementados em
-outra classe. Essa similaridade expressa a coesão da classe.
 
+\item[Response sets for Class (RFC)] Quantidade de métodos que são executados
+quando um objeto recebe uma mensagem, incluindo os métodos de outras classes. É
+levado em consideração somente os métodos que são chamados diretamente.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.6]{img/pic_rfc.png}
+	\caption{Exemplo de avaliação da métrica RFC/Fonte: Próprio Autor}
+	\label{fig:pic_rfc}
+\end{figure}
+
+Na figura \ref{fig:pic_rfc}, a classe de exemplo tem um total de três métodos
+definido nela. A implementação do método ``MetódoA'' chama o método ``MétodoB'',
+o método ``MétodoW'' que é de outra classe referenciada pelo atributo
+``Atributo2'' e o método ``MétodoC''. Assumindo que os métodos ``MétodoB'' e
+``MétodoC'' não contém chamadas a nenhum outro método, o valor da métrica RFC
+para a classe ilustrada é de seis métodos.
+
+\item[Coupling Bettwen Objects (CBO)]  Em um sistema orientado a objetos,
+diversas classes são implementadas para exercer uma respoonsabilidade, as
+instâncias dessa classes interagem entre si para atingir o objetivo do sistema.
+Uma classe está acoplada a outra quando o método de um classe invoca o método de
+uma variável de instância de outra classe que gera uma dependência entre essas
+classes. Quanto mais dependências existirem, mais difícil é reutilizar esses
+componetes em outras partes do sistema, além do aumento do risco de efeitos
+colaterais que ocorrerem ao modificar uma classe altamente acoplada. O valor da
+métrica CBO para uma classe é o número de outras classes que a classe analisada
+depende.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.8]{img/pic_cbo.png}
+	\caption{Exemplo de avaliação da métrica CBO/Fonte: Próprio Autor}
+	\label{fig:pic_cbo}
+\end{figure}
+
+A figura \ref{fig:pic_cbo} ilustra um exemplo de acoplamento entre objetos. Um
+classe chamada ``A'' depende das classes ``C'', ``X'' e ``Z''. O
+valor de CBO para a classe ``A" é a somas de todas as suas
+dependências, neste caso totalizando três dependências.
+
+
+\item[Lack of Cohesion in Methods (LCOM)] Usado para avaliar a coesão de uma
+classe através dos relacionamentos entre seus atributos e métodos.
+O valor dessa métrica é fornecido por meio da quantidade de métodos que não tem
+nenhum atributo em comum, menos a quantidade de métodos que tem atributos em
+comum.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.5]{img/pic_lcom.png}
-	\caption{Exemplo de avaliação da métrica LCOM/Fonte: Próprio Autor}
-	\label{fig:pic_lcom}
+	\includegraphics[scale=0.8]{img/pic_lcom_ex1.png}
+	\caption{Exemplo  de avaliação da métrica LCOM/Fonte: Próprio Autor}
+	\label{fig:pic_lcom_ex1}
 \end{figure}
 
+No exemplo da figura \ref{fig:pic_lcom_ex1} a classe ilustrada tem três métodos
+implementados e cada método tem um conjunto de atributos que cada um utiliza.
+O método ``MétodoA'' utiliza o atributo ``Atributo1'' formando o cunjunto Ma =
+\{Atributo1\}, o método ``MétodoB'' não utiliza nenhum atributo formando um
+conjunto vazio Mb = \{\}, e o método ``MetodoC'' referencia o atributo
+``Atributo2'' formando o conjunto Mc = \{Atributo2\}. É necessário descobrir a
+interseção de cada um desses grupos para saber quantos grupos tem atributos em
+comum. A seguir é mostrado o resultado dessa avaliação:
 
-\item[Profundidade na árvore de herança (DIT)] Nível de uma classe na
-hierárquia de herança. Reflete o número máximo de elementos pai dentro da árvore
+\[
+Ma \cap Mb = \{ \},
+Ma \cap Mc = \{ \},
+Mc \cap Mb = \{ \}
+\]
+
+Com esses resultados em mãos pode-se calcular o valor de lcom para a classe
+exemplos. O total de conjuntos resultates vazios é três  e não foi identificado
+nenhum conjunto com algum atributo que seja compartilhado entre os métodos.
+Portanto o LCOM para para a classe ``ClasseA'' é, três conjuntos vazios, menos
+zero conjuntos não vazios, que é igual a, LCOM três.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{img/pic_lcom_ex2.png}
+	\caption{Exemplo  de avaliação da métrica LCOM/Fonte: Próprio Autor}
+	\label{fig:pic_lcom_ex2}
+\end{figure}
+
+Outro exemplo é mostrado na figura \ref{fig:pic_lcom_ex2} . Aplicando a mesma
+nomenclatura do exemplo anterior da figura \ref{fig:pic_lcom_ex1} teremos a
+seguinte analise para calcular o valor de LCOM para a classe ``ClasseB'': Dado,
+Ma = \{ Atributo1\}; Mb = \{\}; Mc = \{Atributo1, Atributo2\}. 
+
+\[
+Ma \cap Mb = \{ \},
+Ma \cap Mc = \{ Atributo1 \},
+Mc \cap Mb = \{ \}
+\]
+
+Totalizando dois conjuntos vazios e um conjunto não vazio. Portanto o valor da
+métrica LCOM para a classe ``ClasseB'' é de um conjunto. Podemos concluir que a
+classe ``ClasseB'' é mais coesa que  a classe ``ClasseA''.
+
+
+\item[Depth Inheritance Tree (DIT)] Nível de uma classe na
+hierárquia de herança. Reflete o número máximo de nós  dentro da árvore
 de classes até a raiz, o que aumenta a complexidade conforme a quantidade de
 elementos envolvidos se eleva, diminuindo a previsibilidade do comportamento da
 classe com vários métodos e atributos sendo herdados, principalmente com o uso
-de sobrecarga de métodos.
-\item[Métodos por Classe (WMC)] Serve para expressar o nível de complexidade de
-uma classe basseado na soma da complexidade dos métodos que ela possui.
+de sobrecarga de métodos. No exemplo da figura \ref{fig:pic_dit} a classe
+``ClasseZ'' tem um relacionamento de herança com a classe ``ClasseT'' que se
+relaciona também por meio de herança com a classe ``Raiz''. A distância entre a
+classe ``ClasseZ'' até a classe ``Raiz'' na hierarquia é de dois nós. Portanto o
+valor da métrica DIT para a classe ``ClasseZ'' é dois.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.6]{img/pic_dit.png}
+	\caption{Exemplo de avaliação da métrica DIT/Fonte: Próprio Autor}
+	\label{fig:pic_dit}
+\end{figure}
+
+\item[Number of Children (NOC)] Número de subclasses imediatas de uma
+classe analisada. Essa medida é um indicativo de mau uso de herança conforme seu
+valor aumenta e mostra o impacto que uma classe pode ter no sistema requerendo maior
+atenção e testes.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.6]{img/pic_noc.png}
+	\caption{Exemplo de avaliação da métrica NOC/Fonte: Próprio Autor}
+	\label{fig:pic_noc}
+\end{figure}
+
+Na figura \ref{fig:pic_noc} a classe ``ClasseA'' e a classe ``ClasseT'' são as
+únicas classes que tem uma relação de herança direta com a classe ``Raiz'',
+portanto o valor da métrica NOC para a classe ``Raiz'' é  dois.
+
+ 
+
+\item[Wheighted Methods per Classe (WMC)] Serve para expressar o nível de
+complexidade de uma classe basseado na soma da complexidade dos métodos que ela possui.
 Isso afeta o esforço de manutenção da classe, além de impactar nas classes
 filhas que herdarão esses métodos. Também é um indicativo de que a classe tem
 métodos específicos dificultando o seu reuso.
 A unidade de complexidade definida por \citeonline{cksuite} é o próprio método e
 não considera outros fatores como número de linhas, número de parâmetros ou
-quantidade de estruturas de decisão. A figura~\ref{fic:pic_wmc} ilustra como a
+quantidade de estruturas de decisão. A figura~\ref{fig:pic_wmc} ilustra como a
 métrica WMC é avaliada em uma classe. 
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.5]{img/pic_wmc.png}
+	\includegraphics[scale=0.6]{img/pic_wmc.png}
 	\caption{Exemplo de avaliação da métrica WMC/Fonte: Próprio Autor}
 	\label{fig:pic_wmc}
 \end{figure}
 
-No exemplo da figura~\ref{fic:pic_wmc}, a classe reprensentada tem um total de
+No exemplo da figura~\ref{fig:pic_wmc}, a classe reprensentada tem um total de
 cinco métodos implementados. Seguindo estritamente o que \citeonline{cksuite}
-definem para a métrica o valor da métrica WMC para a classe é cinco unidades.
+definem para a métrica, o valor da métrica WMC para a classe é cinco métodos.
 
-\item[Número de classes filhas (NOC)] Número de subclasses imediatas de uma
-classe. Essa medida é um indicativo de mau uso de herança conforme seu valor
-aumenta e mostra o impacto que uma classe pode ter no sistema requerendo maior
-atenção e testes.
-\item[Response sets for Class (RFC)] Quantidade de métodos que são executados
-quando um objeto recebe uma mensagem, incluindo os métodos de outras classes. 
+
 \end{description}
 
 Todas essas métricas tem uma relação inerente com a coesão e acoplamento dos
@@ -296,7 +396,7 @@ Dolphin Smalltalk\footnote{Implementação da Linguagem de programação Smallta
 \url{http://www.object-arts.com}} adotando os conceitos do MVP onde salienta que
 a maioria dos sistemas operacionais com ambiente gráfico fornece um conjunto de
 componentes (Widgets) nos quais estão contidas as responsabilidades do
-Controller, de acordo com a descrição do padrão MVC.A maior parte do
+Controller, de acordo com a descrição do padrão MVC. A maior parte do
 comportamento com o usuário é implementada no Presenter que está
 diretamente associado à View.
 
@@ -307,7 +407,7 @@ máximo a API gráfica do resto da aplicação. Dessa forma o model não se comu
 com a view por meio do padrão Observer, sendo que a view séra atualizada
 pelo presenter como pode ser observado na Figura~\ref{fig:mvp_passive_view}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.5]{img/passive_view.png}
 	\caption{Passive View/Fonte: Próprio autor}
@@ -317,14 +417,14 @@ pelo presenter como pode ser observado na Figura~\ref{fig:mvp_passive_view}.
 Outra variação do MVP descrita por \citeonline{fowler:sp} é o Supevising
 Controller. Nesta abordagem o Model utiliza algum mecanismo de notificação, por
 exemplo o padrão Observer, para atualizar a View. Este comportamente é parecido
-com o do padrão MVC. Como pode pode ser observado na
+com o do padrão MVC como pode pode ser observado na
 figura~\ref{fig:sup_controller}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
-	\includegraphics[scale=0.5]{img/passive_view.png}
-	\caption{Passive View/Fonte: Próprio autor}
-	\label{fig:mvp_passive_view}
+	\includegraphics[scale=0.5]{img/supervising_controller.png}
+	\caption{Supervising Controller/Fonte: Próprio autor}
+	\label{fig:sup_controller}
 \end{figure}
 
 

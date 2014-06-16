@@ -21,7 +21,7 @@ exemplo de uso do CKJM é mostrado a seguir:
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.53]{img/ckjm_run.png}
+	\includegraphics[scale=0.5]{img/ckjm_run.png}
 	\caption{Exemplo de execução do CKJM} 
 	\label{fig:ckjm_run}
 \end{figure}
@@ -50,11 +50,12 @@ contatos e é composto 153 classes organizadas em 13 pacotes. O padrão
 de projeto MVP será aplicado em uma parte do aplicativo. Será refatorado o
 pacote referente ao gerenciamento de grupos de contatos presente no pacote
 \textbf{com.android.contacts.group}. A figura \ref{fig:pacotes_contacts}
-mostra os pacotes que compõem o aplicativo.
+mostra os pacotes que compõem o aplicativo. O pacote a ser refatorado está
+destacado em azul.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.53,angle=90]{img/pacotes_contacts.png}
+	\includegraphics[scale=0.40,angle=90]{img/pacotes_contacts.png}
 	\caption{Diagrama de pacotes do aplicativo de contatos} 
 	\label{fig:pacotes_contacts}
 \end{figure}
@@ -65,27 +66,27 @@ padrão MVP. Cada tela é implementada por uma classe e suas interfaces
 são ilustradas nas figuras \ref{fig:contacts_groups},
 \ref{fig:contacts_groups_view} e \ref{fig:groups_edit}. 
 
-
-\begin{figure}[!h]
-\begin{minipage}{.5\textwidth}
+\begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.25]{img/contacts_groups.png}
-	\caption{Tela de lista de grupos} 
-	\label{fig:contacts_groups}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-	\centering
-	\includegraphics[scale=0.25]{img/contacts_group_view.png}
-	\caption{Tela de visualização de um grupo} 
-	\label{fig:contacts_groups_view}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-\centering
-	\includegraphics[scale=0.25]{img/contacts_edit.png}
-	\caption{Tela de edição e criação de grupos} 
-	\label{fig:groups_edit}
-\end{minipage}
+	\begin{minipage}[b]{0.45\linewidth}
+		\includegraphics[scale=0.2]{img/contacts_groups.png}
+		\caption{Tela de lista de grupos} 
+		\label{fig:contacts_groups}
+	\end{minipage}
+\quad
+	\begin{minipage}[b]{0.45\linewidth}
+		\includegraphics[scale=0.2]{img/contacts_group_view.png}
+		\caption{Tela de visualização de um grupo} 
+		\label{fig:contacts_groups_view}
+	\end{minipage}
+\quad
+	\begin{minipage}[b]{0.45\linewidth}
+		\includegraphics[scale=0.2]{img/contacts_edit.png}
+		\caption{Tela de edição e criação de grupos} 
+		\label{fig:groups_edit}
+	\end{minipage}
 \end{figure}
+
 
 As classes a serem refatoradas são:
 \begin{description}
@@ -222,7 +223,7 @@ métrica no projeto.
 %3o) justificar o q causou tal comportamento.
 
 De acordo com o que foi exposto, o MVP não deveria afetar a métrica WMC. Porém,
-houve um aumento na métrica WMC. Isso é consequência da divisão de
+houve um aumento nos valores dessa métrica . Isso é consequência da divisão de
 responsabilidades entre a View e o Presenter. Antes da refatoração, os métodos
 das classes de View implementavam o accesso a dados, controle dos componentes
 visuais e regras específicas das operações executadas na tela, como por exemplo,
@@ -411,7 +412,7 @@ métrica LCOM. Isto indica que a coesão do código melhorou após cada iteraç�
     \label{tab:lcom}
 \end{table}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics{img/lcom.png}
 	\caption{Valores de lcom/Fonte: Próprio autor}

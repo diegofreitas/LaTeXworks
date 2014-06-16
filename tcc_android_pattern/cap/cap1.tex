@@ -78,6 +78,45 @@ apresentação de um aplicativo android utilizando padrões de projetos.
 
 \section{Trabalhos Relacionados}
 
+O uso de um dispositivo móvel permite inovar ao usufrui-lo para atender
+necessidades tanto para computação pessoal e corporativa. Conforme a variedade
+de aplicativos surgem, o interesse em projeta-los com mais qualidade tambem
+aumenta. Existem estudos sobre arquitetura de aplicativos Android como
+demonstrado por \citeonline{BMVC}, onde é elaborado uma arquitetura baseada no
+padrão de projeto MVC que é extendida para as camadas do sistema que estão
+presentes em um serviço remoto para aproveitar as vantagens que a conectividade
+desses aparelhos oferencem. Outro trabalho relacionado é
+de \citeonline{corporateandroid} que desenvolvem um aplicativo dentro de um
+contexto corporativo que é usado para consultar dados a partir de um banco de
+dados central.
+
+Não foi encontrado na literatura disponível, referências sobre a aplicação do
+MVP para desenvolvimento de aplicativos android. Outros trabalhos mostram a
+aplicação do padrão em outros contextos e plataformas  \cite{presenterfirst},
+\cite{yangmvp}. Esses trabalhos enfatizam que o MVP melhora a
+testabilidade, que é uma característica de qualidade de software.
+
+A principal referência presente neste trabalho é \citeonline{cksuite} que
+elaboram um conjunto de métricas para descrever de forma quantitativa a
+qualidade de software orientado a objetos. \citeonline{cksuite} aplicam um
+conjunto de seis métricas em dois projetos distintos desenvolvidos em Smalltak e
+C++ analisando a relação dos resultados obtidos e os fatores que influenciaram
+no desenvolvimento dos sistemas como por exemplo decisões arquiteturais e a
+qualidade dos sistemas.
+
+As métricas \citeonline{cksuite} tem se demonstradas como uma forma de avaliar a
+qualidade de um sistema orientado a objetos. \citeonline{Dubey:2011} sumarizam
+uma série de estudos que mostram o aumento da manutenabilidade do código ao
+manter os valores das métricas baixos. Outras características de
+qualidade de software são verificadas por meio de métricas de código
+como demonstrado por \citeonline{Khalid:2010} que usa essas métricas para
+avaliar a complexidade e a testabilidade de sistema orientados a objetos.
+Segundo \citeonline{Briand:2000}, características como acoplamento, coesão e
+herança estão relacionados com uma probabilidade maior de ocorrer falhas, e
+avalia essa relação usando métricas para analisar a estrutura de projetos de
+software. \citeonline{CK:98} relacionam os resultados dessas métricas com a
+produtividade, esforço de retrabalho e projeto.
+
 Na dissertação de \citeonline{turk} é feita uma análise dos impactos na
 qualidade do código  ao aplicar cinco padrões de projetos em um software de comunicação
 TCP/IP. Os resultados do trabalho citado mostram que a qualidade do software
@@ -85,31 +124,16 @@ aumenta ao aplicar padrões de projetos, sendo que o principal atributo de
 qualidade aferido é a manutenabilidade. O método utilizado para a execução desta
 pesquisa se baseia no trabalho citado. 
 
-Não foi encontrado na literatura disponível, referências sobre a aplicação do
-MVP para desenvolvimento de aplicativos android. Outros trabalhos mostram a
-aplicação do padrão em outros contextos e plataformas  \cite{presenterfirst},
-\cite{yangmvp}. Esses trabalhos enfatizam que o MVP melhora a
-testabilidade, que é uma característica de qualidade de software. Outra
-característica subjetiva da qualidade de software é a manutenabilidade.
-\citeonline{Dubey:2011} sumarizam uma série de estudos que mostram a relação
-entre sistemas orientados a objetos e sua manutenabilidades, e como as métricas
-de \citeonline{cksuite} são eficazes para descrever de forma quantitativa essa
-relação. 
-%TODO 2DO - Sugiro que aqui nesse parag vc comente um pouco sobre os trabalhos
-% q vc citou no final, a fim de detalhar melhor a fundamentacao a partir de outros trabalhos e tb para ajudar na `encorpada' do trab
-
 \section{Contribuições}
 
 
 Tendo em vista que padrões de projetos descrevem soluções genéricas, este
 trabalho tem como principal contribuição uma interpretação do padrão de projeto
 Model-View-Presenter, proporcionando uma referência prática aplicada ao
-framework android.
-
-A diversidade de projetos de software torna difícil inferir se as métricas
-podem ser consideradas um paramêtro para determinar a qualidade. O presente
-trabalho  se propõe a avaliar a aderência do padrão MVP a projetos android
-através de indicadores de qualidade de código orientado a objetos.
+framework android. A diversidade de projetos de software torna difícil inferir
+se as métricas podem ser consideradas um paramêtro para determinar a qualidade.
+O presente trabalho se propõe a avaliar a aderência do padrão MVP a projetos
+android através de indicadores de qualidade de código orientado a objetos.
 
 \section{Metodologia}
 
@@ -162,7 +186,7 @@ Os critérios para a escolha do objeto de estudo são:
 
 A Figura \ref{processo_experimentacao} demonstra as atividades do processo de
 experimentação adotado:
-\begin{figure}[!h]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[scale=0.4]{img/processo_experimentacao.png}
 	\caption[Processo de Experimentação]{Processo de Experimentação/Fonte: Próprio
