@@ -1,5 +1,5 @@
 %% abtex2-modelo-trabalho-academico.tex, v-1.7.1 laurocesar
-%% Copyright 2012-2013 by abnTeX2 group at http://abntex2.googlecode.com/ 
+%% Copyright 2012-2013 by abnTeX2 group at http://abntex2.googlecode.com/
 %%
 %% This work may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3
@@ -10,9 +10,9 @@
 %% version 2005/12/01 or later.
 %%
 %% This work has the LPPL maintenance status `maintained'.
-%% 
+%%
 %% The Current Maintainer of this work is the abnTeX2 team, led
-%% by Lauro César Araujo. Further information are available on 
+%% by Lauro César Araujo. Further information are available on
 %% http://abntex2.googlecode.com/
 %%
 %% This work consists of the files abntex2-modelo-trabalho-academico.tex,
@@ -22,7 +22,7 @@
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 % abnTeX2: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
-% mestrado e trabalhos monograficos em geral) em conformidade com 
+% mestrado e trabalhos monograficos em geral) em conformidade com
 % ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
 % Apresentacao
 % ------------------------------------------------------------------------
@@ -31,7 +31,7 @@
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
-	a4paper,			% tamanho do papel. 
+	a4paper,			% tamanho do papel.
 	% -- opções da classe abntex2 --
 	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
 	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
@@ -49,7 +49,7 @@
 % ---
 
 % ---
-% Pacotes fundamentais 
+% Pacotes fundamentais
 % ---
 \usepackage{cmap}				% Mapear caracteres especiais no PDF
 \usepackage{lmodern}			% Usa a fonte Latin Modern			
@@ -71,7 +71,7 @@
 % ---
 \usepackage{lipsum}				% para geração de dummy text
 % ---
-
+ 
 % ---
 % Pacotes de citações
 % ---
@@ -83,9 +83,9 @@
 
 
 
-% --- 
+% ---
 % CONFIGURAÇÕES DE PACOTES
-% --- 
+% ---
 
 % ---
 % Configurações do pacote backref
@@ -120,8 +120,8 @@
   \par
   Centro de Pós-Graduação e Extensão (CPGE)}
 \tipotrabalho{Monografia}
-% O preambulo deve conter o tipo do trabalho, o objetivo, 
-% o nome da instituição e a área de concentração 
+% O preambulo deve conter o tipo do trabalho, o objetivo,
+% o nome da instituição e a área de concentração
 \preambulo{}
 % ---
 
@@ -136,11 +136,11 @@
 \makeatletter
 \hypersetup{
      	%pagebackref=true,
-		pdftitle={\@title}, 
+		pdftitle={\@title},
 		pdfauthor={\@author},
     	pdfsubject={\imprimirpreambulo},
 	    pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico},
 		colorlinks=true,       		% false: boxed links; true: colored links
     	linkcolor=blue,          	% color of internal links
     	citecolor=blue,        		% color of links to bibliography
@@ -149,11 +149,11 @@
 		bookmarksdepth=4
 }
 \makeatother
-% --- 
+% ---
 
-% --- 
-% Espaçamentos entre linhas e parágrafos 
-% --- 
+% ---
+% Espaçamentos entre linhas e parágrafos
+% ---
 
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
@@ -172,7 +172,7 @@
 \begin{document}
 
 % Retira espaço extra obsoleto entre as frases.
-\frenchspacing 
+\frenchspacing
 
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
@@ -212,7 +212,7 @@ porém, com um pequeno aumento da complexidade devido a inclusão de novos
 componentes usados para dividir as responsabilidades.
 
 \vspace{\onelineskip}
-    
+
 \noindent
 \textbf{Palavras-chaves}: Android. Model View Presenter. Padrões de projeto.
 \end{resumo}
@@ -238,7 +238,7 @@ cohesion of the code, however, with a small increase in complexity due to the in
 components used to divide responsibilities .
 
  \vspace{\onelineskip}
-    
+
  \noindent
  \textbf{keywords}: Android. MVP. MVC. Design Patterns.
  \end{otherlanguage*}
@@ -277,6 +277,7 @@ components used to divide responsibilities .
  	\item[LCOM] Lack of cohesion in methods
    	\item[NPM] 	Number of Public Methods for a class
 \item[Ce]Afferent coupling
+\item[SDK] Software Development Kit
 
 
 \end{siglas}
@@ -310,7 +311,7 @@ components used to divide responsibilities .
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
 % ---
-\bookmarksetup{startatroot}% 
+\bookmarksetup{startatroot}%
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS

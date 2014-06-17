@@ -1,15 +1,15 @@
 \chapter{Introdução}
 
 Segundo \cite{idc} o mercado de dispositivos móveis ultrapassou a marca de mais de um
-bilhão de aparelhos vendidos em 2013. O sistema operacional Android é o líder
+bilhão de aparelhos vendidos em 2013. A plataforma Android é a líder
 de mercado dominando 78\% desse universo com mais de 226.1 milhões de
 Smartphones produzidos e embarcados com android no último quadrimestre de 2013.
 Baseado nesses dados é possível concluir que existe uma demanda latente no
-desenvolvimento de novos aplicativos que agreguem valor à esses aparelhos.
+desenvolvimento de novos aplicativos que agreguem valor à esta plataforma.
 
 Para produzir aplicativos de qualidade é necessário aplicar boas práticas de
 desenvolvimento de software. Levando-se em consideração que a linguagem de
-programação usada para o desenvolvimento na plataforma android é a Java, é
+programação usada para o desenvolvimento na plataforma android é Java, é
 natural que se aplique as práticas definidas pelos princípios de projeto
 orientado a objetos. Tais  princípios guiam o desenvolvedor na definição da
 estrutura interna do software, afetando diretamente características  de
@@ -25,7 +25,7 @@ artefatos que constituem o sistema de forma coesa. Os conjuntos desses artefatos
 podem ser classificados de acordo com suas responsabilidades, surgindo
 uma divisão clara em camadas. Um sistema pode ter diversas camadas, responsáveis
 por acesso a um banco de dados, comunicação com serviços externos, encapsular
-regras de negócio. Uma dessas camadas que constitui um aplicativo android é a
+regras de negócios. Uma dessas camadas que constitui um aplicativo android é a
 camada de apresentação ou interface com o usuário.
  
 Segundo \citeonline{pressman}, ``A interface com o usuário pode ser considerada
@@ -69,10 +69,10 @@ técnicas contribuem para seus projetos. Os seguintes objetivos específicos ser
 camada de apresentação de um aplicativo android.
 \item Avaliar os componentes do  framework android, identificando seus papéis e
 responsabilidades de acordo com os padrões estudados, levando  em consideração
-características que podem dificultar a aplicação dos padrões. 
+características que podem dificultar a aplicação dos padrões de projeto.
 \item Identificar os impactos nas características de qualidade do aplicativo de acordo
 com o paradigma da Orientação a Objetos, através da análise de métricas de qualidade de código.
-\item Propor uma fonte de consulta para implementação da camada de
+\item Propor um modelo para implementação da camada de
 apresentação de um aplicativo android utilizando padrões de projetos.
 \end{itemize}
 
@@ -127,13 +127,13 @@ pesquisa se baseia no trabalho citado.
 \section{Contribuições}
 
 
-Tendo em vista que padrões de projetos descrevem soluções genéricas, este
+Tendo em vista que padrões de projetos descrevem soluções abstratas, este
 trabalho tem como principal contribuição uma interpretação do padrão de projeto
 Model-View-Presenter, proporcionando uma referência prática aplicada ao
 framework android. A diversidade de projetos de software torna difícil inferir
 se as métricas podem ser consideradas um paramêtro para determinar a qualidade.
 O presente trabalho se propõe a avaliar a aderência do padrão MVP a projetos
-android através de indicadores de qualidade de código orientado a objetos.
+android por meio de indicadores de qualidade de código orientado a objetos.
 
 \section{Metodologia}
 
@@ -143,12 +143,12 @@ métricas serão influenciadas pelos experimentos de refatoração embasados na
 revisão literatura existente sobre orientação a objetos e seus princípios.
 
 Para validar a hipótese apresentada neste trabalho a pesquisa terá uma
-abordagem quantitativa através da análise de dados estatistícos de métricas 
+abordagem quantitativa por meio da análise de dados estatistícos de métricas 
 que expresssam atributos de qualidade em software orientado a objetos. O
 conjunto de métricas a serem usadas nessa validação será o elaborado por
 \citeonline{cksuite}.
 
-Essas medidas serão coletadas através de um procedimento experimental em
+Essas medidas serão coletadas por meio de um procedimento experimental em
 laboratório utilizando um processo iterativo-incremental para executar
 refatorações no código do objeto de estudo afim de introduzir o padrão de
 projeto Model-View-Presenter e a cada iteração será feita a coleta das
@@ -162,7 +162,7 @@ apresentação com a qual o usuário interage.
 O projeto a ser refatorado será o aplicativo de Contatos do
 android\footnote{\url{https://android.googlesource.com/platform/packages/apps/Contacts}},
 que é um dos aplicativos básicos pré-instalados com o sistema operacional. Este
-projeto é opensource mantido pelo  The Android Open Source Projeto suportado
+projeto é opensource mantido pelo  The Android Open Source Project suportado
 pela Google com contribuições de desenvolvedores do mundo todo.
 
 Os critérios para a escolha do objeto de estudo são:
@@ -199,7 +199,7 @@ experimentação adotado:
 repositório.
 \item[Refatoração de funcionalidade] Esta atividade tem como objetivo aplicar os
 padrões propostos em uma funcionalidade do aplicativo.
-\item[Construir proejto] Excutar o processo de construção do projeto que inclui
+\item[Construir projeto] Excutar o processo de construção do projeto que inclui
 a compilação das classes para fazer a coleta das métricas.
 \item[Coleta de Métricas] Este passo tem como objetivo fazer a coleta
 das métricas do código que se encontra no repositório a partir de uma revisão

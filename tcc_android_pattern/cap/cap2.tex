@@ -12,13 +12,13 @@ sistema orientado a objetos\cite{evans2004ddd},\cite{gomma11} um sistema bem
 construído apreseta características fundamentais como alta coesão e
 baixo acoplamento.
 
-A Coesão é uma característica de um componete de software que se refere ao grau
-de relacionamento entres os menbros desse componente. No contexto de uma classe,
+A Coesão é uma característica de um componente de software que se refere ao grau
+de relacionamento entres os membros desse componente. No contexto de uma classe,
 é levado em consideração as relações entre os métodos e atributos. Classes com
 coesão baixa demonstram grande complexidade pois os atributos e métodos que não
 se relacionam indicam que a classe tem muitas responsablidades.
 
-O acoplamento descreve as dependências entre componetes. Quanto maior a
+O acoplamento descreve as dependências entre componentes. Quanto maior a
 quantidade dessas dependências entre classes, mais complexo ela se torna, pois
 dificulta  alterações na classe. Além disso, o acoplamento aumenta o risco de
 uma classe ser afetada devido à alterações em suas dependências.
@@ -110,7 +110,7 @@ instâncias dessa classes interagem entre si para atingir o objetivo do sistema.
 Uma classe está acoplada a outra quando o método de um classe invoca o método de
 uma variável de instância de outra classe que gera uma dependência entre essas
 classes. Quanto mais dependências existirem, mais difícil é reutilizar esses
-componetes em outras partes do sistema, além do aumento do risco de efeitos
+componentes em outras partes do sistema, além do aumento do risco de efeitos
 colaterais que ocorrerem ao modificar uma classe altamente acoplada. O valor da
 métrica CBO para uma classe é o número de outras classes que a classe analisada
 depende.
@@ -129,7 +129,7 @@ dependências, neste caso totalizando três dependências.
 
 
 \item[Lack of Cohesion in Methods (LCOM)] Usado para avaliar a coesão de uma
-classe através dos relacionamentos entre seus atributos e métodos.
+classe por meio dos relacionamentos entre seus atributos e métodos.
 O valor dessa métrica é fornecido por meio da quantidade de métodos que não tem
 nenhum atributo em comum, menos a quantidade de métodos que tem atributos em
 comum.
@@ -222,7 +222,7 @@ portanto o valor da métrica NOC para a classe ``Raiz'' é  dois.
  
 
 \item[Wheighted Methods per Classe (WMC)] Serve para expressar o nível de
-complexidade de uma classe basseado na soma da complexidade dos métodos que ela possui.
+complexidade de uma classe baseado na soma da complexidade dos métodos que ela possui.
 Isso afeta o esforço de manutenção da classe, além de impactar nas classes
 filhas que herdarão esses métodos. Também é um indicativo de que a classe tem
 métodos específicos dificultando o seu reuso.
@@ -254,8 +254,8 @@ validação dos projetos orientados a objetos.
 
 \section{Model View Controller}
 
-O padrão Model View Controller surgiu como uma solução genérica para que
-usuários de um sistema de planejamento manipulem dados complexos
+O padrão \textit{Model View Controller} surgiu como uma solução genérica para
+que usuários de um sistema de planejamento manipulem dados complexos
 \citeonline{Reenskaug:1979}. Posteriormente, \citeonline{krasnerPope1988}
 implementam um framework MVC para o ambiente gráfico da linguagem de programação
 Smalltalk-80 como uma forma de promover a reusabilidade e plugabilidade dos
@@ -267,7 +267,7 @@ relevantes e permitir que o usuário inspecione e altere estas
 informações.''(tradução livre).
 Esse modelo mental é como o usuário percebe o dominio do problema que está inserido no qual executará suas atividades sobre dados de seu interesse. Para que o usuário de um sistema de
 informação possa interagir com a representação computacional  de seu modelo
-mental três componetes são definidos:
+mental três componentes são definidos:
 
 Model - É o componente constituído de uma composição de classes que implementam
 as regras de negócio referentes as funcionalidades que o programa provê,
@@ -280,7 +280,7 @@ responsável por toda a manipulação visual, recuperando um estado do model e
 exibindo os dados, podendo ser composta por sub-views e ser parte de views mais
 complexas.
 
-Controller - Interpreta a as ações do usuário provenientes de um dispositivo de
+Controller - Interpreta as ações do usuário provenientes de um dispositivo de
 entrada(Teclado, Mouse) alterando estado da view ou do model.
 
 
@@ -299,7 +299,7 @@ podem ser parametrizadas assim cada view pode verificar se a alteração é de s
 interesse. 
 
 Segundo \citeonline{Fowler:2002:PEA} ``\ldots esta separação da
-apresentação e modelo é uma das mais fundamentais herísticas de bom projeto
+apresentação e modelo é uma das mais fundamentais heurísticas de bom projeto
 de software''(tradução livre).
 O controller poderia ser o responsável por publicar as alterações no estado do
 model devido sua relação direta com o mesmo, mas em casos onde o model é
@@ -311,7 +311,7 @@ levando em consideração as aplicações desenvolvidas em Smalltalk usando
 características espefíficas dessa linguagem de programação que da suporte à
 implementação dos três componentes como por exemplo o gerenciamento dos objetos
 que são dependentes do model definido na classe Objet que o model deve extender.
-A Figura \ref{mvc} esclarece a interação entre os componetes.
+A Figura \ref{mvc} esclarece a interação entre os componentes.
 
 \begin{figure}[h]
 	\centering
@@ -321,7 +321,7 @@ A Figura \ref{mvc} esclarece a interação entre os componetes.
 \end{figure}
 
 \citeonline{gof} cita \citeonline{krasnerPope1988} fazendo uma análise dos
-objetos que compõem o MVC relacionando-os com outros padrões de proejto
+objetos que compõem o MVC relacionando-os com outros padrões de projeto
 descritos em seu catálogo.
 O desacoplamento entre a View e o Model, somado à propagação das mudanças de
 estado no model para a View e o Controller podem ser
@@ -347,7 +347,7 @@ visuais podem ser tratadas de forma encapsulada onde cada um implementa a
 mesma abstração. 
 
 Segundo \citeonline{gof} o padrão de projeto Strategy ``\ldots define uma
-família de algoritmos, encapsula cada um, e torna-os substituíveis entre si
+família de algorítmos, encapsula cada um, e torna-os substituíveis entre si
 permitindo que variem independentemente dos clientes que o usam''(tradução
 livre). O padrão Strategy define uma abstração cuja as implementações podem ser
 trocadas de acordo com algum critério. Esse conceito pode ser aplicado ao
@@ -438,7 +438,7 @@ mediação do Model e a View por parte do Presenter.
 \section{Framework Android}
  
 
-O android é um sistema operacional baseado no linux mantido pela Google para
+O android é uma plataforma baseado no linux mantido pela Google para
 ser embarcado em dispositivos podendo ser aplicado em carros, televisão, placas
 controladoras mas seu destaque é a utilização em smartphones e
 tablets, que é o foco deste trabalho. A plataforma é contituída por API's e
@@ -453,12 +453,12 @@ aplicativos básicos como é demonstrado na figura \ref{android_stack}.
 	\label{android_stack}
 \end{figure}
 
-Para desenvolvimento é usada a API disponível no sdk que define
+Para desenvolvimento é usada a API disponível no SDK que define
 os blocos de construção de um aplicativo, a saber:
 
 \begin{description}
   \item[Activity] Representa uma atividade que o usuário executa no aplicativo
-  em um determinado momento. É um agregador de componetes visuais e responde à
+  em um determinado momento. É um agregador de componentes visuais e responde à
   interações do usuário.
   \item[Fragment] Representa uma parte de interface com o usuário em uma
   Activity.

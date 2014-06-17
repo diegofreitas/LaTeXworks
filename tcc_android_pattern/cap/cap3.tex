@@ -91,7 +91,7 @@ são ilustradas nas figuras \ref{fig:contacts_groups},
 As classes a serem refatoradas são:
 \begin{description}
 \item[GroupDetailFragment.java] Exibe os dados de um grupo de contatos.
-\item[GroupBrowseListFragment.java] Fonece uma lista de grupos.
+\item[GroupBrowseListFragment.java] Fornece uma lista de grupos.
 \item[GroupEditorFragment.java] Disponibiliza um formulário para edição dos
 dados de um grupo.
 \end{description}
@@ -154,7 +154,7 @@ Controller podem ser exercidos pelo mesmo objeto quando eles estão muito
 acoplados. Exemplo: Um Menu.''(tradução livre). Porém, isso requer um boa
 análise do problema em questão para decidir o nível de granularidade que esses componentes podem ter.
 Portanto, é recomendável manter sempre essa separação para manter uma boa coesão
-nas classes. O Presenter será uma classe auxiliar à view e pode ser implementada
+nas classes. O Presenter será uma classe auxiliar à View e pode ser implementada
 como uma classe java simples. 
 
 
@@ -185,7 +185,7 @@ WMC é um indicador de que é necessário fazer um refatoração para extrair fu
 aplicativo, além do pacote de Groups, como por exemplo funções para exibição de
 dados em uma lista, validação de dados em componentes de texto etc. O escopo de
 atuação do padrão MVP é mais amplo, abrangendo o caso de uso realizado pela
-inteface refatorada. Logo, o MVP não tem impacto na reusabilidade.
+interface refatorada. Logo, o MVP não tem impacto na reusabilidade.
 
 Os efeitos colaterais em uma classe filha é maior quando é feito alguma
 alteração na classe pai que tenha o número de métodos muito alto\cite{cksuite}.
@@ -194,7 +194,7 @@ refatoradas tem uma função muito específica dentro da aplicação e não são
 extendidas por outras classes. O MVP está relacionado com a separação de
 responsabilidades e sua aplicação não interferiu na hierarquia de classes que
 foram refatoradas.
-A tablela \ref{tab:wmc} e a figura \ref{fig:wmc} mostram os valores dessa
+A tabela \ref{tab:wmc} e a figura \ref{fig:wmc} mostram os valores dessa
 métrica no projeto.
 
 
@@ -225,7 +225,7 @@ métrica no projeto.
 De acordo com o que foi exposto, o MVP não deveria afetar a métrica WMC. Porém,
 houve um aumento nos valores dessa métrica . Isso é consequência da divisão de
 responsabilidades entre a View e o Presenter. Antes da refatoração, os métodos
-das classes de View implementavam o accesso a dados, controle dos componentes
+das classes de View implementavam o acesso a dados, controle dos componentes
 visuais e regras específicas das operações executadas na tela, como por exemplo,
 a atualização de um componente visual quando nenhum dado está disponível para
 exibição. Os métodos da classe de View, afetados pela refatoração, foram
@@ -244,13 +244,13 @@ indicador determinante para a avaliação da qualidade do objeto de estudo.
 
 \subsection{DIT}
 
-A métrica DIT esta relacionado complexidade e reusabilidade. Quanto mais abaixo
-na hierarquia de heraça a classe estiver, menos previsível será seu
+A métrica DIT está relacionada complexidade e reusabilidade. Quanto mais
+abaixo na hierarquia de heraça a classe estiver, menos previsível será seu
 comportamento devido a quantidade de métodos que serão herdados das classes
 acima nessa hierarquia. Entretanto, a métrica também indica um potencial reuso
 de código por meio da herança de métodos, isso torna os parâmetros de avaliação
 da métrica dependentes do contexto a ser analisado. O aumento demonstrado na DIT
-se deve ao fato que o ckjm considera a implementação de interface como herança.
+se deve ao fato que o CKJM considera a implementação de interface como herança.
 A interface define somente o contrato que a classe deve implementar. Sendo uma
 interface, não há nenhuma implementação que possa interferir no comportamento
 da classe, portanto essa alteração na métrica DIT não deve ser considerada. O
@@ -326,7 +326,7 @@ dependências. Algumas depedências não relacionadas a camada de apresentação
 permaneceram na View, dessa forma, tanto a View como o Presenter tem referências
 para essas dependências aumentando o valor da métrica. Além disso, existe o
 acréscimo de duas dependências entre a View e o Presenter. A variação da métrica
-é exposta na tabela \ref{tab:cbo} e no figura~\ref{fig:cbo}
+é exposta na tabela \ref{tab:cbo} e na figura~\ref{fig:cbo}
 
 \begin{table}[!h]
 	\centering
