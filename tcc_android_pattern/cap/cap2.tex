@@ -8,8 +8,8 @@ computacional de uma faceta da realidade em que seus constituintes trabalhem de
 forma harmoniosa para atingir as necessidades que o software se propõe a
 atender requer experiência, conhecimento do domínio do problema e um processo de
 análise e projeto. Apesar de existirem várias abordagens para se conceber um
-sistema orientado a objetos\cite{evans2004ddd},\cite{gomma11} um sistema bem
-construído apreseta características fundamentais como alta coesão e
+sistema orientado a objetos\cite{evans2004ddd},\cite{gomma11}, um sistema bem
+construído apresenta características fundamentais como alta coesão e
 baixo acoplamento.
 
 A Coesão é uma característica de um componente de software que se refere ao grau
@@ -29,7 +29,7 @@ de uma área de conhecimento com a intenção de atingir um
 objetivo\cite{MetskerWake06}. Ao seguir um padrão evita-se o retrabalho de
 resolver um problema cuja a solução já existe.
 
-Um padrão de projeto descreve uma solução pra algum problema recorrente em um
+Um padrão de projeto descreve uma solução para algum problema recorrente em um
 sistema orientado a objeto \cite{gof}. Essa descrição envolve as motivações para
 a utilização daquele padrão, a estrutura de classes e objetos participantes do
 padrão e contextualização de sua aplicabilidade. Em desenvolvimento de software,
@@ -186,7 +186,7 @@ classe ``ClasseB'' é mais coesa que  a classe ``ClasseA''.
 
 
 \item[Depth Inheritance Tree (DIT)] Nível de uma classe na
-hierárquia de herança. Reflete o número máximo de nós  dentro da árvore
+hierarquia de herança. Reflete o número máximo de nós  dentro da árvore
 de classes até a raiz, o que aumenta a complexidade conforme a quantidade de
 elementos envolvidos se eleva, diminuindo a previsibilidade do comportamento da
 classe com vários métodos e atributos sendo herdados, principalmente com o uso
@@ -222,14 +222,14 @@ portanto o valor da métrica NOC para a classe ``Raiz'' é  dois.
  
 
 \item[Wheighted Methods per Classe (WMC)] Serve para expressar o nível de
-complexidade de uma classe baseado na soma da complexidade dos métodos que ela possui.
-Isso afeta o esforço de manutenção da classe, além de impactar nas classes
-filhas que herdarão esses métodos. Também é um indicativo de que a classe tem
-métodos específicos dificultando o seu reuso.
-A unidade de complexidade definida por \citeonline{cksuite} é o próprio método e
-não considera outros fatores como número de linhas, número de parâmetros ou
+complexidade de uma classe com base na soma da complexidade dos métodos que ela
+possui. Isso afeta o esforço de manutenção da classe, além de impactar nas
+classes filhas que herdarão esses métodos. Também é um indicativo de que a
+classe tem métodos específicos dificultando o seu reuso. A unidade de
+complexidade definida por \citeonline{cksuite} é o próprio método e não
+considera outros fatores como número de linhas, número de parâmetros ou
 quantidade de estruturas de decisão. A figura~\ref{fig:pic_wmc} ilustra como a
-métrica WMC é avaliada em uma classe. 
+métrica WMC é avaliada em uma classe.
 
 \begin{figure}[!ht]
 	\centering
@@ -271,7 +271,7 @@ mental três componentes são definidos:
 
 Model - É o componente constituído de uma composição de classes que implementam
 as regras de negócio referentes as funcionalidades que o programa provê,
-representa o  conhecimento que o usuário tem e como manipula-lo. Atende
+representa o  conhecimento que o usuário tem e como manipulá-lo. Atende
 mensagens da view requisitando seu estado e mensagens do controller para mudar
 seu estado,
 
@@ -310,8 +310,8 @@ controller são registrados como dependentes de seu model. O padrão é descrito
 levando em consideração as aplicações desenvolvidas em Smalltalk usando
 características espefíficas dessa linguagem de programação que da suporte à
 implementação dos três componentes como por exemplo o gerenciamento dos objetos
-que são dependentes do model definido na classe Objet que o model deve extender.
-A Figura \ref{mvc} esclarece a interação entre os componentes.
+que são dependentes do model definido na classe Object que o model deve
+extender. A Figura \ref{mvc} esclarece a interação entre os componentes.
 
 \begin{figure}[h]
 	\centering
@@ -441,7 +441,7 @@ mediação do Model e a View por parte do Presenter.
 O android é uma plataforma baseado no linux mantido pela Google para
 ser embarcado em dispositivos podendo ser aplicado em carros, televisão, placas
 controladoras mas seu destaque é a utilização em smartphones e
-tablets, que é o foco deste trabalho. A plataforma é contituída por API's e
+tablets, que é o foco deste trabalho. A plataforma é constituída por API's e
 frameworks tendo em sua base o sistema operacional e seus drivers seguido da
 máquina virtual que executa os aplicativos android e bibliotecas auxiliares e
 aplicativos básicos como é demonstrado na figura \ref{android_stack}.

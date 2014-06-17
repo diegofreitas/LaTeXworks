@@ -183,8 +183,8 @@ A possibilidade de reuso de uma classe reduz, pois a grande quantidade de
 métodos indica que ela tem funções muito específicas\cite{cksuite}. Neste caso o
 WMC é um indicador de que é necessário fazer um refatoração para extrair funções comuns a outras partes do
 aplicativo, além do pacote de Groups, como por exemplo funções para exibição de
-dados em uma lista, validação de dados em componentes de texto etc. O escopo de
-atuação do padrão MVP é mais amplo, abrangendo o caso de uso realizado pela
+dados em uma lista, validação de dados em componentes de texto, entre outros. O
+escopo de atuação do padrão MVP é mais amplo, abrangendo o caso de uso realizado pela
 interface refatorada. Logo, o MVP não tem impacto na reusabilidade.
 
 Os efeitos colaterais em uma classe filha é maior quando é feito alguma
@@ -245,7 +245,7 @@ indicador determinante para a avaliação da qualidade do objeto de estudo.
 \subsection{DIT}
 
 A métrica DIT está relacionada complexidade e reusabilidade. Quanto mais
-abaixo na hierarquia de heraça a classe estiver, menos previsível será seu
+abaixo na hierarquia de herança a classe estiver, menos previsível será seu
 comportamento devido a quantidade de métodos que serão herdados das classes
 acima nessa hierarquia. Entretanto, a métrica também indica um potencial reuso
 de código por meio da herança de métodos, isso torna os parâmetros de avaliação
@@ -284,8 +284,8 @@ figura~\ref{fig:dit}
 Altos valores para a métrica NOC são indicativos de que existe maior reuso de
 código. Assim como DIT, a métrica NOC é um indicador da influência da classe
 no comportamento das classes filhas o que aumenta o esforço de testes. Quando os
-valores desta métrica estão muito altos há grande chance de que a abstração está
-sendo usada de forma incorreta. Dado esses cenários, está é um métrica cujos
+valores desta métrica estão aberrantes em relação às outras classes, há grande
+chance de que a abstração está sendo usada de forma incorreta. Dado esses cenários, está é um métrica cujos
 seus valores devem ser analisados caso a caso.
 
 Durante o processo de refatoração não foi aplicada herança em nenhuma das
@@ -385,7 +385,7 @@ A justificativa para o aumento da métrica WMC também se aplica neste caso.
 Após cada iteração de refatoração, as Views passaram a delegar
 responsabilidades para o Presenter por meio de chamada de métodos, além disso, o Presenter interage com a
 View da mesma forma para atualizá-la. Portanto, a quantidade de chamada de
-métodos aumentou e isso se refletiu na métrica RFC.
+métodos aumentaram e isso se refletiu na métrica RFC.
 
 \subsection{LCOM}
 
