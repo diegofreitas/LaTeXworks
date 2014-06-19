@@ -90,11 +90,13 @@ informação\cite{WandWeber}. As métricas são:
 quando um objeto recebe uma mensagem, incluindo os métodos de outras classes. É
 levado em consideração somente os métodos que são chamados diretamente.
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[scale=0.6]{img/pic_rfc.png}
-	\caption{Exemplo de avaliação da métrica RFC/Fonte: Próprio Autor}
+\begin{figure}[htb]
 	\label{fig:pic_rfc}
+	\caption{Exemplo de avaliação da métrica RFC}
+	\begin{center}
+		\includegraphics[scale=0.6]{img/pic_rfc.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 Na figura \ref{fig:pic_rfc}, a classe de exemplo tem um total de três métodos
@@ -115,11 +117,14 @@ colaterais que ocorrerem ao modificar uma classe altamente acoplada. O valor da
 métrica CBO para uma classe é o número de outras classes que a classe analisada
 depende.
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[scale=0.8]{img/pic_cbo.png}
-	\caption{Exemplo de avaliação da métrica CBO/Fonte: Próprio Autor}
+
+\begin{figure}[htb]
 	\label{fig:pic_cbo}
+	\caption{Exemplo de avaliação da métrica CBO}
+	\begin{center}
+		\includegraphics[scale=0.8]{img/pic_cbo.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 A figura \ref{fig:pic_cbo} ilustra um exemplo de acoplamento entre objetos. Um
@@ -134,11 +139,13 @@ O valor dessa métrica é fornecido por meio da quantidade de métodos que não 
 nenhum atributo em comum, menos a quantidade de métodos que tem atributos em
 comum.
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.8]{img/pic_lcom_ex1.png}
-	\caption{Exemplo  de avaliação da métrica LCOM/Fonte: Próprio Autor}
+\begin{figure}[htb]
 	\label{fig:pic_lcom_ex1}
+	\caption{Exemplo  de avaliação da métrica LCOM}
+	\begin{center}
+		\includegraphics[scale=0.8]{img/pic_lcom_ex1.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 No exemplo da figura \ref{fig:pic_lcom_ex1} a classe ilustrada tem três métodos
@@ -162,11 +169,13 @@ nenhum conjunto com algum atributo que seja compartilhado entre os métodos.
 Portanto o LCOM para para a classe ``ClasseA'' é, três conjuntos vazios, menos
 zero conjuntos não vazios, que é igual a, LCOM três.
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.8]{img/pic_lcom_ex2.png}
-	\caption{Exemplo  de avaliação da métrica LCOM/Fonte: Próprio Autor}
+\begin{figure}[htb]
 	\label{fig:pic_lcom_ex2}
+	\caption{Exemplo  de avaliação da métrica LCOM}
+	\begin{center}
+		\includegraphics[scale=0.8]{img/pic_lcom_ex2.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 Outro exemplo é mostrado na figura \ref{fig:pic_lcom_ex2} . Aplicando a mesma
@@ -196,11 +205,14 @@ relaciona também por meio de herança com a classe ``Raiz''. A distância entre
 classe ``ClasseZ'' até a classe ``Raiz'' na hierarquia é de dois nós. Portanto o
 valor da métrica DIT para a classe ``ClasseZ'' é dois.
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[scale=0.6]{img/pic_dit.png}
-	\caption{Exemplo de avaliação da métrica DIT/Fonte: Próprio Autor}
+
+\begin{figure}[htb]
 	\label{fig:pic_dit}
+	\caption{Exemplo de avaliação da métrica DIT}
+	\begin{center}
+		\includegraphics[scale=0.6]{img/pic_dit.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 \item[Number of Children (NOC)] Número de subclasses imediatas de uma
@@ -208,11 +220,13 @@ classe analisada. Essa medida é um indicativo de mau uso de herança conforme s
 valor aumenta e mostra o impacto que uma classe pode ter no sistema requerendo maior
 atenção e testes.
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[scale=0.6]{img/pic_noc.png}
-	\caption{Exemplo de avaliação da métrica NOC/Fonte: Próprio Autor}
+\begin{figure}[htb]
 	\label{fig:pic_noc}
+	\caption{Exemplo de avaliação da métrica NOC}
+	\begin{center}
+		\includegraphics[scale=0.6]{img/pic_noc.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 Na figura \ref{fig:pic_noc} a classe ``ClasseA'' e a classe ``ClasseT'' são as
@@ -231,11 +245,13 @@ considera outros fatores como número de linhas, número de parâmetros ou
 quantidade de estruturas de decisão. A figura~\ref{fig:pic_wmc} ilustra como a
 métrica WMC é avaliada em uma classe.
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[scale=0.6]{img/pic_wmc.png}
-	\caption{Exemplo de avaliação da métrica WMC/Fonte: Próprio Autor}
+\begin{figure}[htb]
 	\label{fig:pic_wmc}
+	\caption{Exemplo de avaliação da métrica WMC}
+	\begin{center}
+		\includegraphics[scale=0.6]{img/pic_wmc.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 No exemplo da figura~\ref{fig:pic_wmc}, a classe reprensentada tem um total de
@@ -313,10 +329,9 @@ implementação dos três componentes como por exemplo o gerenciamento dos objet
 que são dependentes do model definido na classe Object que o model deve
 extender. A Figura \ref{mvc} esclarece a interação entre os componentes.
 
-
-
 \begin{figure}[htb]
-	\caption{\label{mvc}Representação dos componentes do MVC}
+	\label{mvc}
+	\caption{Representação dos componentes do MVC}
 	\begin{center}
 		\includegraphics[scale=0.5]{img/mvc.png}
 	\end{center}
@@ -410,11 +425,13 @@ máximo a API gráfica do resto da aplicação. Dessa forma o model não se comu
 com a view por meio do padrão Observer, sendo que a view séra atualizada
 pelo presenter como pode ser observado na Figura~\ref{fig:mvp_passive_view}.
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.5]{img/passive_view.png}
-	\caption{Passive View/Fonte: Próprio autor}
+\begin{figure}[htb]
 	\label{fig:mvp_passive_view}
+	\caption{MVP - Passive View}
+	\begin{center}
+		\includegraphics[scale=0.5]{img/passive_view.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 Outra variação do MVP descrita por \citeonline{fowler:sp} é o Supevising
@@ -423,24 +440,22 @@ exemplo o padrão Observer, para atualizar a View. Este comportamente é parecid
 com o do padrão MVC como pode pode ser observado na
 figura~\ref{fig:sup_controller}.
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.5]{img/supervising_controller.png}
-	\caption{Supervising Controller/Fonte: Próprio autor}
+\begin{figure}[htb]
 	\label{fig:sup_controller}
+	\caption{MVP - Supervising Controller}
+	\begin{center}
+		\includegraphics[scale=0.5]{img/supervising_controller.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
-
 
 MVP se adequa melhor as API's gráficas existentes e define de forma mais clara
 os componentes necessários para desenvolver uma aplicação, sendo o ponto de maior
 discussão reside em quais os limites das responsabilidades no que tange a
 mediação do Model e a View por parte do Presenter.
 
-
-
 \section{Framework Android}
  
-
 O android é uma plataforma baseado no linux mantido pela Google para
 ser embarcado em dispositivos podendo ser aplicado em carros, televisão, placas
 controladoras mas seu destaque é a utilização em smartphones e
@@ -449,11 +464,13 @@ frameworks tendo em sua base o sistema operacional e seus drivers seguido da
 máquina virtual que executa os aplicativos android e bibliotecas auxiliares e
 aplicativos básicos como é demonstrado na figura \ref{android_stack}.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.5]{img/android_stack.png}
-	\caption{Android Stack/Fonte: Learning Android}
+\begin{figure}[htb]
 	\label{android_stack}
+	\caption{Android Stack}
+	\begin{center}
+		\includegraphics[scale=0.5]{img/android_stack.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 Para desenvolvimento é usada a API disponível no SDK que define

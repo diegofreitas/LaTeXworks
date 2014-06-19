@@ -19,13 +19,14 @@ sem interface gráfica, executado por linha de comando. Ele analisa o código ja
 compilado, conhecido como byte codes contido em arquivos com extensão .class. Um
 exemplo de uso do CKJM é mostrado a seguir:
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.5]{img/ckjm_run.png}
-	\caption{Exemplo de execução do CKJM} 
+\begin{figure}[htb]
 	\label{fig:ckjm_run}
+	\caption{Exemplo de execução do CKJM} 
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ckjm_run.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
-
 
 Os resultados são escritos na saída padrão do sistema, neste caso, no terminal
 de execução, mostrando uma lista com os nomes completos das classes
@@ -34,12 +35,13 @@ ordem: WMC, DIT, NOC, CBO, RFC, LCOM, Ce, and NPM sendo que as métricas Ce e
 NPM são desconsideradas para esta pesquisa. a figura~\ref{fig:ckjm_result}
 ilustra o resultado de uma coleta.
 
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.45]{img/ckjm_result.png}
-	\caption{Exemplo de resultado da análise do CKJM} 
+\begin{figure}[htb]
 	\label{fig:ckjm_result}
+	\caption{Exemplo de resultado da análise do CKJM} 
+	\begin{center}
+		\includegraphics[scale=0.45]{img/ckjm_result.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 
@@ -53,13 +55,14 @@ pacote referente ao gerenciamento de grupos de contatos presente no pacote
 mostra os pacotes que compõem o aplicativo. O pacote a ser refatorado está
 destacado em azul.
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.40,angle=90]{img/pacotes_contacts.png}
-	\caption{Diagrama de pacotes do aplicativo de contatos} 
+\begin{figure}[htb]
 	\label{fig:pacotes_contacts}
+	\caption{Diagrama de pacotes do aplicativo de contatos}  
+	\begin{center}
+		\includegraphics[scale=0.40,angle=90]{img/pacotes_contacts.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
-
 
 A cada iteração será selecionada uma tela do aplicativo para a aplicação do
 padrão MVP. Cada tela é implementada por uma classe e suas interfaces
@@ -69,20 +72,29 @@ são ilustradas nas figuras \ref{fig:contacts_groups},
 \begin{figure}[!ht]
 	\centering
 	\begin{minipage}[b]{0.45\linewidth}
-		\includegraphics[scale=0.2]{img/contacts_groups.png}
-		\caption{Tela de lista de grupos} 
 		\label{fig:contacts_groups}
+		\caption{Tela de lista de grupos} 
+		\begin{center}
+			\includegraphics[scale=0.18]{img/contacts_groups.png}
+		\end{center}
+		\legend{Fonte: Próprio Autor}
 	\end{minipage}
 \quad
 	\begin{minipage}[b]{0.45\linewidth}
-		\includegraphics[scale=0.2]{img/contacts_group_view.png}
-		\caption{Tela de visualização de um grupo} 
+		\caption{Tela de visualização de um grupo}
+		\begin{center}
+			\includegraphics[scale=0.18]{img/contacts_group_view.png}
+		\end{center}
+		\legend{Fonte: Próprio Autor} 
 		\label{fig:contacts_groups_view}
 	\end{minipage}
 \quad
 	\begin{minipage}[b]{0.45\linewidth}
-		\includegraphics[scale=0.2]{img/contacts_edit.png}
-		\caption{Tela de edição e criação de grupos} 
+		\caption{Tela de edição e criação de grupos}
+		\begin{center} 
+			\includegraphics[scale=0.18]{img/contacts_edit.png}
+		\end{center}
+		\legend{Fonte: Próprio Autor} 
 		\label{fig:groups_edit}
 	\end{minipage}
 \end{figure}
@@ -99,11 +111,13 @@ dados de um grupo.
 Essas classes estão presentes no pacote \textbf{com.android.contacts.group} como
 mostra a figura \ref{fig:classes_group_baseline}.
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.53]{img/classes_group_baseline.png}
-	\caption{Diagrama de pacotes do aplicativo de contatos} 
+\begin{figure}[htb]
 	\label{fig:classes_group_baseline}
+	\caption{Diagrama de pacotes de grupos}   
+	\begin{center}
+		\includegraphics[scale=0.53]{img/classes_group_baseline.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 Estas interfaces com o usuário são usadas dentro de Activities que controlam uma
@@ -133,6 +147,14 @@ versão \verb|4.4.2_r1| do aplicativo.
     \end{tabular}
     \label{tab:dados_baseline}
 \end{table}
+
+
+Os dados de referência apresentados na tabela \ref{tab:dados_baseline} foram
+coletados usando a ferramenta CKJM. Os dados são referentes ao pacote de grupos.
+Foram coletados os valores de cada métricas para cada uma das classes presentes
+no pacote de grupos e para cada métrica foi calculado a média. A cada
+refatoração será executado o mesmo procedimento de coleta descrito para fazer
+uma análise na variação das médias de cada métrica.
 
 
 \section{Arquitetura Proposta}
@@ -213,12 +235,16 @@ métrica no projeto.
     \label{tab:wmc}
 \end{table}
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics{img/wmc.png}
-	\caption{Gráfico da métrica WMC/Fonte: Próprio autor} 
+
+\begin{figure}[!htb]
 	\label{fig:wmc}
+	\caption{Gráfico da métrica WMC}   
+	\begin{center}
+		\includegraphics{img/wmc.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
+
 
 %3o) justificar o q causou tal comportamento.
 
@@ -242,45 +268,6 @@ No contexto dessa refatoração, a métrica WMC não pode ser considerada um
 indicador determinante para a avaliação da qualidade do objeto de estudo.
 
 
-\subsection{DIT}
-
-A métrica DIT está relacionada complexidade e reusabilidade. Quanto mais
-abaixo na hierarquia de herança a classe estiver, menos previsível será seu
-comportamento devido a quantidade de métodos que serão herdados das classes
-acima nessa hierarquia. Entretanto, a métrica também indica um potencial reuso
-de código por meio da herança de métodos, isso torna os parâmetros de avaliação
-da métrica dependentes do contexto a ser analisado. O aumento demonstrado na DIT
-se deve ao fato que o CKJM considera a implementação de interface como herança.
-A interface define somente o contrato que a classe deve implementar. Sendo uma
-interface, não há nenhuma implementação que possa interferir no comportamento
-da classe, portanto essa alteração na métrica DIT não deve ser considerada. O
-aumento no valor da métrica é mostrado na tabela~\ref{tab:dit} e
-figura~\ref{fig:dit}
-
-\begin{table}[!h]
-	\centering
-	    \caption{Dados métrica DIT}
-    \begin{tabular}{ | l | l | }
-    \hline
-    Iteração & Média 			\\ \hline
-    Baseline & 0.7741935484  	\\ \hline
-    Iteração 1 & 0.78125		\\ \hline
-	Iteração 2 & 0.78125			\\ \hline
-	Iteração 3 & 0.7878787879	\\ \hline
-    \end{tabular}
-    \label{tab:dit}
-\end{table}
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics{img/dit.png}
-	\caption{Valores de DIT/Fonte: Próprio autor}
-	\label{fig:dit}
-\end{figure}
-
-\vspace{\onelineskip}
-\vspace{\onelineskip}
-\vspace{\onelineskip}
 \subsection{NOC}
 
 Altos valores para a métrica NOC são indicativos de que existe maior reuso de
@@ -315,6 +302,45 @@ como pode ser observado na tabela \ref{tab:noc}. %e figura~\ref{fig:noc}
 %	\label{fig:noc}
 %\end{figure}
 
+
+\subsection{DIT}
+
+A métrica DIT está relacionada complexidade e reusabilidade. Quanto mais
+abaixo na hierarquia de herança a classe estiver, menos previsível será seu
+comportamento devido a quantidade de métodos que serão herdados das classes
+acima nessa hierarquia. Entretanto, a métrica também indica um potencial reuso
+de código por meio da herança de métodos, isso torna os parâmetros de avaliação
+da métrica dependentes do contexto a ser analisado. O aumento demonstrado na DIT
+se deve ao fato que o CKJM considera a implementação de interface como herança.
+A interface define somente o contrato que a classe deve implementar. Sendo uma
+interface, não há nenhuma implementação que possa interferir no comportamento
+da classe, portanto essa alteração na métrica DIT não deve ser considerada. O
+aumento no valor da métrica é mostrado na tabela~\ref{tab:dit} e
+figura~\ref{fig:dit}
+
+\begin{table}[!h]
+	\centering
+	    \caption{Dados métrica DIT}
+    \begin{tabular}{ | l | l | }
+    \hline
+    Iteração & Média 			\\ \hline
+    Baseline & 0.7741935484  	\\ \hline
+    Iteração 1 & 0.78125		\\ \hline
+	Iteração 2 & 0.78125			\\ \hline
+	Iteração 3 & 0.7878787879	\\ \hline
+    \end{tabular}
+    \label{tab:dit}
+\end{table}
+
+\begin{figure}[!htb]
+	\label{fig:dit}
+	\caption{Gráfico da métrica DIT}   
+	\begin{center}
+		\includegraphics{img/dit.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
+\end{figure}
+
 \subsection{CBO}
 
 Valores baixos de CBO são indicativos de boa modularidade e encapsulamento que
@@ -345,11 +371,13 @@ acréscimo de duas dependências entre a View e o Presenter. A variação da mé
     \label{tab:cbo}
 \end{table}
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics{img/cbo.png}
-	\caption{Valores de CBO/Fonte: Próprio autor}
+\begin{figure}[!htb]
 	\label{fig:cbo}
+	\caption{Gráfico da métrica CBO}   
+	\begin{center}
+		\includegraphics{img/cbo.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 
@@ -376,12 +404,15 @@ sugere um aumento da complexidade do código conforme é apresentado na tabela \
     \label{tab:rfc}
 \end{table}
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics{img/rfc.png}
-	\caption{Valores de RFC/Fonte: Próprio autor}
+\begin{figure}[!htb]
 	\label{fig:rfc}
+	\caption{Gráfico da métrica RFC}   
+	\begin{center}
+		\includegraphics{img/rfc.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
+
 
 A justificativa para o aumento da métrica WMC também se aplica neste caso.
 Após cada iteração de refatoração, as Views passaram a delegar
@@ -414,9 +445,11 @@ métrica LCOM. Isto indica que a coesão do código melhorou após cada iteraç�
     \label{tab:lcom}
 \end{table}
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics{img/lcom.png}
-	\caption{Valores de lcom/Fonte: Próprio autor}
+\begin{figure}[!htb]
 	\label{fig:lcom}
+	\caption{Gráfico da métrica LCOM}   
+	\begin{center}
+		\includegraphics{img/lcom.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}

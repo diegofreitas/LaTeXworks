@@ -19,11 +19,13 @@ interação com a classe de View. A figura \ref{fig:classes_iteracao3} mostra a
 disposição das classes após a refatoração.
 
 
-\begin{figure}[!h]
-	\centering
+\begin{figure}[htb]
 	\label{fig:classes_iteracao3}
-	\includegraphics[scale=0.55]{img/classes_iteracao3}
-	\caption{Pacote após refatoração/Fonte: Próprio autor}
+	\caption{Pacote após refatoração}
+	\begin{center}
+		\includegraphics[scale=0.55]{img/classes_iteracao3}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
 
 
@@ -62,13 +64,15 @@ significativa maior coesão no aplicativo. Isso é demonstrado nos resultados da
 métrica LCOM que foi a mais afetada pelo uso do padrão MVP no projeto como pode
 ser observado na figura \ref{fig:allmetrics}.
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics{img/allmetrics}
-	\caption[Variação das métricas ao longo das iterações]{Variação das métricas ao
-	longo das iterações/Fonte:Próprio autor}
+\begin{figure}[htb]
 	\label{fig:allmetrics}
+	\caption{Variação das métricas ao longo das iterações}
+	\begin{center}
+		\includegraphics{img/allmetrics}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
 \end{figure}
+
 
 É possível observar nos resutados a relação entre LCOM e as métricas 
 WMC,RFC que aumentaram conforme o LCOM diminuia. O aumento da complexidade
