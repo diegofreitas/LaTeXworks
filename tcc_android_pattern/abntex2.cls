@@ -222,14 +222,14 @@
 \newcommand{\coorientadorname}{Coorientador:}
 \newcommand{\folhadeaprovacaoname}{Folha de aprova\c{c}\~ao}
 \newcommand{\resumoname}{Resumo} 
-\newcommand{\listadesiglasname}{Lista de abreviaturas e siglas}
+\newcommand{\listadesiglasname}{Lista de siglas}
 \newcommand{\listadesimbolosname}{Lista de s\'imbolos}
 %
 \addto\captionsbrazil{% portugues-brasil
   %% ajusta nomes padroes do babel
   \renewcommand{\bibname}{Refer\^encias}
   \renewcommand{\indexname}{\'Indice}
-  \renewcommand{\listfigurename}{Lista de ilustra\c{c}\~{o}es}
+  \renewcommand{\listfigurename}{Lista de figuras}
   \renewcommand{\listtablename}{Lista de tabelas}
   %% ajusta nomes usados com a macro \autoref
   \renewcommand{\pageautorefname}{p\'agina}

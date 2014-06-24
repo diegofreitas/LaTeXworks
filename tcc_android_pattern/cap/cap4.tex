@@ -2,6 +2,19 @@
 
 \section{Discussão dos Resultados} 
 
+A figura \ref{fig:classes_iteracao3} mostra a
+disposição das classes após a refatoração.
+\begin{figure}[htb]
+	\label{fig:classes_iteracao3}
+	\caption{Pacote após refatoração}
+	\begin{center}
+		\includegraphics[scale=0.5]{img/classes_iteracao3}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
+\end{figure}
+
+
+%CBO
 As classes destinadas à implementação da interface no framework android fornecem
 acesso a recursos que servem para implementação de responsabilidades não
 relacionadas com a interface. Essa característica do framework android leva à
@@ -15,20 +28,14 @@ de projeto onde um objeto recebe as referências para as suas dependências sem
 conhecer os processo de contrução das mesmas.
 \url{http://en.wikipedia.org/wiki/Dependency_injection}}
 pode ser aplicado para acessar esses recursos e serviços sem a necessidade de
-interação com a classe de View. A figura \ref{fig:classes_iteracao3} mostra a
-disposição das classes após a refatoração.
+interação com a classe de View.
 
+Houve diminuição na métrica CBO nas classes alteradas pois diversas
+responsabilidades que utilizam essas dependências foram movidas para a classe de
+Presenter. Analisando de forma geral, essas dependências permanecem no pacote
+além de ser criado mais um acoplamento entre a View e a nova classe Presenter.
 
-\begin{figure}[htb]
-	\label{fig:classes_iteracao3}
-	\caption{Pacote após refatoração}
-	\begin{center}
-		\includegraphics[scale=0.5]{img/classes_iteracao3}
-	\end{center}
-	\legend{Fonte: Próprio Autor}
-\end{figure}
-
-
+%WMC/RFC OK
 Ao usar o padrão MVP, a quantidade de linhas de métodos diminui pois cada um
 dos componentes implementaram uma parte do caso de uso, aumentando o números de
 métodos que se reflete na métrica WMC. Na implementação original onde um método
@@ -51,17 +58,11 @@ métrica aumentou ao aplicar o padrão MVP, pois mais métodos foram criados. A
 métrica WMC mostra a complexidade de uma classe, mas apesar do aumento nos
 valores, a complexidade diminuiu, ao ser usado a implementação com métodos mais
 simples.
-
 % colocar imagem de código antes e depois.
-
 A divisão de responsabilidades também afetou negativamente a métrica RFC, pois
 com o aumento da quantidade de métodos, a troca de mensagens entre componentes
 e com a própria classe aumentaram.  
 
-Houve diminuição na métrica CBO nas classes alteradas pois diversas
-responsabilidades que utilizam essas dependências foram movidas para a classe de
-Presenter. Analisando de forma geral, essas dependências permanecem no pacote
-além de ser criado mais um acoplamento entre a View e a nova classe Presenter.
 
 A métrica WMC está relacionada com as métricas DIT e NOC. Como houve pouca
 variação no DIT e nenhuma variação no NOC, o aumento da WMC não tem impacto
@@ -100,7 +101,9 @@ analisando os resultados, como também ao analisar o código em que as classes
 estão menores, mais coesas, com responsabilidades bem definidas. Portanto, a
 arquitetura proposta melhorou a qualidade do objeto de estudo porque promoveu
 maior coesão e diminuiu a complexidade.
+%
 
+%OK
 A maioria das métricas tendem a aumentar durante o processo de refatoração. 
 É válido resaltar que as três classes refatoradas são as mais complexas do
 pacote de grupos com valores anômalos para as métricas. Portanto, somente após
