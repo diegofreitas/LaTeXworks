@@ -40,7 +40,6 @@
 	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
 	% -- opções do pacote babel --
 	english,			% idioma adicional para hifenização
-	spanish,			% idioma adicional para hifenização
 	brazil,				% o último idioma é o principal do documento
 	]{abntex2}
 
@@ -114,24 +113,25 @@
 
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
-% ---
-\titulo{Uso de Padrões de Projetos no desenvolvimento de aplicativos Android}
-\autor{Diego Lins de Freitas}
-\local{Manaus-Am}
+% --- 
+\titulo{ANÁLISE DO PADRÃO DE PROJETO MODEL VIEW PRESENTER NA PLATAFORMA ANDROID
+USANDO MÉTRICAS DE QUALIDADE OO}
+\autor{DIEGO LINS DE FREITAS}
+\local{MANAUS}
 \data{2014}
-\orientador{MsC. Danny Lopes}
+\orientador{Danny Lopes M.Sc.}
 \instituicao{
-  Faculdade Fucapi
+  FUNDAÇÃO CENTRO DE ANÁLISE PESQUISA E INOVAÇÃO TECNOLOGICA
   \par
-  Especialização em Engenharia de Software
+  INSTITUTO DE ENSINO SUPERIOR FUCAPI
   \par
-  Centro de Pós-Graduação e Extensão (CPGE)}
+  CENTRO DE PÓS-GRADUAÇÃO E EXTENSÃO (CPGE)}
 \tipotrabalho{Monografia}
-Monografia apresentada ao curso de Administração da 
-Faculdade Fucapi (Instituto de Ensino Superior Fucapi), como 
-requisito parcial para obtenção do Título de Bacharel em 
-Administração. 
-\preambulo{}
+\preambulo{
+Monografia apresentada ao curso de especialização em Engenhria de Software do
+Centro de Pós-graduação e Extensão - CPGE - FUCAPI, como requisito parcial para
+obtenção do título de Especialista em Engenharia de Software. 
+}
 % ---
 
 
@@ -189,9 +189,9 @@ Administração.
 % ---
 % Capa
 % ---
-\imprimircapa
+\imprimircapa 
 
-\imprimirfolhaderosto*
+\imprimirfolhaderosto* 
 
 % ---
 % RESUMOS
@@ -199,6 +199,7 @@ Administração.
 
 % resumo em português
 \begin{resumo}
+\noindent
 A plataforma android foi adotada por vários fornecedores de smartphones e
 tablets promovendo uma abrangente disseminação do sistema operacional.
 Formou-se um grande mercado a ser explorado com fornecimento de aplicativos para
@@ -226,23 +227,25 @@ componentes usados para dividir as responsabilidades.
 
 \begin{resumo}[Abstract]
  \begin{otherlanguage*}{english}
-
+\noindent 
 The android platform has been adopted by several vendors of smartphones and
 tablets promoting a comprehensive dissemination of the operating system.
-It Formed a large market to be exploited for application development
-for the most varied purposes. To meet this demand is necessary to develop
-quality aplications in a productive way. However , since for the case
-of small applications there is little concern with the architecture of the solution.
-The patterns that are widespread in the community has the focus on the use of
-components and development of man-machine interaction. This paper aims to present the
-application of MVP design pattern in the development projects using android
-framework. The effects that this pattern has on the object of study are
-evaluated on an object-oriented perspective. The experimental method is
-iteratively applied using a  process of incremental refactoring collecting
-quality metrics of code to do a quantitative analysis .
-The results show that the application of the design pattern increased the
-cohesion of the code, however, with a small increase in complexity due to the inclusion of new
-components used to divide responsibilities .
+Formed a large market to be exploited for application delivery
+the most varied purposes. To meet this demand is necessary
+develop quality and high productivity applications. However, for
+dealing with applications designed to meet specific needs and with a
+short, the development cycle there is little concern with the architecture of
+solution resulting in products with poor quality. Within the engineering
+there are software design patterns that help in the development of sitema.
+This work aims to present the application of the design pattern
+Model View Presenter in android application development to increase
+application quality. The effects that this pattern has on the object of study
+are assessed on an object-oriented perspective. The experimental method is
+iteratively applied using the process and incremental refactoring
+collecting quality metrics of code to do a quantitative analysis.
+The results show that the application of standard increased the cohesion of the code,
+however, with a small increase in complexity due to the inclusion of new
+components used to divide responsibilities.
 
  \vspace{\onelineskip}
 
@@ -285,6 +288,9 @@ components used to divide responsibilities .
    	\item[NPM] 	Number of Public Methods for a class
 \item[Ce]Afferent coupling
 \item[SDK] Software Development Kit
+\item[MVVM]  Model View ViewModel
+\item[MVP-VM] Model View Presenter ViewModel
+\item[MVPC] Model View Presenter Controller
 
 
 \end{siglas}
@@ -338,6 +344,33 @@ components used to divide responsibilities .
 % Consulte o manual da classe abntex2 para orientações sobre o glossário.
 %
 %\glossary
+
+% ----------------------------------------------------------
+% Apêndices 
+% ----------------------------------------------------------
+
+% --- 
+% Inicia os apêndices
+% --- 
+%\begin{apendicesenv}
+
+% Imprime uma página indicando o início dos apêndices
+%\partapendices
+  
+% ----------------------------------------------------------
+%\chapter{Métricas coletadas}
+%\begin{figure}[htb]
+%	\caption{\label{baseline_data}Métricas da versão de referência}
+%	 \vspace{\onelineskip}
+%	 \vspace{\onelineskip}
+%	 \vspace{\onelineskip}
+%	\begin{center}
+%	    \includegraphics[scale=0.6,angle=90]{baseline_data}
+%	\end{center}
+%	\legend{Fonte: Próprio Autor}
+%\end{figure}
+
+%\end{apendicesenv}
 
 
 \end{document}

@@ -20,8 +20,7 @@ compilado, conhecido como byte codes contido em arquivos com extensão .class. U
 exemplo de uso do CKJM é mostrado a seguir:
 
 \begin{figure}[htb]
-	\label{fig:ckjm_run}
-	\caption{Exemplo de execução do CKJM} 
+	\caption{\label{fig:ckjm_run} Exemplo de execução do CKJM} 
 	\begin{center}
 		\includegraphics[scale=0.5]{img/ckjm_run.png}
 	\end{center}
@@ -36,8 +35,7 @@ NPM são desconsideradas para esta pesquisa. a figura~\ref{fig:ckjm_result}
 ilustra o resultado de uma coleta.
 
 \begin{figure}[htb]
-	\label{fig:ckjm_result}
-	\caption{Exemplo de resultado da análise do CKJM} 
+	\caption{\label{fig:ckjm_result} Exemplo de resultado da análise do CKJM} 
 	\begin{center}
 		\includegraphics[scale=0.45]{img/ckjm_result.png}
 	\end{center}
@@ -56,8 +54,8 @@ mostra os pacotes que compõem o aplicativo. O pacote a ser refatorado está
 destacado em azul.
 
 \begin{figure}[htb]
-	\label{fig:pacotes_contacts}
-	\caption{Diagrama de pacotes do aplicativo de contatos}  
+	\caption{\label{fig:pacotes_contacts} Diagrama de pacotes do aplicativo de
+	contatos}
 	\begin{center}
 		\includegraphics[scale=0.40,angle=90]{img/pacotes_contacts.png}
 	\end{center}
@@ -69,11 +67,10 @@ padrão MVP. Cada tela é implementada por uma classe e suas interfaces
 são ilustradas nas figuras \ref{fig:contacts_groups},
 \ref{fig:contacts_groups_view} e \ref{fig:groups_edit}. 
 
-\begin{figure}[!ht]
+\begin{figure}[htb]
 	\centering
 	\begin{minipage}[b]{0.45\linewidth}
-		\label{fig:contacts_groups}
-		\caption{Tela de lista de grupos} 
+		\caption{\label{fig:contacts_groups} Tela de lista de grupos} 
 		\begin{center}
 			\includegraphics[scale=0.18]{img/contacts_groups.png}
 		\end{center}
@@ -81,21 +78,19 @@ são ilustradas nas figuras \ref{fig:contacts_groups},
 	\end{minipage}
 \quad
 	\begin{minipage}[b]{0.45\linewidth}
-		\caption{Tela de visualização de um grupo}
+		\caption{\label{fig:contacts_groups_view} Tela de visualização de um grupo}
 		\begin{center}
 			\includegraphics[scale=0.18]{img/contacts_group_view.png}
 		\end{center}
 		\legend{Fonte: Próprio Autor} 
-		\label{fig:contacts_groups_view}
 	\end{minipage}
 \quad
 	\begin{minipage}[b]{0.45\linewidth}
-		\caption{Tela de edição e criação de grupos}
+		\caption{\label{fig:groups_edit} Tela de edição e criação de grupos}
 		\begin{center} 
 			\includegraphics[scale=0.18]{img/contacts_edit.png}
 		\end{center}
 		\legend{Fonte: Próprio Autor} 
-		\label{fig:groups_edit}
 	\end{minipage}
 \end{figure}
 
@@ -112,8 +107,7 @@ Essas classes estão presentes no pacote \textbf{com.android.contacts.group} com
 mostra a figura \ref{fig:classes_group_baseline}.
 
 \begin{figure}[htb]
-	\label{fig:classes_group_baseline}
-	\caption{Diagrama de pacotes de grupos}   
+	\caption{\label{fig:classes_group_baseline} Diagrama de pacotes de grupos}   
 	\begin{center}
 		\includegraphics[scale=0.53]{img/classes_group_baseline.png}
 	\end{center}
@@ -133,7 +127,7 @@ versão \verb|4.4.2_r1| do aplicativo.
 
 \begin{table}[!h]
 	\centering
-	    \caption{Métricas CK da versão de referência}
+	    \caption{\label{tab:dados_baseline} Métricas CK da versão de referência}
 	
     \begin{tabular}{ | l | l | }
     \hline
@@ -145,7 +139,7 @@ versão \verb|4.4.2_r1| do aplicativo.
 	RFC	 	& 	23.7419354839	\\ \hline
 	LCOM 	& 	57.4838709677	\\ \hline
     \end{tabular}
-    \label{tab:dados_baseline}
+    \legend{Fonte: Próprio Autor}
 \end{table}
 
 
@@ -222,7 +216,7 @@ métrica no projeto.
 
 \begin{table}[!h]
 	\centering
-	\caption{Dados métrica WMC}
+	\caption{\label{tab:wmc}Dados métrica WMC}
     \begin{tabular}{ | l | l | }
     \hline
     Iteração & Média 			\\ \hline
@@ -231,14 +225,14 @@ métrica no projeto.
 	Iteração 2 & 9				\\ \hline
 	Iteração 3 & 8.9393939394	\\ \hline
     \end{tabular}
-    
-    \label{tab:wmc}
+    \legend{Fonte: Próprio Autor}
+
 \end{table}
 
 
 \begin{figure}[!htb]
-	\label{fig:wmc}
-	\caption{Gráfico da métrica WMC}   
+	
+	\caption{\label{fig:wmc} Gráfico da métrica WMC}   
 	\begin{center}
 		\includegraphics{img/wmc.png}
 	\end{center}
@@ -283,7 +277,7 @@ como pode ser observado na tabela \ref{tab:noc}. %e figura~\ref{fig:noc}
 
 \begin{table}[!h]
 	\centering
-	    \caption{Dados métrica NOC}
+	    \caption{\label{tab:noc} Dados métrica NOC}
     \begin{tabular}{ | l | l | }
     \hline
     Iteração & Média 			\\ \hline
@@ -292,7 +286,7 @@ como pode ser observado na tabela \ref{tab:noc}. %e figura~\ref{fig:noc}
 	Iteração 2 & 0				\\ \hline
 	Iteração 3 & 0	\\ \hline
     \end{tabular}
-    \label{tab:noc}
+    \legend{Fonte: Próprio Autor}
 \end{table}
 
 %\begin{figure}[h]
@@ -320,7 +314,7 @@ figura~\ref{fig:dit}
 
 \begin{table}[!h]
 	\centering
-	    \caption{Dados métrica DIT}
+	    \caption{\label{tab:dit} Dados métrica DIT}
     \begin{tabular}{ | l | l | }
     \hline
     Iteração & Média 			\\ \hline
@@ -329,12 +323,11 @@ figura~\ref{fig:dit}
 	Iteração 2 & 0.78125			\\ \hline
 	Iteração 3 & 0.7878787879	\\ \hline
     \end{tabular}
-    \label{tab:dit}
+    \legend{Fonte: Próprio Autor}
 \end{table}
 
 \begin{figure}[!htb]
-	\label{fig:dit}
-	\caption{Gráfico da métrica DIT}   
+	\caption{\label{fig:dit} Gráfico da métrica DIT}   
 	\begin{center}
 		\includegraphics{img/dit.png}
 	\end{center}
@@ -358,7 +351,7 @@ acréscimo de duas dependências entre a View e o Presenter. A variação da mé
 
 \begin{table}[!h]
 	\centering
-	    \caption{Dados métrica CBO}
+	    \caption{\label{tab:cbo} Dados métrica CBO}
 	
     \begin{tabular}{ | l | l | }
     \hline
@@ -368,12 +361,11 @@ acréscimo de duas dependências entre a View e o Presenter. A variação da mé
 	Iteração 2 & 10.09375		\\ \hline
 	Iteração 3 & 10.1515151515	\\ \hline
     \end{tabular}
-    \label{tab:cbo}
+    \legend{Fonte: Próprio Autor}
 \end{table}
 
 \begin{figure}[!htb]
-	\label{fig:cbo}
-	\caption{Gráfico da métrica CBO}   
+	\caption{\label{fig:cbo} Gráfico da métrica CBO}   
 	\begin{center}
 		\includegraphics{img/cbo.png}
 	\end{center}
@@ -392,7 +384,7 @@ sugere um aumento da complexidade do código conforme é apresentado na tabela \
 
 \begin{table}[!h]
 	\centering
-	    \caption{Dados métrica RFC}
+	    \caption{\label{tab:rfc} Dados métrica RFC}
     \begin{tabular}{ | l | l | }
     \hline
     Iteração & Média 			\\ \hline
@@ -401,12 +393,11 @@ sugere um aumento da complexidade do código conforme é apresentado na tabela \
 	Iteração 2 & 24.71875		\\ \hline
 	Iteração 3 & 24.9090909091	\\ \hline
     \end{tabular}
-    \label{tab:rfc}
+    \legend{Fonte: Próprio Autor}
 \end{table}
 
-\begin{figure}[!htb]
-	\label{fig:rfc}
-	\caption{Gráfico da métrica RFC}   
+\begin{figure}[htb]
+	\caption{\label{fig:rfc} Gráfico da métrica RFC}   
 	\begin{center}
 		\includegraphics{img/rfc.png}
 	\end{center}
@@ -433,7 +424,7 @@ métrica LCOM. Isto indica que a coesão do código melhorou após cada iteraç�
 
 \begin{table}[!h]
 	\centering
-	    \caption{Dados métrica LCOM}
+	    \caption{\label{tab:lcom} Dados métrica LCOM}
     \begin{tabular}{ | l | l | }
     \hline
     Iteração & Média 			\\ \hline
@@ -442,14 +433,104 @@ métrica LCOM. Isto indica que a coesão do código melhorou após cada iteraç�
 	Iteração 2 & 53.1875		\\ \hline
 	Iteração 3 & 48.4242424242	\\ \hline
     \end{tabular}
-    \label{tab:lcom}
+    \legend{Fonte: Próprio Autor}
 \end{table}
 
 \begin{figure}[!htb]
-	\label{fig:lcom}
-	\caption{Gráfico da métrica LCOM}   
+	\caption{\label{fig:lcom} Gráfico da métrica LCOM}   
 	\begin{center}
 		\includegraphics{img/lcom.png}
 	\end{center}
 	\legend{Fonte: Próprio Autor}
 \end{figure}
+
+
+
+\section{Discussão dos Resultados} 
+
+A figura \ref{fig:classes_iteracao3} mostra a
+disposição das classes após a refatoração.
+\begin{figure}[htb]
+	\caption{\label{fig:classes_iteracao3} Pacote após refatoração}
+	\begin{center}
+		\includegraphics[scale=0.5]{img/classes_iteracao3}
+	\end{center}
+	\legend{Fonte: Próprio Autor }
+\end{figure}
+
+
+%CBO
+As classes destinadas à implementação da interface no framework android fornecem
+acesso a recursos que servem para implementação de responsabilidades não
+relacionadas com a interface. Essa característica do framework android leva à
+implementação da camada de View com diversas responsabilidades que não são
+inerentes à interação com o usuário. Isso dificultou a refatoração, pois as
+classes que exercem o papel de Presenter necessitam interagir com as classes de
+View para acessar esses recursos, além de atualizar o estado da View. O uso do
+padrão de injeção de
+dependência\footnote{Padrão
+de projeto onde um objeto recebe as referências para as suas dependências sem
+conhecer os processo de contrução das mesmas.
+\url{http://en.wikipedia.org/wiki/Dependency_injection}}
+pode ser aplicado para acessar esses recursos e serviços sem a necessidade de
+interação com a classe de View.
+
+Houve diminuição na métrica CBO nas classes alteradas pois diversas
+responsabilidades que utilizam essas dependências foram movidas para a classe de
+Presenter. Analisando de forma geral, essas dependências permanecem no pacote
+além de ser criado mais um acoplamento entre a View e a nova classe Presenter.
+
+%WMC/RFC OK
+Ao usar o padrão MVP, a quantidade de linhas de métodos diminui pois cada um
+dos componentes implementaram uma parte do caso de uso, aumentando o números de
+métodos que se reflete na métrica WMC. Na implementação original onde um método
+que era implementado na classe View, tinha a  responsabilidade de tratar os
+eventos do usuário, acessar os componetes visuais e recuperar os dados, validar
+esses dados, acessar o Model para persistir o dados e atualizar a tela como o
+novo estado. Tudo isso resulta em métodos com muitas linhas de código com várias
+estruturas de controle e iteração, isso aumenta a complexidade da classe.
+
+Ao dividir as responsabilidades entre os componentes definidos no padrão, um
+método complexo que era implementado na View quebrado em pelo menos três métodos
+menores, para que a View possa receber as interações com o usuário e dados de
+entrada para então delegar o precessamento ao Presenter que vai interagir com as
+classes que exercem o papel de Model, e para finalizar, o Presenter chama algum
+método da View que irá atualizar os componetes visuais com o novo estado dos
+dados.
+
+Tendo em vista que o método foi usado como unidade para calcular o WMC, essa
+métrica aumentou ao aplicar o padrão MVP, pois mais métodos foram criados. A
+métrica WMC mostra a complexidade de uma classe, mas apesar do aumento nos
+valores, a complexidade diminuiu, ao ser usado a implementação com métodos mais
+simples.
+% colocar imagem de código antes e depois.
+A divisão de responsabilidades também afetou negativamente a métrica RFC, pois
+com o aumento da quantidade de métodos, a troca de mensagens entre componentes
+e com a própria classe aumentaram.  
+
+
+A métrica WMC está relacionada com as métricas DIT e NOC. Como houve pouca
+variação no DIT e nenhuma variação no NOC, o aumento da WMC não tem impacto
+relevante.
+
+Os experimentos demonstraram que a aplicação do padrão MVP promoveu de forma
+significativa maior coesão no aplicativo. Isso é demonstrado nos resultados da
+métrica LCOM que foi a mais afetada pelo uso do padrão MVP no projeto como pode
+ser observado na figura \ref{fig:allmetrics}.
+
+\begin{figure}[htb]
+	\caption{\label{fig:allmetrics} Variação das métricas ao longo das iterações}
+		\includegraphics{img/allmetrics}
+	\legend{Fonte: Próprio Autor}
+\end{figure}
+
+
+É possível observar nos resutados a relação entre LCOM e as métricas 
+WMC,RFC que aumentaram conforme o LCOM diminuia. O aumento da complexidade
+indicado pelas métricas WMC e RFC é pequeno em comparação ao aumento de
+coesão indicada pela métrica LCOM. Pode-se chegar a essa conclusão, não somente
+analisando os resultados, como também ao analisar o código em que as classes
+estão menores, mais coesas, com responsabilidades bem definidas. Portanto, a
+arquitetura proposta melhorou a qualidade do objeto de estudo porque promoveu
+maior coesão e diminuiu a complexidade.
+%

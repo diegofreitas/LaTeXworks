@@ -531,6 +531,7 @@
   }{%else  
     \pagestyle{abntheadings}%
     \aliaspagestyle{chapter}{abntchapfirst}% customizing chapter pagestyle
+    \aliaspagestyle{section}{abntchapfirst}% customizing chapter pagestyle
   }  
   \nouppercaseheads%
   \bookmarksetup{startatroot}% 
@@ -665,7 +666,7 @@
    \renewcommand{\abstractnamefont}{\chaptitlefont}
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
    \begin{abstract}
-   \SingleSpacing
+   \OneHalfSpacing
   }{\end{abstract}\PRIVATEclearpageifneeded}
   
 \newenvironment{resumoumacoluna}[1][\resumoname]{%
@@ -673,7 +674,7 @@
    \renewcommand{\abstractnamefont}{\chaptitlefont}
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
    \begin{onecolabstract}
-   \SingleSpacing
+   \OneHalfSpacing
 }{\end{onecolabstract}\PRIVATEclearpageifneeded}
 % ---
 
@@ -861,17 +862,20 @@
 % Impressão da Capa
 \newcommand{\imprimircapa}{%
   \begin{capa}%
+  \SingleSpacing
     \center
-    %\vspace*{1cm}
-    {\ABNTEXchapterfont\large\imprimirautor}
+    {\ABNTEXchapterfont\small\bfseries\imprimirinstituicao}
+    
+    \vspace*{3cm}
+    {\ABNTEXchapterfont\bfseries\small\imprimirautor}
 
-    \vspace*{\fill}
-    {\ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo}
+    \vspace*{5cm}
+    {\ABNTEXchapterfont\bfseries\small\imprimirtitulo}
     \vspace*{\fill}
     
-    {\large\imprimirlocal}
+    {\bfseries\small\imprimirlocal}
     \par
-    {\large\imprimirdata}
+    {\bfseries\small\imprimirdata}
     
     \vspace*{1cm}
   \end{capa}
@@ -895,32 +899,38 @@
   \begin{center}
 
     %\vspace*{1cm}
-    {\ABNTEXchapterfont\large\imprimirautor}
+    {\ABNTEXchapterfont\bfseries\small\imprimirautor}
 
     \vspace*{\fill}\vspace*{\fill}
-    {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
+    {\ABNTEXchapterfont\bfseries\small\imprimirtitulo}
     \vspace*{\fill}
 
     \abntex@ifnotempty{\imprimirpreambulo}{%
-      \hspace{.45\textwidth}
-      \begin{minipage}{.5\textwidth}
+      \hspace{.3\textwidth}
+      \begin{minipage}{.6\textwidth}
       	\SingleSpacing
          \imprimirpreambulo
+         \vspace{\onelineskip}
+         \vspace{\onelineskip}
+         {\bfseries\small\imprimirorientadorRotulo~\imprimirorientador\par}
        \end{minipage}%
+
+    	
        \vspace*{\fill}
     }%
 
-    {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
+    %{\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
 
-    {\large\imprimirorientadorRotulo~\imprimirorientador\par}
+	
+    
     \abntex@ifnotempty{\imprimircoorientador}{%
        {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
     }%
     \vspace*{\fill}
 
-    {\large\imprimirlocal}
+    {\bfseries\small\imprimirlocal}
     \par
-    {\large\imprimirdata}
+    {\bfseries\small\imprimirdata}
     \vspace*{1cm}
 
   \end{center}
