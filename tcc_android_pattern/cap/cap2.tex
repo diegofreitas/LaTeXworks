@@ -86,6 +86,29 @@ informação\cite{WandWeber}. As métricas são:
 
 \begin{description}
 
+\item[Wheighted Methods per Classe (WMC)] Serve para expressar o nível de
+complexidade de uma classe com base na soma da complexidade dos métodos que ela
+possui. Isso afeta o esforço de manutenção da classe, além de impactar nas
+classes filhas que herdarão esses métodos. Também é um indicativo de que a
+classe tem métodos específicos dificultando o seu reuso. A unidade de
+complexidade definida por \citeonline{cksuite} é o próprio método e não
+considera outros fatores como número de linhas, número de parâmetros ou
+quantidade de estruturas de decisão. A figura~\ref{fig:pic_wmc} ilustra como a
+métrica WMC é avaliada em uma classe.
+
+\begin{figure}[htb]
+	\caption{\label{fig:pic_wmc}Exemplo de avaliação da métrica WMC}
+	\begin{center}
+		\includegraphics[scale=0.6]{img/pic_wmc.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
+\end{figure}
+
+No exemplo da figura~\ref{fig:pic_wmc}, a classe reprensentada tem um total de
+cinco métodos implementados. Seguindo estritamente o que \citeonline{cksuite}
+definem para a métrica, o valor da métrica WMC para a classe é cinco métodos.
+
+
 \item[Response sets for Class (RFC)] Quantidade de métodos que são executados
 quando um objeto recebe uma mensagem, incluindo os métodos de outras classes. É
 levado em consideração somente os métodos que são chamados diretamente.
@@ -131,7 +154,27 @@ classe chamada ``A'' depende das classes ``C'', ``X'' e ``Z''. O
 valor de CBO para a classe ``A" é a somas de todas as suas
 dependências, neste caso totalizando três dependências.
 
+\vspace{\onelineskip}
+\item[Depth Inheritance Tree (DIT)] Nível de uma classe na
+hierarquia de herança. Reflete o número máximo de nós  dentro da árvore
+de classes até a raiz, o que aumenta a complexidade conforme a quantidade de
+elementos envolvidos se eleva, diminuindo a previsibilidade do comportamento da
+classe com vários métodos e atributos sendo herdados, principalmente com o uso
+de sobrecarga de métodos. No exemplo da figura \ref{fig:pic_dit} a classe
+``ClasseZ'' tem um relacionamento de herança com a classe ``ClasseT'' que se
+relaciona também por meio de herança com a classe ``Raiz''. A distância entre a
+classe ``ClasseZ'' até a classe ``Raiz'' na hierarquia é de dois nós. Portanto o
+valor da métrica DIT para a classe ``ClasseZ'' é dois.
 
+
+\begin{figure}[htb]
+	\caption{\label{fig:pic_dit}Exemplo de avaliação da métrica DIT}
+	\begin{center}
+		\includegraphics[scale=0.6]{img/pic_dit.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
+\end{figure}
+\vspace{\onelineskip}
 \item[Lack of Cohesion in Methods (LCOM)] Usado para avaliar a coesão de uma
 classe por meio dos relacionamentos entre seus atributos e métodos.
 O valor dessa métrica é fornecido por meio da quantidade de métodos que não tem
@@ -190,27 +233,6 @@ Totalizando dois conjuntos vazios e um conjunto não vazio. Portanto o valor da
 métrica LCOM para a classe ``ClasseB'' é de um conjunto. Podemos concluir que a
 classe ``ClasseB'' é mais coesa que  a classe ``ClasseA''.
 
-
-\item[Depth Inheritance Tree (DIT)] Nível de uma classe na
-hierarquia de herança. Reflete o número máximo de nós  dentro da árvore
-de classes até a raiz, o que aumenta a complexidade conforme a quantidade de
-elementos envolvidos se eleva, diminuindo a previsibilidade do comportamento da
-classe com vários métodos e atributos sendo herdados, principalmente com o uso
-de sobrecarga de métodos. No exemplo da figura \ref{fig:pic_dit} a classe
-``ClasseZ'' tem um relacionamento de herança com a classe ``ClasseT'' que se
-relaciona também por meio de herança com a classe ``Raiz''. A distância entre a
-classe ``ClasseZ'' até a classe ``Raiz'' na hierarquia é de dois nós. Portanto o
-valor da métrica DIT para a classe ``ClasseZ'' é dois.
-
-
-\begin{figure}[htb]
-	\caption{\label{fig:pic_dit}Exemplo de avaliação da métrica DIT}
-	\begin{center}
-		\includegraphics[scale=0.6]{img/pic_dit.png}
-	\end{center}
-	\legend{Fonte: Próprio Autor}
-\end{figure}
-
 \item[Number of Children (NOC)] Número de subclasses imediatas de uma
 classe analisada. Essa medida é um indicativo de mau uso de herança conforme seu
 valor aumenta e mostra o impacto que uma classe pode ter no sistema requerendo maior
@@ -227,31 +249,6 @@ atenção e testes.
 Na figura \ref{fig:pic_noc} a classe ``ClasseA'' e a classe ``ClasseT'' são as
 únicas classes que tem uma relação de herança direta com a classe ``Raiz'',
 portanto o valor da métrica NOC para a classe ``Raiz'' é  dois.
-
- 
-
-\item[Wheighted Methods per Classe (WMC)] Serve para expressar o nível de
-complexidade de uma classe com base na soma da complexidade dos métodos que ela
-possui. Isso afeta o esforço de manutenção da classe, além de impactar nas
-classes filhas que herdarão esses métodos. Também é um indicativo de que a
-classe tem métodos específicos dificultando o seu reuso. A unidade de
-complexidade definida por \citeonline{cksuite} é o próprio método e não
-considera outros fatores como número de linhas, número de parâmetros ou
-quantidade de estruturas de decisão. A figura~\ref{fig:pic_wmc} ilustra como a
-métrica WMC é avaliada em uma classe.
-
-\begin{figure}[htb]
-	\caption{\label{fig:pic_wmc}Exemplo de avaliação da métrica WMC}
-	\begin{center}
-		\includegraphics[scale=0.6]{img/pic_wmc.png}
-	\end{center}
-	\legend{Fonte: Próprio Autor}
-\end{figure}
-
-No exemplo da figura~\ref{fig:pic_wmc}, a classe reprensentada tem um total de
-cinco métodos implementados. Seguindo estritamente o que \citeonline{cksuite}
-definem para a métrica, o valor da métrica WMC para a classe é cinco métodos.
-
 
 \end{description}
 

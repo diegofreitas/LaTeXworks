@@ -448,15 +448,7 @@ métrica LCOM. Isto indica que a coesão do código melhorou após cada iteraç�
 
 \section{Discussão dos Resultados} 
 
-A figura \ref{fig:classes_iteracao3} mostra a
-disposição das classes após a refatoração.
-\begin{figure}[htb]
-	\caption{\label{fig:classes_iteracao3} Pacote após refatoração}
-	\begin{center}
-		\includegraphics[scale=0.5]{img/classes_iteracao3}
-	\end{center}
-	\legend{Fonte: Próprio Autor }
-\end{figure}
+
 
 
 %CBO
@@ -479,6 +471,16 @@ Houve diminuição na métrica CBO nas classes alteradas pois diversas
 responsabilidades que utilizam essas dependências foram movidas para a classe de
 Presenter. Analisando de forma geral, essas dependências permanecem no pacote
 além de ser criado mais um acoplamento entre a View e a nova classe Presenter.
+A figura \ref{fig:classes_iteracao3} mostra a disposição das classes após a
+refatoração.
+
+\begin{figure}[htb]
+	\caption{\label{fig:classes_iteracao3} Pacote após refatoração}
+	\begin{center}
+		\includegraphics[scale=0.5]{img/classes_iteracao3}
+	\end{center}
+	\legend{Fonte: Próprio Autor }
+\end{figure}
 
 %WMC/RFC OK
 Ao usar o padrão MVP, a quantidade de linhas de métodos diminui pois cada um
