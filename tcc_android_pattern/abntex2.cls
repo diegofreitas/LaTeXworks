@@ -666,7 +666,7 @@
    \renewcommand{\abstractnamefont}{\chaptitlefont}
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
    \begin{abstract}
-   \OneHalfSpacing
+   \SingleSpacing
   }{\end{abstract}\PRIVATEclearpageifneeded}
   
 \newenvironment{resumoumacoluna}[1][\resumoname]{%
@@ -674,7 +674,7 @@
    \renewcommand{\abstractnamefont}{\chaptitlefont}
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
    \begin{onecolabstract}
-   \OneHalfSpacing
+   \SingleSpacing
 }{\end{onecolabstract}\PRIVATEclearpageifneeded}
 % ---
 

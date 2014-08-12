@@ -86,6 +86,28 @@ informação\cite{WandWeber}. As métricas são:
 
 \begin{description}
 
+
+
+\item[Response sets for Class (RFC)] Quantidade de métodos que são executados
+quando um objeto recebe uma mensagem, incluindo os métodos de outras classes. É
+levado em consideração somente os métodos que são chamados diretamente.
+
+\begin{figure}[htb]
+	\caption{\label{fig:pic_rfc}Exemplo de avaliação da métrica RFC}
+	\begin{center}
+		\includegraphics[scale=0.6]{img/pic_rfc.png}
+	\end{center}
+	\legend{Fonte: Próprio Autor}
+\end{figure}
+
+
+Na figura \ref{fig:pic_rfc}, a classe de exemplo tem um total de três métodos
+definido nela. A implementação do método ``MetódoA'' chama o método ``MétodoB'',
+o método ``MétodoW'' que é de outra classe referenciada pelo atributo
+``Atributo2'' e o método ``MétodoC''. Assumindo que os métodos ``MétodoB'' e
+``MétodoC'' não contém chamadas a nenhum outro método, o valor da métrica RFC
+para a classe ilustrada é de seis métodos.
+
 \item[Wheighted Methods per Classe (WMC)] Serve para expressar o nível de
 complexidade de uma classe com base na soma da complexidade dos métodos que ela
 possui. Isso afeta o esforço de manutenção da classe, além de impactar nas
@@ -108,26 +130,6 @@ No exemplo da figura~\ref{fig:pic_wmc}, a classe reprensentada tem um total de
 cinco métodos implementados. Seguindo estritamente o que \citeonline{cksuite}
 definem para a métrica, o valor da métrica WMC para a classe é cinco métodos.
 
-
-\item[Response sets for Class (RFC)] Quantidade de métodos que são executados
-quando um objeto recebe uma mensagem, incluindo os métodos de outras classes. É
-levado em consideração somente os métodos que são chamados diretamente.
-
-\begin{figure}[htb]
-	\caption{\label{fig:pic_rfc}Exemplo de avaliação da métrica RFC}
-	\begin{center}
-		\includegraphics[scale=0.6]{img/pic_rfc.png}
-	\end{center}
-	\legend{Fonte: Próprio Autor}
-\end{figure}
-
-
-Na figura \ref{fig:pic_rfc}, a classe de exemplo tem um total de três métodos
-definido nela. A implementação do método ``MetódoA'' chama o método ``MétodoB'',
-o método ``MétodoW'' que é de outra classe referenciada pelo atributo
-``Atributo2'' e o método ``MétodoC''. Assumindo que os métodos ``MétodoB'' e
-``MétodoC'' não contém chamadas a nenhum outro método, o valor da métrica RFC
-para a classe ilustrada é de seis métodos.
 
 \item[Coupling Bettwen Objects (CBO)]  Em um sistema orientado a objetos,
 diversas classes são implementadas para exercer uma respoonsabilidade, as
