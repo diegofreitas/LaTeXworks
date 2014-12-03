@@ -4,4 +4,3 @@ De 2012 à 2014 fiz uma especialização em Engenharia de Software na Fucapi. Ne
 
 A idéia principal do trabalho é avaliar a qualidade do código de um aplicativo após a refatoração do código. Essa avaliação foi feita usando as métricas Chidember e Kemerer. A refatoração consistia em aplicar o padrão de projeto MVP na camada de apresentação.
 
-O aplicativo avaliado foi o Contact App do Android. Todo o trabalho está disponível no github:
